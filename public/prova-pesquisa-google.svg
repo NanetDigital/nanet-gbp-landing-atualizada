@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%">
+  <defs>
+    <filter id="shadowG" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Container -->
+  <rect width="960" height="560" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadowG)"/>
+  
+  <!-- Browser Header -->
+  <path d="M 0 14 A 14 14 0 0 1 14 0 L 946 0 A 14 14 0 0 1 960 14 L 960 48 L 0 48 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="48" x2="960" y2="48" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- Browser Tab -->
+  <path d="M 30 48 L 45 12 L 230 12 L 245 48 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="65" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500" fill="#334155">bike eletrica em vitória - Pesqu...</text>
+  <circle cx="215" cy="28" r="6" fill="#E2E8F0"/>
+
+  <!-- Search Bar Header -->
+  <g transform="translate(40, 65)">
+    <!-- Google Logo -->
+    <text x="0" y="30" font-family="'Product Sans', Arial, sans-serif" font-size="26" font-weight="700">
+      <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+    </text>
+
+    <!-- Main Search Input -->
+    <g transform="translate(100, 0)">
+      <rect x="0" y="0" width="560" height="44" rx="22" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1.5"/>
+      <text x="24" y="27" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="15" fill="#202124" font-weight="500">bike eletrica em vitória</text>
+      <!-- Search Icons -->
+      <path d="M495 22 L515 22 M505 12 L505 32" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="535" cy="22" r="7" fill="none" stroke="#4285F4" stroke-width="2.5"/>
+    </g>
+  </g>
+
+  <!-- Location Indicator -->
+  <g transform="translate(40, 125)">
+    <circle cx="8" cy="8" r="4" fill="#5F6368"/>
+    <text x="18" y="12" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#202124">Vitória, ES</text>
+    <text x="90" y="12" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#1A73E8">· Escolher região</text>
+  </g>
+
+  <!-- Title "Locais" -->
+  <text x="40" y="172" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#202124">Locais</text>
+
+  <!-- Local Results Block -->
+  <g transform="translate(40, 190)">
+    <!-- Left Listings Column (Width 440) -->
+    
+    <!-- Item 1: Delta Go -->
+    <g transform="translate(0, 0)">
+      <!-- Image Thumbnail -->
+      <rect x="0" y="0" width="84" height="84" rx="10" fill="#E2E8F0"/>
+      <text x="42" y="48" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#64748B">🚲</text>
+      
+      <!-- Details -->
+      <g transform="translate(98, 8)">
+        <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#1A0DA0">Delta Go – Bicicletas Elétricas / Shopping Vila Ve...</text>
+        <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#4D5156">5,0 <tspan fill="#FBBC04">★★★★★</tspan> (203) · Loja de bicicletas elétricas</text>
+        <text x="0" y="48" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#70757A">Vila Velha - ES · (27) 98813-5998</text>
+        <text x="0" y="64" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#188038">Aberto <tspan fill="#70757A" font-weight="400">· Fecha 21:00</tspan></text>
+      </g>
+      <line x1="0" y1="96" x2="440" y2="96" stroke="#F1F3F4"/>
+    </g>
+
+    <!-- Item 2: Vix Importadora -->
+    <g transform="translate(0, 108)">
+      <!-- Image Thumbnail -->
+      <rect x="0" y="0" width="84" height="74" rx="10" fill="#F1F5F9"/>
+      <text x="42" y="42" font-family="sans-serif" font-size="13" font-weight="700" fill="#0284C7" text-anchor="middle">Vitória</text>
+      
+      <!-- Details -->
+      <g transform="translate(98, 4)">
+        <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#1A0DA0">Vix Importadora - Bicicletas Elétricas</text>
+        <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#70757A">Nenhum comentário · Loja de bicicletas elétricas</text>
+        <text x="0" y="48" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#70757A">R. Gama Rosa · (27) 99283-0230</text>
+        <text x="0" y="64" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#188038">Aberto 24 horas</text>
+      </g>
+      <line x1="0" y1="84" x2="440" y2="84" stroke="#F1F3F4"/>
+    </g>
+
+    <!-- Item 3: GTR EBIKES -->
+    <g transform="translate(0, 204)">
+      <!-- Image Thumbnail -->
+      <rect x="0" y="0" width="84" height="84" rx="10" fill="#0F172A"/>
+      <text x="42" y="48" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#FFFFFF">⚡</text>
+      
+      <!-- Details -->
+      <g transform="translate(98, 4)">
+        <text x="0" y="14" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#1A0DA0">GTR EBIKES Mobilidade Elétrica</text>
+        
+        <!-- Management Badge -->
+        <g transform="translate(0, 22)">
+          <path d="M 0 2 L 6 8 L 14 0" fill="none" stroke="#1A73E8" stroke-width="2"/>
+          <text x="18" y="7" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#1A73E8" font-weight="500">Você gerencia o perfil desta empresa</text>
+        </g>
+
+        <text x="0" y="46" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#4D5156">4,9 <tspan fill="#FBBC04">★★★★★</tspan> (48) · Loja de bicicletas elétricas</text>
+        <text x="0" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#70757A">Av. Jerônimo Monteiro, 829 · (27) 99288-2290</text>
+      </g>
+    </g>
+
+    <!-- Right Side Map Component -->
+    <g transform="translate(465, 0)">
+      <rect x="0" y="0" width="415" height="310" rx="12" fill="#C5E1A5" stroke="#AED581"/>
+      
+      <!-- Map Water Bay -->
+      <path d="M 120 0 Q 180 120 220 180 T 415 220 L 415 0 Z" fill="#90CAF9"/>
+      
+      <!-- Roads -->
+      <path d="M 0 100 Q 200 150 415 130" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+      <path d="M 150 0 Q 180 200 120 310" fill="none" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M 0 220 L 415 260" fill="none" stroke="#FFF59D" stroke-width="6"/>
+
+      <!-- Map Pins -->
+      <!-- Delta Go Pin -->
+      <circle cx="280" cy="270" r="10" fill="#EA4335"/>
+      <text x="295" y="274" font-family="sans-serif" font-size="10" font-weight="700" fill="#202124">Delta Go</text>
+
+      <!-- Vix Importadora Pin -->
+      <circle cx="160" cy="180" r="10" fill="#EA4335"/>
+
+      <!-- GTR EBIKES Pin -->
+      <circle cx="180" cy="230" r="12" fill="#EA4335" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="198" y="234" font-family="sans-serif" font-size="11" font-weight="700" fill="#202124">GTR EBIKES</text>
+
+      <!-- "Abrir no Maps" Button -->
+      <rect x="290" y="15" width="110" height="32" rx="16" fill="#FFFFFF" stroke="#DADCE0"/>
+      <text x="345" y="35" font-family="sans-serif" font-size="11" font-weight="600" fill="#3C4043" text-anchor="middle">Abrir no Maps</text>
+    </g>
+  </g>
+</svg>

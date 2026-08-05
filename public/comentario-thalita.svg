@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="100%" height="100%">
+  <rect width="520" height="200" fill="#FFFFFF"/>
+  <!-- Avatar circle -->
+  <g transform="translate(20, 24)">
+    <clipPath id="avatar1">
+      <circle cx="30" cy="30" r="30"/>
+    </clipPath>
+    <rect x="0" y="0" width="60" height="60" fill="#991B1B" clip-path="url(#avatar1)"/>
+    <circle cx="30" cy="25" r="16" fill="#FDBA74" clip-path="url(#avatar1)"/>
+    <!-- Dark curly hair -->
+    <path d="M 10 22 C 8 8, 22 2, 30 2 C 38 2, 52 8, 50 22 C 48 35, 45 35, 45 42 C 40 38, 20 38, 15 42 Z" fill="#292524" clip-path="url(#avatar1)"/>
+  </g>
+  <!-- Username + Time -->
+  <text x="100" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#1C1E21">thalitatmd.espaco</text>
+  <text x="280" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="400" fill="#8A8D91">11 sem</text>
+  <!-- Comment Body -->
+  <text x="100" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="400" fill="#1C1E21">Estou tendo ótimos resultados!</text>
+  <text x="100" y="108" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="400" fill="#1C1E21">Recomendo demais o seu serviço!</text>
+  <text x="100" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20">🙏🙏🙏</text>
+  <!-- Heart Icon -->
+  <path d="M 470 88 C 470 82, 464 76, 457 76 C 449 76, 444 82, 444 88 C 444 98, 457 108, 457 108 C 457 108, 470 98, 470 88 Z" fill="#FF3040"/>
+  <!-- Footer -->
+  <text x="100" y="176" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#8A8D91">1 curtida</text>
+  <text x="180" y="176" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#8A8D91">Responder</text>
+</svg>

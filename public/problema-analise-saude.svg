@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%">
+  <defs>
+    <filter id="shadowA" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+    <linearGradient id="gaugeArcA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect width="900" height="620" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadowA)"/>
+
+  <!-- Map Previews Section Top -->
+  <g transform="translate(40, 30)">
+    <!-- Map 1: Regional Places -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Mapa de locais na região com a busca "Médico":</text>
+      <rect x="0" y="24" width="400" height="130" rx="8" fill="#E2E8F0"/>
+      <!-- Map Graphic -->
+      <path d="M 0 60 Q 200 90 400 50" fill="none" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M 180 24 L 180 154" fill="none" stroke="#FFFFFF" stroke-width="12"/>
+      <path d="M 280 24 L 280 154" fill="none" stroke="#93C5FD" stroke-width="8"/>
+      <!-- Water -->
+      <path d="M 320 24 Q 350 80 400 110 L 400 24 Z" fill="#93C5FD"/>
+      <!-- Pins -->
+      <circle cx="210" cy="70" r="6" fill="#2563EB"/>
+      <circle cx="230" cy="60" r="6" fill="#2563EB"/>
+      <circle cx="240" cy="80" r="6" fill="#2563EB"/>
+      <circle cx="250" cy="90" r="8" fill="#10B981"/>
+      <circle cx="270" cy="75" r="6" fill="#2563EB"/>
+    </g>
+
+    <!-- Map 2: Heatmap Region -->
+    <g transform="translate(420, 0)">
+      <text x="0" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Mapa de calor da região com a busca "Médico":</text>
+      <rect x="0" y="24" width="400" height="130" rx="8" fill="#334155"/>
+      <!-- Dark Satellite Heatmap Preview -->
+      <path d="M 0 30 Q 200 70 400 40" fill="none" stroke="#475569" stroke-width="8"/>
+      <radialGradient id="heatM" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+      </radialGradient>
+      <circle cx="220" cy="75" r="60" fill="url(#heatM)"/>
+      <circle cx="220" cy="75" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Title & Business Info -->
+  <g transform="translate(40, 205)">
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#0F172A">Análise de Saúde da Consultório Dr. Luciano de Paiva Alves:</text>
+    <text x="0" y="38" font-family="sans-serif" font-size="11" fill="#64748B">Ed. Centro Empresarial Praia da Costa Offices - Alça da Terceira Ponte, 245 - Praia da Costa, Vila Velha - ES, 29101-440</text>
+  </g>
+
+  <!-- Main 2 Cards Grid -->
+  <!-- Card 1: Pontuação Geral -->
+  <g transform="translate(40, 265)">
+    <rect x="0" y="0" width="390" height="315" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadowA)"/>
+    <text x="195" y="42" font-family="sans-serif" font-size="15" font-weight="800" fill="#1E293B" text-anchor="middle">Pontuação Geral</text>
+    <text x="195" y="60" font-family="sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Desempenho do Negócio</text>
+
+    <!-- Gauge -->
+    <path d="M 95 210 A 100 100 0 0 1 295 210" fill="none" stroke="#F1F5F9" stroke-width="22" stroke-linecap="round"/>
+    <path d="M 95 210 A 100 100 0 0 1 295 210" fill="none" stroke="url(#gaugeArcA)" stroke-width="22" stroke-linecap="round"/>
+
+    <!-- Needle pointing to 60 -->
+    <g transform="translate(195, 210) rotate(22)">
+      <polygon points="-4,0 0,-85 4,0" fill="#334155"/>
+      <circle cx="0" cy="0" r="8" fill="#334155"/>
+    </g>
+
+    <text x="195" y="248" font-family="sans-serif" font-size="28" font-weight="900" fill="#0F172A" text-anchor="middle">60</text>
+    <rect x="145" y="260" width="100" height="24" rx="12" fill="#FEF3C7" stroke="#FCD34D"/>
+    <text x="195" y="276" font-family="sans-serif" font-size="10" font-weight="800" fill="#D97706" text-anchor="middle">RAZOÁVEL</text>
+  </g>
+
+  <!-- Card 2: Pontuação Detalhada -->
+  <g transform="translate(470, 265)">
+    <rect x="0" y="0" width="390" height="315" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadowA)"/>
+    <text x="195" y="42" font-family="sans-serif" font-size="15" font-weight="800" fill="#1E293B" text-anchor="middle">Pontuação Detalhada</text>
+
+    <!-- Option 1: Fraco -->
+    <g transform="translate(25" y="65)">
+      <rect x="0" y="0" width="340" height="68" rx="12" fill="#FFFFFF" stroke="#F1F5F9" filter="url(#shadowA)"/>
+      <circle cx="36" cy="34" r="18" fill="#EF4444"/>
+      <text x="36" y="40" font-family="sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">8</text>
+      <text x="70" y="28" font-family="sans-serif" font-size="13" font-weight="800" fill="#1E293B">Fraco</text>
+      <text x="70" y="46" font-family="sans-serif" font-size="11" fill="#64748B">Métricas que precisam de atenção</text>
+    </g>
+
+    <!-- Option 2: Razoável -->
+    <g transform="translate(25, 145)">
+      <rect x="0" y="0" width="340" height="68" rx="12" fill="#FFFFFF" stroke="#F1F5F9" filter="url(#shadowA)"/>
+      <circle cx="36" cy="34" r="18" fill="#F59E0B"/>
+      <text x="36" y="40" font-family="sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">0</text>
+      <text x="70" y="28" font-family="sans-serif" font-size="13" font-weight="800" fill="#1E293B">Razoável</text>
+      <text x="70" y="46" font-family="sans-serif" font-size="11" fill="#64748B">Métricas com potencial de melhoria</text>
+    </g>
+
+    <!-- Option 3: Bom -->
+    <g transform="translate(25, 225)">
+      <rect x="0" y="0" width="340" height="68" rx="12" fill="#FFFFFF" stroke="#F1F5F9" filter="url(#shadowA)"/>
+      <circle cx="36" cy="34" r="18" fill="#10B981"/>
+      <text x="36" y="40" font-family="sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">12</text>
+      <text x="70" y="28" font-family="sans-serif" font-size="13" font-weight="800" fill="#1E293B">Bom</text>
+      <text x="70" y="46" font-family="sans-serif" font-size="11" fill="#64748B">Métricas em excelente estado</text>
+    </g>
+  </g>
+</svg>

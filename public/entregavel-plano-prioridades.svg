@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%">
+  <defs>
+    <filter id="shadowP" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Container -->
+  <rect width="900" height="620" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadowP)"/>
+
+  <!-- Executive Header -->
+  <g transform="translate(40, 35)">
+    <rect x="0" y="0" width="820" height="60" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="24" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#0F172A">PLANO DE AÇÕES PRIORIZADAS &amp; RECOMENDAÇÕES ESTRATÉGICAS</text>
+    <rect x="660" y="16" width="136" height="28" rx="14" fill="#DCFCE7" stroke="#86EFAC"/>
+    <text x="728" y="34" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803D" text-anchor="middle">MATRIZ DE IMPACTO</text>
+  </g>
+
+  <!-- Action 1 -->
+  <g transform="translate(40, 115)">
+    <rect x="0" y="0" width="820" height="110" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="110" rx="4" fill="#16A34A"/>
+    
+    <text x="30" y="35" font-family="sans-serif" font-size="15" font-weight="700" fill="#0F172A">1. Otimização de Categorias e Palavras-Chave de Alta Conversão</text>
+    <text x="30" y="60" font-family="sans-serif" font-size="13" fill="#475569">Ajuste técnico na estrutura do perfil para capturar buscas ativas por "serviços especializados" na região.</text>
+    
+    <rect x="30" y="72" width="110" height="24" rx="6" fill="#DCFCE7"/>
+    <text x="85" y="88" font-family="sans-serif" font-size="11" font-weight="700" fill="#15803D" text-anchor="middle">ALTO IMPACTO</text>
+
+    <rect x="150" y="72" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <text x="210" y="88" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">EXECUÇÃO: 48h</text>
+
+    <rect x="650" y="30" width="140" height="50" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="720" y="50" font-family="sans-serif" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">ESTIMATIVA DE GANHO</text>
+    <text x="720" y="68" font-family="sans-serif" font-size="14" font-weight="800" fill="#16A34A" text-anchor="middle">+35% CHAMADAS</text>
+  </g>
+
+  <!-- Action 2 -->
+  <g transform="translate(40, 240)">
+    <rect x="0" y="0" width="820" height="110" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="110" rx="4" fill="#2563EB"/>
+    
+    <text x="30" y="35" font-family="sans-serif" font-size="15" font-weight="700" fill="#0F172A">2. Reestruturação da Área de Atendimento e Raio Geográfico</text>
+    <text x="30" y="60" font-family="sans-serif" font-size="13" fill="#475569">Expandir a cobertura do algoritmo para bairros vizinhos com alta densidade populacional e baixa concorrência.</text>
+    
+    <rect x="30" y="72" width="110" height="24" rx="6" fill="#DBEAFE"/>
+    <text x="85" y="88" font-family="sans-serif" font-size="11" font-weight="700" fill="#1E40AF" text-anchor="middle">ALTO IMPACTO</text>
+
+    <rect x="150" y="72" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <text x="210" y="88" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">EXECUÇÃO: SEMANA 1</text>
+
+    <rect x="650" y="30" width="140" height="50" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="720" y="50" font-family="sans-serif" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">ESTIMATIVA DE GANHO</text>
+    <text x="720" y="68" font-family="sans-serif" font-size="14" font-weight="800" fill="#2563EB" text-anchor="middle">+28% ALCANCE</text>
+  </g>
+
+  <!-- Action 3 -->
+  <g transform="translate(40, 365)">
+    <rect x="0" y="0" width="820" height="110" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="0" y="0" width="8" height="110" rx="4" fill="#F59E0B"/>
+    
+    <text x="30" y="35" font-family="sans-serif" font-size="15" font-weight="700" fill="#0F172A">3. Protocolo Aceleração de Avaliações e Prova Social</text>
+    <text x="30" y="60" font-family="sans-serif" font-size="13" fill="#475569">Implementação de script para captação diária de avaliações 5 estrelas com palavras-chave estratégicas nos comentários.</text>
+    
+    <rect x="30" y="72" width="120" height="24" rx="6" fill="#FEF3C7"/>
+    <text x="90" y="88" font-family="sans-serif" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">MÉDIO IMPACTO</text>
+
+    <rect x="160" y="72" width="120" height="24" rx="6" fill="#F1F5F9"/>
+    <text x="220" y="88" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">EXECUÇÃO: CONTÍNUA</text>
+
+    <rect x="650" y="30" width="140" height="50" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="720" y="50" font-family="sans-serif" font-size="10" font-weight="600" fill="#64748B" text-anchor="middle">ESTIMATIVA DE GANHO</text>
+    <text x="720" y="68" font-family="sans-serif" font-size="14" font-weight="800" fill="#D97706" text-anchor="middle">+40% CONVERSÃO</text>
+  </g>
+
+  <!-- Bottom Summary Bar -->
+  <g transform="translate(40, 490)">
+    <rect x="0" y="0" width="820" height="90" rx="12" fill="#0F172A"/>
+    <text x="30" y="38" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Resumo de Recomendações Estratégicas</text>
+    <text x="30" y="62" font-family="sans-serif" font-size="12" fill="#94A3B8">Plano estruturado de curto, médio e longo prazo para consolidação de liderança no Google Maps.</text>
+    
+    <rect x="630" y="24" width="160" height="42" rx="8" fill="#16A34A"/>
+    <text x="710" y="50" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PLANO PRONTO</text>
+  </g>
+</svg>

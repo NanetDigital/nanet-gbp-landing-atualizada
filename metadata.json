@@ -1,0 +1,6 @@
+{
+  "name": "Landing Page Architecture",
+  "description": "Estrutura visual minimalista e modular de Landing Page em React, TypeScript e Tailwind CSS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

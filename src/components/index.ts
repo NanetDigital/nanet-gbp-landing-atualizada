@@ -1,0 +1,16 @@
+export { Hero } from './Hero';
+export { Oportunidade } from './Oportunidade';
+export { Problema } from './Problema';
+export { Solucao } from './Solucao';
+export { ComoFunciona } from './ComoFunciona';
+export { OQueVoceRecebe } from './OQueVoceRecebe';
+export { Provas } from './Provas';
+export { Oferta } from './Oferta';
+export { FAQ } from './FAQ';
+export { CTAFinal } from './CTAFinal';
+export { Duvidas } from './Duvidas';
+export { WhatsAppFloating } from './WhatsAppFloating';
+export { Rodape } from './Rodape';
+export { PoliticaPrivacidade } from './PoliticaPrivacidade';
+export { TermosDeUso } from './TermosDeUso';
+export { SectionHeader } from './SectionHeader';

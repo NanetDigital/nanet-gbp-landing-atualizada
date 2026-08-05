@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Container -->
+  <rect width="900" height="560" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow1)"/>
+  
+  <!-- Browser Header -->
+  <path d="M 0 16 A 16 16 0 0 1 16 0 L 884 0 A 16 16 0 0 1 900 16 L 900 50 L 0 50 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="50" x2="900" y2="50" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <!-- Window Dots -->
+  <circle cx="28" cy="25" r="5" fill="#EF4444"/>
+  <circle cx="46" cy="25" r="5" fill="#F59E0B"/>
+  <circle cx="64" cy="25" r="5" fill="#10B981"/>
+
+  <!-- URL / Search Bar -->
+  <rect x="110" y="10" width="680" height="30" rx="15" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="130" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">https://www.google.com/search?q=consultoria+empresarial+em+vitoria+es</text>
+
+  <!-- Google Logo & Search Box -->
+  <g transform="translate(40, 75)">
+    <!-- Google Logo -->
+    <text x="0" y="32" font-family="'Product Sans', Arial, sans-serif" font-size="28" font-weight="700">
+      <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+    </text>
+
+    <!-- Main Search Input -->
+    <g transform="translate(110, 0)">
+      <rect x="0" y="0" width="680" height="46" rx="23" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1.5"/>
+      <path d="M22 15 A7 7 0 1 1 22 29 A7 7 0 1 1 22 15 M27 27 L33 33" fill="none" stroke="#9AA0A6" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="44" y="28" font-family="Arial, sans-serif" font-size="15" fill="#202124" font-weight="500">consultoria empresarial e assessoria estrategica vitoria es</text>
+    </g>
+  </g>
+
+  <!-- Search Stats -->
+  <text x="40" y="152" font-family="Arial, sans-serif" font-size="12" fill="#70757A">Aproximadamente 1.480.000 resultados (0,38 segundos)</text>
+
+  <!-- Google Local Pack Card (Real Search Result) -->
+  <g transform="translate(40, 175)">
+    <rect x="0" y="0" width="820" height="340" rx="12" fill="#FFFFFF" stroke="#DADCE0" stroke-width="1"/>
+    
+    <!-- Local Pack Title Header -->
+    <path d="M 0 12 A 12 12 0 0 1 12 0 L 808 0 A 12 12 0 0 1 820 12 L 820 45 L 0 45 Z" fill="#F8FAFC"/>
+    <text x="20" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#202124">Empresas e Serviços Locais no Google Maps</text>
+    <line x1="0" y1="45" x2="820" y2="45" stroke="#E5E7EB"/>
+
+    <!-- Map Preview Box -->
+    <g transform="translate(540, 60)">
+      <rect x="0" y="0" width="260" height="260" rx="8" fill="#E5E7EB"/>
+      <!-- Map Roads -->
+      <path d="M 0 40 Q 130 90 260 50" fill="none" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M 80 0 Q 120 130 100 260" fill="none" stroke="#FFFFFF" stroke-width="12"/>
+      <path d="M 0 180 L 260 160" fill="none" stroke="#FDE047" stroke-width="6"/>
+      <!-- Water -->
+      <path d="M 170 0 Q 210 100 260 140 L 260 0 Z" fill="#BFDBFE"/>
+      <!-- Map Pin 1 -->
+      <circle cx="100" cy="80" r="14" fill="#EA4335"/>
+      <text x="100" y="84" font-family="Arial" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">A</text>
+      <!-- Map Pin 2 -->
+      <circle cx="140" cy="140" r="14" fill="#EA4335"/>
+      <text x="140" y="144" font-family="Arial" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">B</text>
+    </g>
+
+    <!-- Listing 1 -->
+    <g transform="translate(20, 65)">
+      <text x="0" y="18" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1A0DA0">Líder Consultoria &amp; Estratégia de Negócios</text>
+      <text x="0" y="38" font-family="Arial, sans-serif" font-size="13" fill="#4D5156">4,9 <tspan fill="#FBBC04">★★★★★</tspan> (128) · Consultoria de Gestão</text>
+      <text x="0" y="56" font-family="Arial, sans-serif" font-size="13" fill="#70757A">Av. Nossa Senhora da Penha, 1495 - Praia do Canto, Vitória - ES</text>
+      <text x="0" y="74" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#188038">Aberto · Fecha às 18:00 · Atendimento presencial e online</text>
+      <line x1="0" y1="92" x2="500" y2="92" stroke="#F1F3F4"/>
+    </g>
+
+    <!-- Listing 2 -->
+    <g transform="translate(20, 175)">
+      <text x="0" y="18" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1A0DA0">Grupo Soluções Empresariais</text>
+      <text x="0" y="38" font-family="Arial, sans-serif" font-size="13" fill="#4D5156">4,8 <tspan fill="#FBBC04">★★★★★</tspan> (94) · Assessoria Comercial</text>
+      <text x="0" y="56" font-family="Arial, sans-serif" font-size="13" fill="#70757A">Rua das Palmeiras, 680 - Enseada do Suá, Vitória - ES</text>
+      <text x="0" y="74" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#188038">Aberto · Atende a região e arredores</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <filter id="pinGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Container -->
+  <rect width="900" height="560" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow2)"/>
+
+  <!-- Left Sidebar - Competitors Ranking -->
+  <rect x="0" y="0" width="340" height="560" fill="#F8FAFC"/>
+  <line x1="340" y1="0" x2="340" y2="560" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Sidebar Header -->
+  <rect x="0" y="0" width="340" height="60" fill="#FFFFFF"/>
+  <line x1="0" y1="60" x2="340" y2="60" stroke="#E2E8F0"/>
+  <text x="20" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#0F172A">Mapa de Concorrentes Locais</text>
+
+  <!-- Competitor 1 Card -->
+  <g transform="translate(16, 76)">
+    <rect x="0" y="0" width="308" height="100" rx="10" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+    <circle cx="28" cy="28" r="14" fill="#10B981"/>
+    <text x="28" y="33" font-family="sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">1º</text>
+    <text x="52" y="26" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">Concorrente Líder</text>
+    <text x="52" y="42" font-family="sans-serif" font-size="11" fill="#059669" font-weight="600">4.9 ★★★★★ (142 avaliações)</text>
+    <text x="16" y="68" font-family="sans-serif" font-size="11" fill="#64748B">Dominando 72% das buscas da região centro</text>
+    <rect x="16" y="78" width="276" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="16" y="78" width="200" height="6" rx="3" fill="#10B981"/>
+  </g>
+
+  <!-- Competitor 2 Card -->
+  <g transform="translate(16, 192)">
+    <rect x="0" y="0" width="308" height="100" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="28" cy="28" r="14" fill="#2563EB"/>
+    <text x="28" y="33" font-family="sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">2º</text>
+    <text x="52" y="26" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">Concorrente Secundário</text>
+    <text x="52" y="42" font-family="sans-serif" font-size="11" fill="#2563EB" font-weight="600">4.8 ★★★★★ (88 avaliações)</text>
+    <text x="16" y="68" font-family="sans-serif" font-size="11" fill="#64748B">Presença forte em 3 bairros vizinhos</text>
+    <rect x="16" y="78" width="276" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="16" y="78" width="150" height="6" rx="3" fill="#2563EB"/>
+  </g>
+
+  <!-- Competitor 3 Card -->
+  <g transform="translate(16, 308)">
+    <rect x="0" y="0" width="308" height="100" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="28" cy="28" r="14" fill="#64748B"/>
+    <text x="28" y="33" font-family="sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle">3º</text>
+    <text x="52" y="26" font-family="sans-serif" font-size="13" font-weight="700" fill="#0F172A">Concorrente Tradicional</text>
+    <text x="52" y="42" font-family="sans-serif" font-size="11" fill="#64748B" font-weight="600">4.6 ★★★★☆ (52 avaliações)</text>
+    <text x="16" y="68" font-family="sans-serif" font-size="11" fill="#64748B">Captação estável por indicação</text>
+    <rect x="16" y="78" width="276" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="16" y="78" width="100" height="6" rx="3" fill="#64748B"/>
+  </g>
+
+  <!-- Your Business Opportunity Box -->
+  <g transform="translate(16, 424)">
+    <rect x="0" y="0" width="308" height="116" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="16" y="28" font-family="sans-serif" font-size="13" font-weight="800" fill="#B45309">⚠️ SUA EMPRESA NESTE MAPA</text>
+    <text x="16" y="50" font-family="sans-serif" font-size="11" fill="#92400E" font-weight="600">
+      Posicionamento com brechas de mercado.
+    </text>
+    <text x="16" y="68" font-family="sans-serif" font-size="11" fill="#78350F">
+      Sem otimização estratégica, as pesquisas vão direto para o 1º e 2º colocados.
+    </text>
+    <rect x="16" y="86" width="276" height="20" rx="4" fill="#F59E0B"/>
+    <text x="154" y="100" font-family="sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">OPORTUNIDADE DE ULTRAPASSAGEM</text>
+  </g>
+
+  <!-- Right Map Canvas Area -->
+  <g transform="translate(340, 0)">
+    <!-- Base Map Graphic -->
+    <rect width="560" height="560" fill="#E2E8F0"/>
+    
+    <!-- Water Bodies / Coast -->
+    <path d="M 380 0 Q 420 200 560 320 L 560 0 Z" fill="#93C5FD" opacity="0.7"/>
+
+    <!-- Map Roads and Blocks -->
+    <rect x="40" y="40" width="120" height="90" rx="8" fill="#CBD5E1"/>
+    <rect x="180" y="40" width="160" height="120" rx="8" fill="#CBD5E1"/>
+    <rect x="40" y="160" width="120" height="160" rx="8" fill="#CBD5E1"/>
+    <rect x="180" y="180" width="180" height="140" rx="8" fill="#CBD5E1"/>
+    <rect x="40" y="340" width="320" height="160" rx="8" fill="#CBD5E1"/>
+
+    <!-- Avenues -->
+    <path d="M 0 145 L 560 145" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+    <path d="M 0 145 L 560 145" fill="none" stroke="#FDE047" stroke-width="8"/>
+
+    <path d="M 165 0 L 165 560" fill="none" stroke="#FFFFFF" stroke-width="18"/>
+    <path d="M 165 0 L 165 560" fill="none" stroke="#93C5FD" stroke-width="10"/>
+
+    <!-- Map Pins -->
+    <!-- Pin 1 - Green Leader Pin -->
+    <g transform="translate(240, 110)" filter="url(#pinGlow)">
+      <path d="M0,0 C-12,-20 -18,-30 -18,-42 C-18,-54 -10,-62 0,-62 C10,-62 18,-54 18,-42 C18,-30 12,-20 0,0 Z" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="0" cy="-42" r="8" fill="#FFFFFF"/>
+      <text x="0" y="-38" font-family="sans-serif" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">1</text>
+    </g>
+
+    <!-- Pin 2 - Blue Pin -->
+    <g transform="translate(100, 240)" filter="url(#pinGlow)">
+      <path d="M0,0 C-10,-18 -15,-26 -15,-36 C-15,-46 -8,-52 0,-52 C8,-52 15,-46 15,-36 C15,-26 10,-18 0,0 Z" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="0" cy="-36" r="7" fill="#FFFFFF"/>
+      <text x="0" y="-33" font-family="sans-serif" font-size="10" font-weight="900" fill="#1D4ED8" text-anchor="middle">2</text>
+    </g>
+
+    <!-- Pin 3 - Gray Pin -->
+    <g transform="translate(280, 270)" filter="url(#pinGlow)">
+      <path d="M0,0 C-10,-18 -15,-26 -15,-36 C-15,-46 -8,-52 0,-52 C8,-52 15,-46 15,-36 C15,-26 10,-18 0,0 Z" fill="#64748B" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="0" cy="-36" r="7" fill="#FFFFFF"/>
+      <text x="0" y="-33" font-family="sans-serif" font-size="10" font-weight="900" fill="#334155" text-anchor="middle">3</text>
+    </g>
+
+    <!-- Gap Alert Overlay Pin -->
+    <g transform="translate(180, 390)" filter="url(#pinGlow)">
+      <path d="M0,0 C-14,-22 -20,-32 -20,-46 C-20,-58 -11,-68 0,-68 C11,-68 20,-58 20,-46 C20,-32 14,-22 0,0 Z" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+      <text x="0" y="-42" font-family="sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">⚡</text>
+    </g>
+  </g>
+</svg>

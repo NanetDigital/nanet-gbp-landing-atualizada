@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="150 70 660 410" width="100%" height="100%">
+  <defs>
+    <filter id="shadowD" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Overlay Canvas Background -->
+  <rect x="150" y="70" width="660" height="410" rx="10" fill="#64748B" opacity="0.25"/>
+  
+  <!-- Centered Modal Box -->
+  <g transform="translate(160, 80)">
+    <rect width="640" height="390" rx="12" fill="#FFFFFF" filter="url(#shadowD)"/>
+
+    <!-- Modal Header (Compact) -->
+    <g transform="translate(20, 16)">
+      <path d="M 0 10 L 10 0 L 10 20 Z" fill="#5F6368" transform="rotate(-90 5 10)"/>
+      <text x="24" y="15" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="#202124">Desempenho</text>
+      <text x="590" y="15" font-family="sans-serif" font-size="16" fill="#5F6368" font-weight="300">✕</text>
+    </g>
+
+    <!-- Highlighted Box with Discrete Green Border around 1.303 Interações (Prominent) -->
+    <g transform="translate(20, 48)">
+      <!-- Green Discrete Border Box -->
+      <rect x="0" y="0" width="280" height="88" rx="10" fill="#F0FDF4" stroke="#16A34A" stroke-width="2.5"/>
+      
+      <!-- Big Number -->
+      <text x="18" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="800" fill="#09090B">1.303</text>
+      
+      <!-- Label -->
+      <text x="18" y="72" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#15803D">Interações no Perfil da Empresa ⓘ</text>
+    </g>
+
+    <!-- Period Dropdown Pill (Right Aligned to Highlighted Box) -->
+    <g transform="translate(390, 68)">
+      <rect x="0" y="0" width="220" height="38" rx="8" fill="#FFFFFF" stroke="#1A73E8" stroke-width="1.5"/>
+      <text x="12" y="-4" font-family="sans-serif" font-size="11" fill="#1A73E8" font-weight="600">Período</text>
+      <text x="14" y="24" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#202124">mar. de 2026 – jul. de 2026 ▾</text>
+    </g>
+
+    <!-- Navigation Tabs -->
+    <g transform="translate(20, 152)">
+      <text x="12" y="18" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#1A73E8">Visão geral</text>
+      <line x1="12" y1="26" x2="78" y2="26" stroke="#1A73E8" stroke-width="2.5"/>
+
+      <text x="95" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#5F6368">Chamadas</text>
+      <text x="175" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#5F6368">Cliques no chat</text>
+      <text x="285" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#5F6368">Agendamentos</text>
+      <text x="395" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#5F6368">Orientações</text>
+      <text x="490" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#5F6368">Cliques no website</text>
+      <line x1="0" y1="27" x2="600" y2="27" stroke="#E8EAED" stroke-width="1"/>
+    </g>
+
+    <!-- Line Chart Area -->
+    <g transform="translate(20, 190)">
+      <!-- Y-Axis Grid Lines & Labels -->
+      <line x1="35" y1="15" x2="590" y2="15" stroke="#F1F3F4" stroke-width="1"/>
+      <text x="24" y="19" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="end">300</text>
+
+      <line x1="35" y1="50" x2="590" y2="50" stroke="#F1F3F4" stroke-width="1"/>
+      <text x="24" y="54" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="end">225</text>
+
+      <line x1="35" y1="85" x2="590" y2="85" stroke="#F1F3F4" stroke-width="1"/>
+      <text x="24" y="89" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="end">150</text>
+
+      <line x1="35" y1="120" x2="590" y2="120" stroke="#F1F3F4" stroke-width="1"/>
+      <text x="24" y="124" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="end">75</text>
+
+      <line x1="35" y1="150" x2="590" y2="150" stroke="#E8EAED" stroke-width="1.5"/>
+
+      <!-- X-Axis Labels -->
+      <text x="35" y="170" font-family="sans-serif" font-size="10" fill="#5F6368" font-weight="500" text-anchor="middle">mar. 2026</text>
+      <line x1="35" y1="150" x2="35" y2="155" stroke="#BDC1C6" stroke-width="1.5"/>
+
+      <text x="173" y="170" font-family="sans-serif" font-size="10" fill="#5F6368" font-weight="500" text-anchor="middle">abr. 2026</text>
+      <line x1="173" y1="150" x2="173" y2="155" stroke="#BDC1C6" stroke-width="1.5"/>
+
+      <text x="312" y="170" font-family="sans-serif" font-size="10" fill="#5F6368" font-weight="500" text-anchor="middle">mai. 2026</text>
+      <line x1="312" y1="150" x2="312" y2="155" stroke="#BDC1C6" stroke-width="1.5"/>
+
+      <text x="450" y="170" font-family="sans-serif" font-size="10" fill="#5F6368" font-weight="500" text-anchor="middle">jun. 2026</text>
+      <line x1="450" y1="150" x2="450" y2="155" stroke="#BDC1C6" stroke-width="1.5"/>
+
+      <text x="580" y="170" font-family="sans-serif" font-size="10" fill="#5F6368" font-weight="500" text-anchor="middle">jul. 2026</text>
+      <line x1="580" y1="150" x2="580" y2="155" stroke="#BDC1C6" stroke-width="1.5"/>
+
+      <!-- Blue Performance Growth Line -->
+      <path d="M 35 60 L 173 52 L 312 42 L 450 38 L 580 22" fill="none" stroke="#1A73E8" stroke-width="3"/>
+
+      <!-- Data Dots -->
+      <circle cx="35" cy="60" r="5" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2.5"/>
+      <circle cx="173" cy="52" r="5" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2.5"/>
+      <circle cx="312" cy="42" r="5" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2.5"/>
+      <circle cx="450" cy="38" r="5" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2.5"/>
+      <circle cx="580" cy="22" r="5" fill="#FFFFFF" stroke="#1A73E8" stroke-width="2.5"/>
+    </g>
+  </g>
+</svg>
