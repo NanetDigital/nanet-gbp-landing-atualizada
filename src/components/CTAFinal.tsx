@@ -1,6 +1,7 @@
 import React from 'react';
 import { CTAFinalData } from '../types/landing';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { useCheckoutUrl } from '../utils/tracking';
 
 export interface CTAFinalProps {
   data?: Partial<CTAFinalData>;
@@ -16,6 +17,7 @@ const defaultData: CTAFinalData = {
 
 export const CTAFinal: React.FC<CTAFinalProps> = ({ data = {} }) => {
   const ctaData = { ...defaultData, ...data };
+  const checkoutUrl = useCheckoutUrl();
 
   return (
     <section
@@ -43,7 +45,7 @@ export const CTAFinal: React.FC<CTAFinalProps> = ({ data = {} }) => {
         {/* CTA Button */}
         <div className="mt-10 max-w-md mx-auto">
           <a
-            href="https://pay.hotmart.com/V106938201T"
+            href={checkoutUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {

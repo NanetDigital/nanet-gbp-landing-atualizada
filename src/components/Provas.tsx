@@ -1,8 +1,10 @@
 import React from 'react';
 import { Search, Cpu, Sliders, TrendingUp, Building2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useCheckoutUrl } from '../utils/tracking';
 
 export const Provas: React.FC = () => {
+  const checkoutUrl = useCheckoutUrl();
   return (
     <section
       id="provas"
@@ -506,7 +508,7 @@ export const Provas: React.FC = () => {
 
           <div className="pt-2 space-y-3">
             <a
-              href="https://pay.hotmart.com/V106938201T"
+              href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {

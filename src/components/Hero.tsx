@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroData } from '../types/landing';
+import { useCheckoutUrl } from '../utils/tracking';
 
 export interface HeroProps {
   data?: Partial<HeroData>;
@@ -18,6 +19,7 @@ const defaultHeroData: HeroData = {
 
 export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
   const heroData: HeroData = { ...defaultHeroData, ...data };
+  const checkoutUrl = useCheckoutUrl();
 
   return (
     <section
@@ -65,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
             <div className="pt-2 space-y-5">
               <div>
                 <a
-                  href="https://pay.hotmart.com/V106938201T"
+                  href={checkoutUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useCheckoutUrl } from '../utils/tracking';
 
 export const ResultadosReais: React.FC = () => {
+  const checkoutUrl = useCheckoutUrl();
+
   return (
     <section
       id="resultados-reais"
@@ -107,7 +110,7 @@ export const ResultadosReais: React.FC = () => {
 
           <div className="pt-2">
             <a
-              href="https://pay.hotmart.com/V106938201T"
+              href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {

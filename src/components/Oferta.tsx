@@ -1,6 +1,7 @@
 import React from 'react';
 import { OfertaData } from '../types/landing';
 import { ShieldCheck, CheckCircle2, Lock, ArrowRight } from 'lucide-react';
+import { useCheckoutUrl } from '../utils/tracking';
 
 export interface OfertaProps {
   data?: Partial<OfertaData>;
@@ -31,6 +32,7 @@ const defaultData: OfertaData = {
 export const Oferta: React.FC<OfertaProps> = ({ data = {} }) => {
   const ofData = { ...defaultData, ...data };
   const features = ofData.features && ofData.features.length > 0 ? ofData.features : defaultData.features;
+  const checkoutUrl = useCheckoutUrl();
 
   return (
     <section
@@ -90,7 +92,7 @@ export const Oferta: React.FC<OfertaProps> = ({ data = {} }) => {
           {/* CTA Button */}
           <div className="max-w-md mx-auto">
             <a
-              href="https://pay.hotmart.com/V106938201T"
+              href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
