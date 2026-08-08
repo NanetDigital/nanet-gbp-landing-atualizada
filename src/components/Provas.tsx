@@ -44,8 +44,12 @@ export const Provas: React.FC = () => {
                 {/* Print Relatório Executivo */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
                     alt="Diagnóstico Inicial - Relatório Executivo"
+                    width={500}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block max-h-[280px] sm:max-h-[320px]"
                   />
                 </div>
@@ -73,8 +77,12 @@ export const Provas: React.FC = () => {
                 {/* Print Mapa Verde / Plano Estratégico */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/v1785767999/3_nebdri.png"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png"
                     alt="Plano Estratégico - Método Algoritmo+"
+                    width={500}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block max-h-[280px] sm:max-h-[320px]"
                   />
                 </div>
@@ -102,8 +110,12 @@ export const Provas: React.FC = () => {
                 {/* Print Resultado Esperado */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg"
                     alt="Resultado Esperado - Pesquisa no Google"
+                    width={400}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
                     className="w-[80%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block max-h-[280px] sm:max-h-[320px]"
                   />
                 </div>
@@ -156,8 +168,12 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768020/2_mnahho.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png"
                   alt="Comentário espontâneo de @thalitatmd.espaco no Instagram"
+                  width={360}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[340px] sm:max-h-[400px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>
@@ -170,8 +186,12 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768021/3_usiozw.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png"
                   alt="Comentário espontâneo de @eriik.viniciuss no Instagram"
+                  width={360}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[340px] sm:max-h-[400px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>
@@ -184,8 +204,12 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
                   alt="Comentário espontâneo de @emporiosaren no Instagram"
+                  width={360}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[340px] sm:max-h-[400px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>
@@ -265,8 +289,12 @@ export const Provas: React.FC = () => {
               {/* Print do Diagnóstico Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
                   alt="Diagnóstico Estratégico - Perfil da Empresa no Google"
+                  width={600}
+                  height={380}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full md:w-[92%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
@@ -308,8 +336,12 @@ export const Provas: React.FC = () => {
               {/* Print do Plano de Ação Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785767999/3_nebdri.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png"
                   alt="Plano de Ação Estratégico - Análise de Ranking"
+                  width={600}
+                  height={380}
+                  loading="lazy"
+                  decoding="async"
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
@@ -348,8 +380,12 @@ export const Provas: React.FC = () => {
               {/* Print da Atração e Visibilidade de Clientes */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785810377/image_qjb8wg.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810377/image_qjb8wg.png"
                   alt="Mais clientes no Google - Perfil da Empresa"
+                  width={600}
+                  height={380}
+                  loading="lazy"
+                  decoding="async"
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
@@ -388,8 +424,12 @@ export const Provas: React.FC = () => {
               {/* Print da Expansão */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785810680/4_n9nsxd.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810680/4_n9nsxd.png"
                   alt="Expansão com um método que pode ser replicado"
+                  width={600}
+                  height={380}
+                  loading="lazy"
+                  decoding="async"
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>

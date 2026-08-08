@@ -11,28 +11,28 @@ export interface CardItem {
 const cardsData: CardItem[] = [
   {
     id: 'card-1',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1785768000/5_osvsye.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785768000/5_osvsye.png',
     title: 'Descubra onde existem clientes procurando seu serviço',
     description:
       'Visualize as regiões com maior demanda e identifique onde sua empresa possui mais oportunidades para conquistar novos clientes.',
   },
   {
     id: 'card-2',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png',
     title: 'Compare sua empresa com os concorrentes',
     description:
       'Veja quem aparece primeiro nas pesquisas, onde você está perdendo espaço e quais oportunidades podem ser aproveitadas.',
   },
   {
     id: 'card-3',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png',
     title: 'Entenda sua posição no mercado',
     description:
       'Visualize como sua empresa está distribuída em relação aos concorrentes e identifique regiões estratégicas.',
   },
   {
     id: 'card-4',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png',
     title: 'Descubra onde estão suas maiores oportunidades',
     description:
       'Receba um diagnóstico claro mostrando quais fatores precisam ser melhorados para aumentar sua geração de clientes.',
@@ -75,6 +75,10 @@ export const OQueVoceRecebe: React.FC = () => {
                   <img
                     src={card.image}
                     alt={card.title}
+                    width={500}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
                     className="w-[80%] h-auto max-h-[260px] sm:max-h-[300px] object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                   />
                 </div>

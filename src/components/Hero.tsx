@@ -31,8 +31,11 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
             {/* Identidade da Marca integrada ao Hero (Substitui o Header) */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left mb-2">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1785814782/Design_sem_nome_3_esxy36.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_300/v1785814782/Design_sem_nome_3_esxy36.png"
                 alt="Nanet Logo"
+                width={130}
+                height={35}
+                decoding="async"
                 className="w-[105px] sm:w-[120px] lg:w-[130px] h-auto object-contain block"
               />
               <p className="mt-3 text-xs sm:text-sm font-mono text-neutral-500 dark:text-neutral-400 tracking-wide font-medium">
@@ -110,8 +113,14 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
               </div>
 
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
+                sizes="(max-width: 768px) 88vw, 500px"
                 alt="Análise Estratégica da Empresa - Relatório Executivo"
+                width={600}
+                height={450}
+                fetchPriority="high"
+                decoding="sync"
                 className="w-full h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
               />
             </div>

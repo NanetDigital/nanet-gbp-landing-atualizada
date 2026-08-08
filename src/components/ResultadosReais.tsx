@@ -31,8 +31,12 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768020/2_mnahho.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png"
                   alt="Comentário espontâneo de @thalitatmd.espaco no Instagram"
+                  width={360}
+                  height={320}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[280px] sm:max-h-[320px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>
@@ -50,8 +54,12 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768021/3_usiozw.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png"
                   alt="Comentário espontâneo de @eriik.viniciuss no Instagram"
+                  width={360}
+                  height={320}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[280px] sm:max-h-[320px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>
@@ -69,8 +77,12 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
                   alt="Comentário espontâneo de @emporiosaren no Instagram"
+                  width={360}
+                  height={320}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain max-h-[280px] sm:max-h-[320px] rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
                 />
               </div>

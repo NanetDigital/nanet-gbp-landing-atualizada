@@ -16,8 +16,12 @@ export const PoliticaPrivacidade: React.FC<PageProps> = ({ onBack }) => {
         {/* Top Header */}
         <div className="flex items-center justify-between pb-6 border-b border-neutral-200 dark:border-neutral-800">
           <img
-            src="https://res.cloudinary.com/nds7zozp/image/upload/v1785814782/Design_sem_nome_3_esxy36.png"
+            src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_300/v1785814782/Design_sem_nome_3_esxy36.png"
             alt="Nanet Logo"
+            width={120}
+            height={32}
+            loading="lazy"
+            decoding="async"
             className="w-[120px] h-auto object-contain"
           />
           <button

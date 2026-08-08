@@ -2,8 +2,12 @@ import React from 'react';
 
 export const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
   <img
-    src="https://res.cloudinary.com/nds7zozp/image/upload/v1785817194/Design_sem_nome_3_uih02c.png"
+    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_100/v1785817194/Design_sem_nome_3_uih02c.png"
     alt="WhatsApp"
+    width={24}
+    height={24}
+    loading="lazy"
+    decoding="async"
     className={`${className} object-contain shrink-0 block pointer-events-none`}
   />
 );

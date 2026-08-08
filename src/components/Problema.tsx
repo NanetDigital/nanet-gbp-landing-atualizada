@@ -47,8 +47,14 @@ export const Problema: React.FC<ProblemaProps> = ({ data = {} }) => {
           <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 flex justify-center items-center">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 800w"
+                sizes="(max-width: 768px) 92vw, 800px"
                 alt="Análise de Saúde da Empresa"
+                width={800}
+                height={450}
+                loading="lazy"
+                decoding="async"
                 className="w-full md:w-[95%] lg:w-[91%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
               />
             </div>
@@ -61,8 +67,14 @@ export const Problema: React.FC<ProblemaProps> = ({ data = {} }) => {
           <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 flex justify-center items-center">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 800w"
+                sizes="(max-width: 768px) 92vw, 800px"
                 alt="Dashboard de Indicadores"
+                width={800}
+                height={450}
+                loading="lazy"
+                decoding="async"
                 className="w-full md:w-[96%] lg:w-[92%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
               />
             </div>
