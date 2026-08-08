@@ -93,6 +93,11 @@ export const Oferta: React.FC<OfertaProps> = ({ data = {} }) => {
               href="https://pay.hotmart.com/V106938201T"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+                  (window as any).fbq('track', 'InitiateCheckout');
+                }
+              }}
               className="w-full py-4 px-8 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-sm sm:text-base font-bold transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2"
             >
               <span>{ofData.ctaText}</span>
