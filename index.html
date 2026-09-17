@@ -1,28 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nanet | Análise Estratégica</title>
-    <!-- Preconnect & LCP Image Preload -->
+    <!-- Preconnect to Cloudinary CDN for critical branding assets -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <link
-      rel="preload"
-      as="image"
-      imagesrcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
-      imagesizes="(max-width: 768px) 88vw, 500px"
-      fetchpriority="high"
-    />
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code with Deferred Script Loading (Preserves all tracking, events & attribution) -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      n.queue=[];
+
+      var pixelLoaded = false;
+      function injectPixel() {
+        if (pixelLoaded) return;
+        pixelLoaded = true;
+        t=b.createElement(e);t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        if(s && s.parentNode) {
+          s.parentNode.insertBefore(t,s);
+        } else {
+          b.head.appendChild(t);
+        }
+      }
+
+      if ('requestIdleCallback' in f) {
+        requestIdleCallback(function() { setTimeout(injectPixel, 1200); }, { timeout: 2500 });
+      } else {
+        f.addEventListener('load', function() { setTimeout(injectPixel, 1200); }, { once: true });
+      }
+      ['touchstart', 'pointerdown', 'scroll', 'click'].forEach(function(evt) {
+        f.addEventListener(evt, injectPixel, { once: true, passive: true });
+      });
+      }(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
       fbq('init', '2152455252205453');
@@ -38,9 +53,83 @@
         width="1"
         style="display:none"
         src="https://www.facebook.com/tr?id=2152455252205453&ev=PageView&noscript=1"
+        alt=""
       />
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Critical Above-the-Fold Content pre-rendered for immediate LCP/FCP on mobile -->
+      <section
+        id="hero"
+        class="w-full pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-20 lg:pb-24 bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="flex flex-col items-center lg:items-start text-center lg:text-left mb-2">
+                <img
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
+                  srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_130/v1785814782/Design_sem_nome_3_esxy36.png 1x, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png 2x"
+                  alt="Nanet Logo"
+                  width="130"
+                  height="35"
+                  decoding="async"
+                  class="w-[105px] sm:w-[120px] lg:w-[130px] h-auto object-contain block"
+                />
+                <p class="mt-3 text-xs sm:text-sm font-mono text-neutral-500 dark:text-neutral-400 tracking-wide font-medium">
+                  Especialistas em Google Business Profile
+                </p>
+              </div>
+
+              <div class="pt-2">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-xs font-mono font-medium text-neutral-700 dark:text-neutral-300 shadow-xs">
+                  <span class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
+                  <span class="tracking-wide uppercase font-semibold">ANÁLISE ESTRATÉGICA DA EMPRESA</span>
+                </div>
+              </div>
+
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 leading-[1.15] font-sans">
+                Todos os dias existem clientes em potencial pesquisando no Google exatamente pelo que sua empresa vende.
+              </h1>
+
+              <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed font-sans max-w-2xl mx-auto lg:mx-0">
+                As oportunidades já existem nas pesquisas. A questão é se a sua empresa está visível no exato momento em que essa busca é realizada.
+              </p>
+
+              <div class="pt-2 space-y-5">
+                <div>
+                  <a
+                    href="https://pay.hotmart.com/I104332490N?checkoutMode=10"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto inline-flex items-center justify-center h-[56px] px-8 sm:px-10 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-base font-semibold border border-[#16A34A] transition-all duration-250 ease-out hover:-translate-y-[2px] shadow-sm hover:shadow-md active:translate-y-0 cursor-pointer"
+                  >
+                    Quero receber minha análise estratégica
+                  </a>
+                </div>
+
+                <div class="flex flex-col sm:flex-row lg:flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-xs sm:text-sm font-sans font-medium text-neutral-700 dark:text-neutral-300">
+                  <span class="inline-flex items-center gap-1.5">
+                    <span class="text-[#16A34A] font-bold font-mono">✓</span> Diagnóstico baseado em dados reais do Google
+                  </span>
+                  <span class="inline-flex items-center gap-1.5">
+                    <span class="text-[#16A34A] font-bold font-mono">✓</span> Sessão Estratégica individual
+                  </span>
+                  <span class="inline-flex items-center gap-1.5">
+                    <span class="text-[#16A34A] font-bold font-mono">✓</span> Plano de ação personalizado para sua empresa
+                  </span>
+                </div>
+
+                <div class="pt-1">
+                  <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 font-sans italic">
+                    Empresas locais já utilizam o Método Algoritmo+ para aumentar oportunidades através do Google.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

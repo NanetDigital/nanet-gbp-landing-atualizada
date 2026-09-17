@@ -43,9 +43,9 @@ export const Oportunidade: React.FC<OportunidadeProps> = ({ data = {} }) => {
           <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900 flex justify-center items-center">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 800w"
-                sizes="(max-width: 768px) 92vw, 800px"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785778723/Gemini_Generated_Image_1warzv1warzv1war_penhvb.png 800w"
+                sizes="(max-width: 480px) 340px, (max-width: 768px) 600px, 800px"
                 alt="Pesquisa no Google"
                 width={800}
                 height={450}
@@ -94,9 +94,9 @@ export const Oportunidade: React.FC<OportunidadeProps> = ({ data = {} }) => {
           <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900 flex justify-center items-center">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 800w"
-                sizes="(max-width: 768px) 92vw, 800px"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png 800w"
+                sizes="(max-width: 480px) 340px, (max-width: 768px) 600px, 800px"
                 alt="Mapa de Concorrentes"
                 width={800}
                 height={450}
@@ -114,9 +114,9 @@ export const Oportunidade: React.FC<OportunidadeProps> = ({ data = {} }) => {
           <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768000/5_osvsye.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768000/5_osvsye.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768000/5_osvsye.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785768000/5_osvsye.png 800w"
-                sizes="(max-width: 768px) 92vw, 800px"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768000/5_osvsye.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768000/5_osvsye.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785768000/5_osvsye.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768000/5_osvsye.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768000/5_osvsye.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785768000/5_osvsye.png 800w"
+                sizes="(max-width: 480px) 340px, (max-width: 768px) 600px, 800px"
                 alt="Mapa de Calor de Oportunidades"
                 width={800}
                 height={450}

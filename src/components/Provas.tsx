@@ -1,6 +1,5 @@
 import React from 'react';
 import { Search, Cpu, Sliders, TrendingUp, Building2 } from 'lucide-react';
-import { motion } from 'motion/react';
 import { useCheckoutUrl } from '../utils/tracking';
 
 export const Provas: React.FC = () => {
@@ -46,9 +45,9 @@ export const Provas: React.FC = () => {
                 {/* Print Relatório Executivo */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
-                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 768w"
-                    sizes="(max-width: 768px) 90vw, 480px"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 768w"
+                    sizes="(max-width: 480px) 320px, (max-width: 768px) 440px, 480px"
                     alt="Diagnóstico Inicial - Relatório Executivo"
                     width={500}
                     height={320}
@@ -81,9 +80,9 @@ export const Provas: React.FC = () => {
                 {/* Print Mapa Verde / Plano Estratégico */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png"
-                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785767999/3_nebdri.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
-                    sizes="(max-width: 768px) 90vw, 480px"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785767999/3_nebdri.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785767999/3_nebdri.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
+                    sizes="(max-width: 480px) 320px, (max-width: 768px) 440px, 480px"
                     alt="Plano Estratégico - Método Algoritmo+"
                     width={500}
                     height={320}
@@ -271,13 +270,7 @@ export const Provas: React.FC = () => {
             />
 
             {/* ETAPA 01: Diagnóstico Estratégico */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: 0, ease: 'easeOut' }}
-              className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6"
-            >
+            <div className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
                 {/* Ícone e Número */}
                 <div className="flex items-center gap-3 shrink-0">
@@ -303,9 +296,9 @@ export const Provas: React.FC = () => {
               {/* Print do Diagnóstico Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 768w"
-                  sizes="(max-width: 768px) 90vw, 600px"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 768w"
+                  sizes="(max-width: 480px) 340px, (max-width: 768px) 500px, 600px"
                   alt="Diagnóstico Estratégico - Perfil da Empresa no Google"
                   width={600}
                   height={380}
@@ -314,16 +307,10 @@ export const Provas: React.FC = () => {
                   className="w-full md:w-[92%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ETAPA 02: Plano de Ação Estratégico */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
-              className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6"
-            >
+            <div className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
                 {/* Ícone e Número */}
                 <div className="flex items-center gap-3 shrink-0">
@@ -352,9 +339,9 @@ export const Provas: React.FC = () => {
               {/* Print do Plano de Ação Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
-                  sizes="(max-width: 768px) 90vw, 600px"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785767999/3_nebdri.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785767999/3_nebdri.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
+                  sizes="(max-width: 480px) 340px, (max-width: 768px) 500px, 600px"
                   alt="Plano de Ação Estratégico - Análise de Ranking"
                   width={600}
                   height={380}
@@ -363,16 +350,10 @@ export const Provas: React.FC = () => {
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ETAPA 03: Visibilidade e Atração de Clientes */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
-              className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6"
-            >
+            <div className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
                 {/* Ícone e Número */}
                 <div className="flex items-center gap-3 shrink-0">
@@ -398,9 +379,9 @@ export const Provas: React.FC = () => {
               {/* Print da Atração e Visibilidade de Clientes */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810377/image_qjb8wg.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810377/image_qjb8wg.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810377/image_qjb8wg.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810377/image_qjb8wg.png 768w"
-                  sizes="(max-width: 768px) 90vw, 600px"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810377/image_qjb8wg.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785810377/image_qjb8wg.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785810377/image_qjb8wg.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810377/image_qjb8wg.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810377/image_qjb8wg.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810377/image_qjb8wg.png 768w"
+                  sizes="(max-width: 480px) 340px, (max-width: 768px) 500px, 600px"
                   alt="Mais clientes no Google - Perfil da Empresa"
                   width={600}
                   height={380}
@@ -409,16 +390,10 @@ export const Provas: React.FC = () => {
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ETAPA 04: Expansão com um método que pode ser replicado */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
-              className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6"
-            >
+            <div className="relative z-10 bg-white dark:bg-neutral-950 border border-neutral-300/80 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#16A34A]/40 transition-all duration-250 ease-out space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
                 {/* Ícone e Número */}
                 <div className="flex items-center gap-3 shrink-0">
@@ -444,9 +419,9 @@ export const Provas: React.FC = () => {
               {/* Print da Expansão */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810680/4_n9nsxd.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810680/4_n9nsxd.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810680/4_n9nsxd.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810680/4_n9nsxd.png 768w"
-                  sizes="(max-width: 768px) 90vw, 600px"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810680/4_n9nsxd.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785810680/4_n9nsxd.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785810680/4_n9nsxd.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810680/4_n9nsxd.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810680/4_n9nsxd.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810680/4_n9nsxd.png 768w"
+                  sizes="(max-width: 480px) 340px, (max-width: 768px) 500px, 600px"
                   alt="Expansão com um método que pode ser replicado"
                   width={600}
                   height={380}
@@ -455,16 +430,10 @@ export const Provas: React.FC = () => {
                   className="w-[90%] h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] max-h-[300px] sm:max-h-[380px] mx-auto block"
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ETAPA 05: Confiança construída através dos resultados (Ponto Alto da Narrativa) */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: 0.4, ease: 'easeOut' }}
-              className="relative z-10 bg-white dark:bg-neutral-900/90 border-2 border-[#16A34A] rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-lg hover:-translate-y-1 ring-2 ring-[#16A34A]/20 transition-all duration-250 ease-out space-y-6"
-            >
+            <div className="relative z-10 bg-white dark:bg-neutral-900/90 border-2 border-[#16A34A] rounded-3xl p-6 sm:p-8 shadow-md hover:shadow-lg hover:-translate-y-1 ring-2 ring-[#16A34A]/20 transition-all duration-250 ease-out space-y-6">
               
               {/* Badge de Destaque CASO REAL */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] dark:bg-emerald-950/80 border border-[#16A34A]/40 text-xs font-mono font-semibold text-[#16A34A] shadow-2xs">
@@ -502,7 +471,7 @@ export const Provas: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
           </div>
         </div>

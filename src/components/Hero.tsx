@@ -33,7 +33,8 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
             {/* Identidade da Marca integrada ao Hero (Substitui o Header) */}
             <div className="flex flex-col items-center lg:items-start text-center lg:text-left mb-2">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_300/v1785814782/Design_sem_nome_3_esxy36.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_130/v1785814782/Design_sem_nome_3_esxy36.png 1x, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png 2x"
                 alt="Nanet Logo"
                 width={130}
                 height={35}
@@ -115,14 +116,13 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
               </div>
 
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
-                sizes="(max-width: 768px) 88vw, 500px"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
+                sizes="(max-width: 480px) 320px, (max-width: 768px) 440px, 500px"
                 alt="Análise Estratégica da Empresa - Relatório Executivo"
                 width={600}
                 height={450}
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
                 decoding="async"
                 className="w-full h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
               />

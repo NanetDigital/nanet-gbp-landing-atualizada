@@ -83,9 +83,9 @@ export const OQueVoceRecebe: React.FC = () => {
                 {/* Print Real / Imagem do Relatório */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-3 sm:p-4 flex items-center justify-center">
                   <img
-                    src={getCardImageSrc(card.id, 640)}
-                    srcSet={`${getCardImageSrc(card.id, 360)} 360w, ${getCardImageSrc(card.id, 480)} 480w, ${getCardImageSrc(card.id, 640)} 640w, ${getCardImageSrc(card.id, 768)} 768w`}
-                    sizes="(max-width: 768px) 80vw, 480px"
+                    src={getCardImageSrc(card.id, 480)}
+                    srcSet={`${getCardImageSrc(card.id, 320)} 320w, ${getCardImageSrc(card.id, 360)} 360w, ${getCardImageSrc(card.id, 480)} 480w, ${getCardImageSrc(card.id, 640)} 640w, ${getCardImageSrc(card.id, 768)} 768w`}
+                    sizes="(max-width: 480px) 320px, (max-width: 768px) 440px, 480px"
                     alt={card.title}
                     width={500}
                     height={300}
