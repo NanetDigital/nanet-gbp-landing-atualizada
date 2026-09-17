@@ -34,7 +34,9 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768020/2_mnahho.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768020/2_mnahho.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768020/2_mnahho.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @thalitatmd.espaco no Instagram"
                   width={360}
                   height={320}
@@ -57,7 +59,9 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768021/3_usiozw.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768021/3_usiozw.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768021/3_usiozw.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @eriik.viniciuss no Instagram"
                   width={360}
                   height={320}
@@ -80,7 +84,9 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @emporiosaren no Instagram"
                   width={360}
                   height={320}

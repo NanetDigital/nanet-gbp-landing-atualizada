@@ -49,7 +49,8 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
           <div>
             <div className="flex items-center mb-1">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_300/v1785814782/Design_sem_nome_3_esxy36.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_130/v1785814782/Design_sem_nome_3_esxy36.png 1x, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png 2x"
                 alt="Nanet Logo"
                 width={130}
                 height={35}

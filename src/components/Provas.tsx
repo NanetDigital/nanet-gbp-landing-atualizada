@@ -46,7 +46,9 @@ export const Provas: React.FC = () => {
                 {/* Print Relatório Executivo */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png 768w"
+                    sizes="(max-width: 768px) 90vw, 480px"
                     alt="Diagnóstico Inicial - Relatório Executivo"
                     width={500}
                     height={320}
@@ -79,7 +81,9 @@ export const Provas: React.FC = () => {
                 {/* Print Mapa Verde / Plano Estratégico */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785767999/3_nebdri.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
+                    sizes="(max-width: 768px) 90vw, 480px"
                     alt="Plano Estratégico - Método Algoritmo+"
                     width={500}
                     height={320}
@@ -112,7 +116,9 @@ export const Provas: React.FC = () => {
                 {/* Print Resultado Esperado */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1.5 sm:p-2 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg"
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785798403/Screenshot_20260803-130356_Google_1_mehnvp.jpg 640w"
+                    sizes="(max-width: 768px) 80vw, 400px"
                     alt="Resultado Esperado - Pesquisa no Google"
                     width={400}
                     height={320}
@@ -170,7 +176,9 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768020/2_mnahho.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768020/2_mnahho.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768020/2_mnahho.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768020/2_mnahho.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @thalitatmd.espaco no Instagram"
                   width={360}
                   height={400}
@@ -188,7 +196,9 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768021/3_usiozw.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768021/3_usiozw.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768021/3_usiozw.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768021/3_usiozw.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @eriik.viniciuss no Instagram"
                   width={360}
                   height={400}
@@ -206,7 +216,9 @@ export const Provas: React.FC = () => {
             <div className="bg-white dark:bg-neutral-950 border border-neutral-200/90 dark:border-neutral-800 rounded-3xl p-6 sm:p-7 shadow-xs hover:border-[#16A34A]/30 transition-all flex flex-col items-center justify-center text-center space-y-5">
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-1 sm:p-2 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 640w"
+                  sizes="(max-width: 768px) 85vw, 360px"
                   alt="Comentário espontâneo de @emporiosaren no Instagram"
                   width={360}
                   height={400}
@@ -291,7 +303,9 @@ export const Provas: React.FC = () => {
               {/* Print do Diagnóstico Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png 768w"
+                  sizes="(max-width: 768px) 90vw, 600px"
                   alt="Diagnóstico Estratégico - Perfil da Empresa no Google"
                   width={600}
                   height={380}
@@ -338,7 +352,9 @@ export const Provas: React.FC = () => {
               {/* Print do Plano de Ação Estratégico */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767999/3_nebdri.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767999/3_nebdri.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767999/3_nebdri.png 768w"
+                  sizes="(max-width: 768px) 90vw, 600px"
                   alt="Plano de Ação Estratégico - Análise de Ranking"
                   width={600}
                   height={380}
@@ -382,7 +398,9 @@ export const Provas: React.FC = () => {
               {/* Print da Atração e Visibilidade de Clientes */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810377/image_qjb8wg.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810377/image_qjb8wg.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810377/image_qjb8wg.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810377/image_qjb8wg.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810377/image_qjb8wg.png 768w"
+                  sizes="(max-width: 768px) 90vw, 600px"
                   alt="Mais clientes no Google - Perfil da Empresa"
                   width={600}
                   height={380}
@@ -426,7 +444,9 @@ export const Provas: React.FC = () => {
               {/* Print da Expansão */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-2 sm:p-4">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810680/4_n9nsxd.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810680/4_n9nsxd.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785810680/4_n9nsxd.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785810680/4_n9nsxd.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785810680/4_n9nsxd.png 768w"
+                  sizes="(max-width: 768px) 90vw, 600px"
                   alt="Expansão com um método que pode ser replicado"
                   width={600}
                   height={380}

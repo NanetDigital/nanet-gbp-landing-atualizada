@@ -115,14 +115,15 @@ export const Hero: React.FC<HeroProps> = ({ data = {} }) => {
               </div>
 
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 768w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1024/v1785767365/Report_refinement_instructions_2K_202608021538_yjdhkd.jpg 1024w"
                 sizes="(max-width: 768px) 88vw, 500px"
                 alt="Análise Estratégica da Empresa - Relatório Executivo"
                 width={600}
                 height={450}
+                loading="eager"
                 fetchPriority="high"
-                decoding="sync"
+                decoding="async"
                 className="w-full h-auto object-contain rounded-[20px] shadow-[0_12px_35px_rgba(0,0,0,0.08)] mx-auto block"
               />
             </div>

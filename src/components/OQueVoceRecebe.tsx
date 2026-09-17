@@ -8,31 +8,41 @@ export interface CardItem {
   description: string;
 }
 
+const getCardImageSrc = (id: string, width: number) => {
+  const images: Record<string, string> = {
+    'card-1': `https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_${width}/v1785768000/5_osvsye.png`,
+    'card-2': `https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_${width}/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png`,
+    'card-3': `https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_${width}/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png`,
+    'card-4': `https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_${width}/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png`,
+  };
+  return images[id] || '';
+};
+
 const cardsData: CardItem[] = [
   {
     id: 'card-1',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785768000/5_osvsye.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768000/5_osvsye.png',
     title: 'Descubra onde existem clientes procurando seu serviço',
     description:
       'Visualize as regiões com maior demanda e identifique onde sua empresa possui mais oportunidades para conquistar novos clientes.',
   },
   {
     id: 'card-2',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785780207/Ranking_of_GTR_EBIKES_Mobilidade_Eletrica_on_Google_2.pdf_nu8uew.png',
     title: 'Compare sua empresa com os concorrentes',
     description:
       'Veja quem aparece primeiro nas pesquisas, onde você está perdendo espaço e quais oportunidades podem ser aproveitadas.',
   },
   {
     id: 'card-3',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785785662/Gemini_Generated_Image_dqm223dqm223dqm2_xejyis.png',
     title: 'Entenda sua posição no mercado',
     description:
       'Visualize como sua empresa está distribuída em relação aos concorrentes e identifique regiões estratégicas.',
   },
   {
     id: 'card-4',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785793152/Gemini_Generated_Image_yj7g7uyj7g7uyj7g_z5spgs.png',
     title: 'Descubra onde estão suas maiores oportunidades',
     description:
       'Receba um diagnóstico claro mostrando quais fatores precisam ser melhorados para aumentar sua geração de clientes.',
@@ -73,7 +83,9 @@ export const OQueVoceRecebe: React.FC = () => {
                 {/* Print Real / Imagem do Relatório */}
                 <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-3 sm:p-4 flex items-center justify-center">
                   <img
-                    src={card.image}
+                    src={getCardImageSrc(card.id, 640)}
+                    srcSet={`${getCardImageSrc(card.id, 360)} 360w, ${getCardImageSrc(card.id, 480)} 480w, ${getCardImageSrc(card.id, 640)} 640w, ${getCardImageSrc(card.id, 768)} 768w`}
+                    sizes="(max-width: 768px) 80vw, 480px"
                     alt={card.title}
                     width={500}
                     height={300}
