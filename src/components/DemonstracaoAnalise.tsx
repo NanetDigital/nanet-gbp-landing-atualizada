@@ -280,7 +280,7 @@ export const DemonstracaoAnalise: React.FC = () => {
                       height={slide.height}
                       loading={index === 0 ? 'eager' : 'lazy'}
                       decoding="async"
-                      className="block w-full h-full min-w-0 min-h-0 object-contain object-center rounded-xl select-none pointer-events-none"
+                      className="block w-full h-full min-w-0 min-h-0 object-contain object-center rounded-xl select-none pointer-events-none max-md:-translate-y-[3%]"
                       style={{
                         width: '100%',
                         height: '100%',
