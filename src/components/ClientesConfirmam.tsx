@@ -69,6 +69,12 @@ function easeOutQuad(t: number): number {
   return clamped * (2 - clamped);
 }
 
+// Verifica se o dispositivo possui um ponteiro fino (mouse real) e suporte a hover
+function hasFinePointer(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+}
+
 type CarouselPhase =
   | { type: 'HOLD'; elapsed: number; cardIndex: number }
   | { type: 'TRANSITION'; elapsed: number; fromIndex: number; toIndex: number }
@@ -94,6 +100,7 @@ export const ClientesConfirmam: React.FC = () => {
   const isHoveredRef = useRef<boolean>(false);
   const isDraggingRef = useRef<boolean>(false);
   const isMouseDownRef = useRef<boolean>(false);
+  const lastTouchTimeRef = useRef<number>(0);
 
   // Arraste
   const dragStartXRef = useRef<number>(0);
@@ -152,7 +159,8 @@ export const ClientesConfirmam: React.FC = () => {
       const currentPhase = phaseRef.current;
 
       // Se houver hover do mouse no desktop durante HOLD ou TRANSITION, pausa o relógio
-      const isPausedByHover = isHoveredRef.current && (currentPhase.type === 'HOLD' || currentPhase.type === 'TRANSITION');
+      // Permite a pausa por hover exclusivamente em dispositivos com mouse real
+      const isPausedByHover = isHoveredRef.current && hasFinePointer() && (currentPhase.type === 'HOLD' || currentPhase.type === 'TRANSITION');
 
       if (!isPausedByHover) {
         if (currentPhase.type === 'HOLD') {
@@ -228,6 +236,7 @@ export const ClientesConfirmam: React.FC = () => {
   const finishDrag = useCallback(() => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
+    isHoveredRef.current = false;
     setIsDraggingUI(false);
 
     const seqWidth = seqWidthRef.current || 1700;
@@ -254,6 +263,8 @@ export const ClientesConfirmam: React.FC = () => {
 
   // Eventos de Toque no Mobile
   const handleTouchStart = (e: React.TouchEvent) => {
+    lastTouchTimeRef.current = Date.now();
+    isHoveredRef.current = false;
     if (e.touches.length !== 1) return;
     touchStartXRef.current = e.touches[0].clientX;
     touchStartYRef.current = e.touches[0].clientY;
@@ -295,6 +306,8 @@ export const ClientesConfirmam: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
+    lastTouchTimeRef.current = Date.now();
+    isHoveredRef.current = false;
     if (touchDirectionRef.current === 'horizontal') {
       finishDrag();
     }
@@ -303,6 +316,9 @@ export const ClientesConfirmam: React.FC = () => {
 
   // Eventos de Mouse no Desktop
   const handleMouseDown = (e: React.MouseEvent) => {
+    // Ignora eventos de mouse sintetizados logo após toques em dispositivos touch
+    if (Date.now() - lastTouchTimeRef.current < 1000) return;
+    if (!hasFinePointer()) return;
     if (e.button !== 0) return; // Apenas botão principal (esquerdo)
     isMouseDownRef.current = true;
     dragStartXRef.current = e.clientX;
@@ -344,8 +360,10 @@ export const ClientesConfirmam: React.FC = () => {
     };
   }, [finishDrag]);
 
-  // Pausa automática no hover do mouse (Desktop)
+  // Pausa automática no hover do mouse (Desktop exclusivo com mouse real)
   const handleMouseEnter = () => {
+    if (!hasFinePointer()) return;
+    if (Date.now() - lastTouchTimeRef.current < 1000) return;
     isHoveredRef.current = true;
   };
 
