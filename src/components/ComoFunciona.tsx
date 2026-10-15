@@ -10,7 +10,7 @@ const defaultData: ComoFuncionaData = {
   tag: 'PASSO A PASSO',
   title: 'Como transformamos dados do Google em um plano de ação para sua empresa',
   description:
-    'Em até 7 dias realizamos a análise completa da sua empresa e agendamos a Sessão Estratégica para apresentar todas as descobertas. Ao final da reunião, você recebe o Relatório Executivo em PDF.',
+    'Em até 7 dias realizamos a análise completa da sua empresa e agendamos a Orientação Prática com Especialista para apresentar todas as descobertas. Ao final da reunião, você recebe o Relatório Executivo em PDF.',
   steps: [
     {
       stepNumber: '01',
@@ -28,7 +28,7 @@ const defaultData: ComoFuncionaData = {
     },
     {
       stepNumber: '03',
-      title: 'Sessão Estratégica Online',
+      title: 'Orientação Prática com Especialista',
       description:
         'Apresentamos todas as descobertas, explicamos os indicadores, mostramos onde estão as oportunidades e definimos quais ações devem ser priorizadas para gerar maior impacto.',
       detail: 'Etapa 03',
@@ -37,7 +37,7 @@ const defaultData: ComoFuncionaData = {
       stepNumber: '04',
       title: 'Entrega do Relatório Executivo',
       description:
-        'Após a Sessão Estratégica, você recebe seu Relatório Executivo completo em PDF para consulta futura, compartilhamento com sua equipe e acompanhamento da implementação das melhorias recomendadas.',
+        'Após a Orientação Prática com Especialista, você recebe seu Relatório Executivo completo em PDF para consulta futura, compartilhamento com sua equipe e acompanhamento da implementação das melhorias recomendadas.',
       detail: 'Etapa 04',
     },
   ],
@@ -142,7 +142,7 @@ export const ComoFunciona: React.FC<ComoFuncionaProps> = ({ data = {} }) => {
               {/* Text Content */}
               <div className="space-y-2 flex-1 pt-0.5">
                 <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 font-sans">
-                  Sessão Estratégica Online
+                  Orientação Prática com Especialista
                 </h3>
                 <p className="text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
                   Apresentamos todas as descobertas, explicamos os indicadores, mostramos onde estão as oportunidades e definimos quais ações devem ser priorizadas para gerar maior impacto.
@@ -170,7 +170,7 @@ export const ComoFunciona: React.FC<ComoFuncionaProps> = ({ data = {} }) => {
                   Entrega do Relatório Executivo
                 </h3>
                 <p className="text-base text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed">
-                  Após a Sessão Estratégica, você recebe seu Relatório Executivo completo em PDF para consulta futura, compartilhamento com sua equipe e acompanhamento da implementação das melhorias recomendadas.
+                  Após a Orientação Prática com Especialista, você recebe seu Relatório Executivo completo em PDF para consulta futura, compartilhamento com sua equipe e acompanhamento da implementação das melhorias recomendadas.
                 </p>
               </div>
             </div>

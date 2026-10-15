@@ -39,9 +39,9 @@ export const PoliticaPrivacidade: React.FC<PageProps> = ({ onBack }) => {
             Política de Privacidade
           </h1>
           <div className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-xs sm:text-sm font-mono text-neutral-600 dark:text-neutral-400 space-y-1">
-            <p><strong className="text-neutral-900 dark:text-neutral-200">Razão Social / Marca:</strong> Nanet</p>
+            <p><strong className="text-neutral-900 dark:text-neutral-200">Empresa:</strong> Nanet Digital</p>
             <p><strong className="text-neutral-900 dark:text-neutral-200">CNPJ:</strong> 65.262.598/0001-32</p>
-            <p><strong className="text-neutral-900 dark:text-neutral-200">Última atualização:</strong> 04/08/2026</p>
+            <p><strong className="text-neutral-900 dark:text-neutral-200">Última atualização:</strong> 15/10/2026</p>
           </div>
         </div>
 
@@ -52,126 +52,94 @@ export const PoliticaPrivacidade: React.FC<PageProps> = ({ onBack }) => {
               1. Quem somos
             </h2>
             <p>
-              A <strong>Nanet</strong> (CNPJ 65.262.598/0001-32) é uma empresa especializada em estratégias de visibilidade digital e otimização de Perfil da Empresa no Google Business Profile. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos os seus dados pessoais em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD).
+              A Nanet Digital oferece análises estratégicas para ajudar empresas a entender e melhorar sua presença no Google, respeitando a privacidade dos seus dados.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              2. Quais dados coletamos
+              2. Dados coletados
             </h2>
             <p>
-              Coletamos informações necessárias para fornecer nossos serviços consultivos e atender às solicitações de contato:
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
-              <li><strong>Informações fornecidas por você:</strong> Nome, e-mail, telefone/WhatsApp, nome da empresa e dados sobre o Perfil da Empresa no Google enviados via formulários ou mensagens.</li>
-              <li><strong>Dados de navegação e dispositivo:</strong> Endereço IP, tipo de navegador, sistema operacional, páginas visitadas e tempo de permanência no site.</li>
-            </ul>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              3. Como utilizamos essas informações
-            </h2>
-            <p>
-              Utilizamos os dados coletados com as seguintes finalidades legítimas:
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-neutral-600 dark:text-neutral-400">
-              <li>Realizar o diagnóstico estratégico e preparar a Sessão Estratégica solicitada.</li>
-              <li>Entrar em contato via WhatsApp ou e-mail para agendamentos e suporte consultivo.</li>
-              <li>Aprimorar a experiência de navegação e aperfeiçoar nossos conteúdos e serviços.</li>
-              <li>Cumprir obrigações legais e regulatórias aplicáveis.</li>
-            </ul>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              4. Cookies
-            </h2>
-            <p>
-              Cookies são pequenos arquivos armazenados em seu dispositivo ao visitar nosso site. Utilizamos cookies para garantir o correto funcionamento das páginas, lembrar suas preferências de navegação e analisar o tráfego do site para melhorias contínuas. Você pode desativar os cookies nas configurações do seu navegador a qualquer momento.
+              Podemos coletar nome, e-mail, WhatsApp, informações da empresa e dados de navegação necessários ao funcionamento do site e à prestação dos nossos serviços.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              5. Google Analytics
+              3. Uso das informações
             </h2>
             <p>
-              Utilizamos a ferramenta Google Analytics para compreender de forma agregada e anônima como os visitantes interagem com nossas páginas. O Google Analytics coleta métricas estatísticas de acessos sem identificar individualmente os usuários.
+              Utilizamos seus dados para preparar a análise, organizar o atendimento, prestar suporte e melhorar a experiência em nosso site, incluindo as informações enviadas pelos formulários.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              6. Meta Pixel
+              4. Cookies e ferramentas de análise
             </h2>
             <p>
-              Podemos utilizar o Meta Pixel para mensurar a eficácia de nossas campanhas de tráfego pago na rede Meta (Facebook e Instagram), permitindo apresentar anúncios relevantes para pessoas interessadas na otimização de empresas no Google.
+              Utilizamos cookies e, quando efetivamente implementados, ferramentas como Google Analytics e Meta Pixel para compreender a navegação e medir o desempenho das campanhas, respeitando os controles de privacidade aplicáveis.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              7. Formulários de contato
+              5. WhatsApp
             </h2>
             <p>
-              Os dados preenchidos nos formulários deste site são utilizados estritamente para a finalidade informada no momento da coleta, como o agendamento da Análise Estratégica da Empresa e o envio do Relatório Executivo.
+              Utilizamos o WhatsApp para responder dúvidas, enviar orientações, prestar suporte e disponibilizar o acesso ao grupo exclusivo de empresários.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              8. WhatsApp
+              6. Compartilhamento de dados
             </h2>
             <p>
-              Ao iniciar uma conversa pelo canal de atendimento do WhatsApp, os dados transmitidos serão tratados exclusivamente para responder às suas dúvidas e orientar sobre nossos serviços consultivos.
+              Não vendemos seus dados pessoais e podemos compartilhá-los com plataformas necessárias ao pagamento, atendimento, funcionamento do site e cumprimento de obrigações legais, incluindo a Hotmart quando aplicável.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              9. Compartilhamento de dados
+              7. Segurança das informações
             </h2>
             <p>
-              A <strong>Nanet não vende, aluga ou comercializa</strong> dados pessoais a terceiros. O compartilhamento ocorre apenas com fornecedores de infraestrutura tecnológica (como hospedagem e análise de tráfego) estritamente necessários para a operação do site ou por determinação judicial/legal.
+              Adotamos medidas de segurança para proteger seus dados contra acessos não autorizados e usos indevidos.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              10. Segurança das informações
+              8. Seus direitos
             </h2>
             <p>
-              Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acessos não autorizados, perda, destruição ou alteração. O tráfego de dados neste site é protegido por criptografia SSL/TLS.
+              Você pode solicitar acesso, correção, exclusão e exercer outros direitos previstos na LGPD, conforme a legislação aplicável.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              11. Direitos do titular dos dados
+              9. Atualizações
             </h2>
             <p>
-              Nos termos da LGPD, você possui o direito de confirmar a existência de tratamento, acessar seus dados, solicitar a correção de dados incompletos ou a eliminação de informações desnecessárias. Para exercer seus direitos, entre em contato através dos nossos canais de atendimento.
+              Esta Política poderá ser atualizada quando necessário, com a data da última revisão informada nesta página.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              12. Contato
+              10. Contato
             </h2>
             <p>
-              Se você tiver qualquer dúvida referente a esta Política de Privacidade ou ao tratamento de seus dados pela <strong>Nanet</strong>, entre em contato pelo nosso canal oficial no WhatsApp.
+              Para dúvidas ou solicitações relacionadas à privacidade e à proteção dos seus dados pessoais, entre em contato:
             </p>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              13. Atualizações desta política
-            </h2>
-            <p>
-              Esta Política de Privacidade pode ser atualizada periodicamente para refletir melhorias em nossos processos ou adequações regulatórias. A data da última versão está sempre indicada no topo deste documento.
-            </p>
+            <div className="pt-1 text-sm sm:text-base space-y-1">
+              <p><strong className="font-semibold text-neutral-900 dark:text-neutral-100">Nanet Digital</strong></p>
+              <p><strong className="font-semibold text-neutral-900 dark:text-neutral-100">CNPJ:</strong> 65.262.598/0001-32</p>
+              <p><strong className="font-semibold text-neutral-900 dark:text-neutral-100">E-mail:</strong> admin@nanetdigital.com</p>
+            </div>
           </section>
         </div>
 

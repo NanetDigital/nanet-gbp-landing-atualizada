@@ -8,17 +8,14 @@ import { Hero } from './components/Hero';
 
 // Code-splitting below-the-fold components to reduce initial JS execution and bundle size
 const Oportunidade = lazy(() => import('./components/Oportunidade').then(m => ({ default: m.Oportunidade })));
-const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
-const Solucao = lazy(() => import('./components/Solucao').then(m => ({ default: m.Solucao })));
-const ComoFunciona = lazy(() => import('./components/ComoFunciona').then(m => ({ default: m.ComoFunciona })));
-const OQueVoceRecebe = lazy(() => import('./components/OQueVoceRecebe').then(m => ({ default: m.OQueVoceRecebe })));
-const Provas = lazy(() => import('./components/Provas').then(m => ({ default: m.Provas })));
+const PublicoAlvo = lazy(() => import('./components/PublicoAlvo').then(m => ({ default: m.PublicoAlvo })));
+const Autoridade = lazy(() => import('./components/Autoridade').then(m => ({ default: m.Autoridade })));
 const Oferta = lazy(() => import('./components/Oferta').then(m => ({ default: m.Oferta })));
+const DepoisDaCompra = lazy(() => import('./components/DepoisDaCompra').then(m => ({ default: m.DepoisDaCompra })));
+const Garantia = lazy(() => import('./components/Garantia').then(m => ({ default: m.Garantia })));
 const FAQ = lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })));
-const CTAFinal = lazy(() => import('./components/CTAFinal').then(m => ({ default: m.CTAFinal })));
-const Duvidas = lazy(() => import('./components/Duvidas').then(m => ({ default: m.Duvidas })));
+const CTAPosFAQ = lazy(() => import('./components/CTAPosFAQ').then(m => ({ default: m.CTAPosFAQ })));
 const Rodape = lazy(() => import('./components/Rodape').then(m => ({ default: m.Rodape })));
-const WhatsAppFloating = lazy(() => import('./components/WhatsAppFloating').then(m => ({ default: m.WhatsAppFloating })));
 const PoliticaPrivacidade = lazy(() => import('./components/PoliticaPrivacidade').then(m => ({ default: m.PoliticaPrivacidade })));
 const TermosDeUso = lazy(() => import('./components/TermosDeUso').then(m => ({ default: m.TermosDeUso })));
 
@@ -58,7 +55,6 @@ export default function App() {
       <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
         <Suspense fallback={null}>
           <PoliticaPrivacidade onBack={() => navigateTo('landing')} />
-          <WhatsAppFloating />
         </Suspense>
       </div>
     );
@@ -69,14 +65,13 @@ export default function App() {
       <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
         <Suspense fallback={null}>
           <TermosDeUso onBack={() => navigateTo('landing')} />
-          <WhatsAppFloating />
         </Suspense>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 selection:bg-neutral-200 dark:selection:bg-neutral-800 font-sans antialiased">
+    <div className="min-h-screen bg-white text-[#171717] selection:bg-neutral-200 font-sans antialiased">
       {/* Main Container rendering all production components */}
       <main className="w-full">
         {/* 1. Hero - Eagerly loaded for instant LCP */}
@@ -84,45 +79,34 @@ export default function App() {
 
         {/* Below-the-fold content loaded asynchronously */}
         <Suspense fallback={null}>
-          {/* 2. Oportunidade */}
+          {/* 2. Transição, O Que Está Incluso, Entregáveis e Bônus */}
           <Oportunidade />
 
-          {/* 3. Problema */}
-          <Problema />
+          {/* Qualificação de Público: Para quem é */}
+          <PublicoAlvo />
 
-          {/* 4. Solução */}
-          <Solucao />
-
-          {/* 5. Como Funciona */}
-          <ComoFunciona />
-
-          {/* 6. O que Você Recebe */}
-          <OQueVoceRecebe />
-
-          {/* 7. Provas */}
-          <Provas />
-
-          {/* 8. Oferta */}
+          {/* 4. Oferta: SUA ANÁLISE ESTRATÉGICA COMPLETA (Imediatamente após o Bônus) */}
           <Oferta />
 
-          {/* 9. FAQ */}
+          {/* Nova Seção: Depois da compra, é simples */}
+          <DepoisDaCompra />
+
+          {/* Nova Seção: Garantia sem risco */}
+          <Garantia />
+
+          {/* Autoridade: Quem está por trás da sua análise */}
+          <Autoridade />
+
+          {/* Perguntas Frequentes */}
           <FAQ />
 
-          {/* 10. CTA Final */}
-          <CTAFinal />
+          {/* Nova Seção: CTA Final de Fechamento */}
+          <CTAPosFAQ />
 
-          {/* 11. Seção de Dúvidas / CTA Secundário */}
-          <Duvidas />
-
-          {/* 12. Rodapé */}
+          {/* Rodapé */}
           <Rodape onNavigate={navigateTo} />
         </Suspense>
       </main>
-
-      {/* Botão Flutuante de WhatsApp */}
-      <Suspense fallback={null}>
-        <WhatsAppFloating />
-      </Suspense>
     </div>
   );
 }

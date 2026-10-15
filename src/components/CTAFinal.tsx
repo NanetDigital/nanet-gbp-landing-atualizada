@@ -12,7 +12,7 @@ const defaultData: CTAFinalData = {
   title: 'Sua empresa pode estar mais perto de conquistar novos clientes do que você imagina.',
   subtitle: 'Descubra primeiro onde estão as oportunidades. Depois decida onde investir.',
   ctaText: 'Quero receber minha análise estratégica',
-  reassuranceNote: 'Análise Estratégica + Sessão Individual • Garantia de 7 dias',
+  reassuranceNote: 'Análise Estratégica + Orientação Prática com Especialista • Garantia de 7 dias',
 };
 
 export const CTAFinal: React.FC<CTAFinalProps> = ({ data = {} }) => {

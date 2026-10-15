@@ -1,48 +1,99 @@
 import React, { useState } from 'react';
-import { FAQData } from '../types/landing';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
-export interface FAQProps {
-  data?: Partial<FAQData>;
+interface FAQItem {
+  id: string;
+  question: string;
+  answer: React.ReactNode;
 }
 
-const defaultData: FAQData = {
-  tag: 'PERGUNTAS FREQUENTES',
-  title: 'Perguntas Frequentes (FAQ)',
-  description: 'Tire suas dúvidas e entenda todos os detalhes sobre a Análise Estratégica.',
-  items: [
-    {
-      id: 'faq-1',
-      question: 'Para quem é esta análise?',
-      answer: 'Empresas locais que desejam conquistar mais clientes através das pesquisas realizadas no Google.',
-    },
-    {
-      id: 'faq-2',
-      question: 'Quanto tempo demora?',
-      answer: 'Todo o processo é concluído em até 7 dias. Nesse período, realizamos o diagnóstico completo da sua empresa e conduzimos a Sessão Estratégica para apresentar todas as descobertas e entregar o relatório.',
-    },
-    {
-      id: 'faq-3',
-      question: 'Quando acontece a Sessão Estratégica?',
-      answer: 'Após o envio das informações da sua empresa, você escolhe o melhor horário para agendar a reunião dentro do prazo de até 7 dias, garantindo o tempo necessário para nosso estudo aprofundado.',
-    },
-    {
-      id: 'faq-4',
-      question: 'Preciso entender de marketing?',
-      answer: 'Não. A análise foi criada para empresários. Todo o conteúdo é explicado de forma simples e prática.',
-    },
-    {
-      id: 'faq-5',
-      question: 'Receberei um relatório?',
-      answer: 'Sim. Você recebe uma análise personalizada acompanhada da Sessão Estratégica.',
-    },
-  ],
-};
+const faqItems: FAQItem[] = [
+  {
+    id: 'faq-1',
+    question: 'Eu já tenho um Perfil da Empresa no Google. Essa análise ainda faz sentido?',
+    answer: (
+      <>
+        Sim. Ter um perfil não significa que sua empresa esteja aproveitando todas as oportunidades. Você vai descobrir{' '}
+        <strong className="font-bold text-[#171717]">
+          onde sua empresa aparece, quais concorrentes estão à frente e o que precisa melhorar
+        </strong>{' '}
+        para ter mais chances de ser encontrada e escolhida.
+      </>
+    ),
+  },
+  {
+    id: 'faq-2',
+    question: 'Preciso entender de Google ou marketing?',
+    answer: (
+      <>
+        Não. A análise foi feita para empresários, não para especialistas em marketing. Na Orientação Prática com Especialista, explicamos{' '}
+        <strong className="font-bold text-[#171717]">
+          o que encontramos, quais ajustes priorizar e como começar
+        </strong>
+        , de forma simples e prática.
+      </>
+    ),
+  },
+  {
+    id: 'faq-3',
+    question: 'A análise é automática ou feita por um especialista?',
+    answer: (
+      <>
+        Utilizamos ferramentas profissionais para levantar os dados, mas sua análise{' '}
+        <strong className="font-bold text-[#171717]">
+          não é apenas um relatório automático
+        </strong>
+        .{' '}
+        <strong className="font-bold text-[#171717]">
+          Um especialista da equipe Nanet analisa o cenário da sua empresa
+        </strong>{' '}
+        e apresenta os principais pontos e prioridades durante a Orientação Prática com Especialista.
+      </>
+    ),
+  },
+  {
+    id: 'faq-4',
+    question: 'Quando vou receber minha análise?',
+    answer: (
+      <>
+        Após a compra, você recebe por e-mail o acesso à área de membros para{' '}
+        <strong className="font-bold text-[#171717]">
+          escolher o melhor dia e horário e enviar as informações da sua empresa
+        </strong>
+        . Nossa equipe prepara a análise e apresenta seus relatórios na Orientação Prática com Especialista, no dia agendado.
+      </>
+    ),
+  },
+  {
+    id: 'faq-5',
+    question: 'Vocês também fazem os ajustes identificados na análise?',
+    answer: (
+      <>
+        A implementação não está incluída. Você recebe{' '}
+        <strong className="font-bold text-[#171717]">
+          os relatórios, as prioridades e o Checklist de Ajustes
+        </strong>{' '}
+        para saber o que precisa ser feito. Se preferir contar com nossa equipe para realizar a implementação, poderá conversar sobre essa possibilidade após a análise.
+      </>
+    ),
+  },
+  {
+    id: 'faq-6',
+    question: 'E se eu comprar e mudar de ideia?',
+    answer: (
+      <>
+        Você tem{' '}
+        <strong className="font-bold text-[#171717]">
+          7 dias de garantia a partir da compra
+        </strong>
+        . Se dentro desse prazo decidir que a Análise Estratégica não faz sentido para você, poderá solicitar o reembolso.
+      </>
+    ),
+  },
+];
 
-export const FAQ: React.FC<FAQProps> = ({ data = {} }) => {
-  const faqData = { ...defaultData, ...data };
-  const items = faqData.items && faqData.items.length > 0 ? faqData.items : defaultData.items;
-  const [openId, setOpenId] = useState<string | null>('faq-1');
+export const FAQ: React.FC = () => {
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
@@ -51,51 +102,51 @@ export const FAQ: React.FC<FAQProps> = ({ data = {} }) => {
   return (
     <section
       id="faq"
-      className="w-full py-16 sm:py-24 md:py-32 bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-900"
+      aria-label="Perguntas Frequentes"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-neutral-200/80"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-mono text-neutral-600 dark:text-neutral-400 mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#16A34A]"></span>
-            <span className="font-semibold uppercase tracking-wide">{faqData.tag}</span>
-          </div>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Título Centralizado */}
+        <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans text-center mb-8 sm:mb-12 leading-tight">
+          Perguntas Frequentes
+        </h2>
 
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 font-sans leading-tight">
-            {faqData.title}
-          </h2>
-
-          <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed font-sans">
-            {faqData.description}
-          </p>
-        </div>
-
-        {/* FAQ Accordion List */}
-        <div className="space-y-4">
-          {items.map((item, idx) => {
-            const itemId = item.id || `faq-${idx}`;
-            const isOpen = openId === itemId;
+        {/* Accordion List em Coluna Única */}
+        <div className="space-y-3 sm:space-y-3.5">
+          {faqItems.map((item) => {
+            const isOpen = openId === item.id;
             return (
               <div
-                key={itemId}
-                className="bg-neutral-50 dark:bg-neutral-900/60 border border-neutral-200/80 dark:border-neutral-800 rounded-2xl overflow-hidden transition-all shadow-2xs"
+                key={item.id}
+                className={`bg-[#F6F3EF] border rounded-2xl transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? 'border-[#2563EB]/40 shadow-xs'
+                    : 'border-neutral-200/80 hover:border-neutral-300'
+                }`}
               >
                 <button
                   type="button"
-                  onClick={() => toggleItem(itemId)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer group"
+                  onClick={() => toggleItem(item.id)}
+                  aria-expanded={isOpen}
+                  className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer group"
                 >
-                  <span className="font-sans text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#16A34A] transition-colors">
+                  <span className="font-sans text-base sm:text-[17px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-snug">
                     {item.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center transition-transform duration-200 shrink-0 ${isOpen ? 'rotate-180 bg-emerald-50 text-[#16A34A]' : 'text-neutral-400'}`}>
-                    <ChevronDown className="w-4 h-4" />
+                  <div
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
+                      isOpen
+                        ? 'bg-blue-50 text-[#2563EB] border border-[#2563EB]/40 rotate-180'
+                        : 'bg-white text-[#2563EB] border border-neutral-200/80 shadow-xs group-hover:border-[#2563EB]/40'
+                    }`}
+                  >
+                    <ChevronDown className="w-4 h-4 text-[#2563EB] stroke-[2.5]" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-0 border-t border-neutral-200/60 dark:border-neutral-800/80">
-                    <p className="mt-4 text-sm sm:text-base font-sans text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 border-t border-neutral-200/60">
+                    <p className="pt-3.5 sm:pt-4 text-sm sm:text-[15px] font-sans text-[#6B7280] leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -108,5 +159,3 @@ export const FAQ: React.FC<FAQProps> = ({ data = {} }) => {
     </section>
   );
 };
-
-

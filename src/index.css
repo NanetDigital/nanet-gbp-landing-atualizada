@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #171717;
+    background-color: #121318;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.depoimentos-marquee-container {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding-left: max(0px, calc((100% - min(82vw, 320px)) / 2));
+  touch-action: pan-y;
+}
+
+@media (min-width: 640px) {
+  .depoimentos-marquee-container {
+    padding-left: 0;
+  }
+}
+
+.depoimentos-marquee-container::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.depoimentos-marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  will-change: transform;
+}

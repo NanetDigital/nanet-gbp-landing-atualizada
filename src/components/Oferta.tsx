@@ -1,140 +1,267 @@
 import React from 'react';
-import { OfertaData } from '../types/landing';
-import { ShieldCheck, CheckCircle2, Lock, ArrowRight } from 'lucide-react';
+import { Lock, Check } from 'lucide-react';
 import { useCheckoutUrl } from '../utils/tracking';
 
 export interface OfertaProps {
-  data?: Partial<OfertaData>;
+  [key: string]: any;
 }
 
-const defaultData: OfertaData = {
-  tag: 'OFERTA ESPECIAL',
-  title: 'Descubra onde sua empresa pode estar perdendo clientes.',
-  subtitle:
-    'Receba uma Análise Estratégica personalizada, participe de uma Sessão Estratégica individual e saiba exatamente quais ações priorizar para conquistar mais clientes.',
-  packageName: 'Análise Estratégica da Empresa',
-  anchorPrice: 'De: R$297',
-  currentPrice: 'Por: R$147',
-  paymentDetails: 'Pagamento único • Acesso imediato ao formulário',
-  features: [
-    { id: 'f-1', text: 'Aplicação do Método Algoritmo+' },
-    { id: 'f-2', text: 'Diagnóstico Estratégico personalizado' },
-    { id: 'f-3', text: 'Plano de Ação priorizado' },
-    { id: 'f-4', text: 'Sessão Estratégica Individual' },
-    { id: 'f-5', text: 'Análise e Sessão entregues em até 7 dias' },
-    { id: 'f-6', text: 'Garantia de 7 dias' },
-  ],
-  guaranteeBadge: 'Garantia de 7 dias',
-  ctaText: 'Quero receber minha análise estratégica',
-  disclaimer: 'Pagamento 100% seguro e ambiente criptografado',
-};
-
-export const Oferta: React.FC<OfertaProps> = ({ data = {} }) => {
-  const ofData = { ...defaultData, ...data };
-  const features = ofData.features && ofData.features.length > 0 ? ofData.features : defaultData.features;
+export const Oferta: React.FC<OfertaProps> = () => {
   const checkoutUrl = useCheckoutUrl();
 
   return (
     <section
       id="oferta"
-      className="w-full py-16 sm:py-24 md:py-32 bg-neutral-50 dark:bg-neutral-900/50 border-b border-neutral-100 dark:border-neutral-900"
+      aria-label="Sua Análise Estratégica Completa"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-[#F6F3EF] border-b border-neutral-300/70"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-mono text-neutral-600 dark:text-neutral-400 mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#16A34A]"></span>
-            <span className="font-semibold uppercase tracking-wide">{ofData.tag}</span>
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ========================================================== */}
+        {/* PARTE 1 — RECAPITULAÇÃO (Pilha de Valor Compacta)          */}
+        {/* Fundo bege-claro #F6F3EF integrado com a oferta           */}
+        {/* ========================================================== */}
+        <div>
+          
+          {/* Headline */}
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
+              Veja tudo o que você vai receber
+            </h2>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 font-sans leading-tight">
-            {ofData.title}
-          </h2>
+          {/* Único Box Compacto e Horizontal — Tabela Branca Elegante */}
+          <div className="max-w-[760px] mx-auto bg-white border border-neutral-200/90 rounded-2xl shadow-sm overflow-hidden">
+            
+            {/* ITEM 01 — DIAGNÓSTICO */}
+            <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left">
+              <div className="flex items-start gap-3 min-w-0">
+                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
+                <div className="min-w-0">
+                  <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                    Diagnóstico da Saúde do Perfil
+                  </h4>
+                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                    Descubra o que pode estar impedindo sua empresa de aparecer melhor no Google.
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
+                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 200</span>
+              </div>
+            </div>
 
-          <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-sans">
-            {ofData.subtitle}
-          </p>
-        </div>
+            {/* ITEM 02 — ORIENTAÇÃO */}
+            <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left">
+              <div className="flex items-start gap-3 min-w-0">
+                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
+                <div className="min-w-0">
+                  <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                    Orientação Prática com Especialista
+                  </h4>
+                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                    Entenda o que melhorar e como colocar os ajustes em prática.
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
+                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 147</span>
+              </div>
+            </div>
 
-        {/* Premium Offer Box */}
-        <div className="bg-white dark:bg-neutral-950 border border-neutral-300 dark:border-neutral-800 rounded-3xl p-8 sm:p-12 text-center relative shadow-lg">
-          {/* Package Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[#16A34A] text-xs font-mono font-bold mb-8">
-            <CheckCircle2 className="w-4 h-4" />
-            <span>{ofData.packageName}</span>
-          </div>
+            {/* ITEM 03 — CHECKLIST DE IMPLEMENTAÇÃO NO GOOGLE */}
+            <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left">
+              <div className="flex items-start gap-3 min-w-0">
+                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
+                <div className="min-w-0">
+                  <div className="flex items-center flex-wrap gap-2">
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold font-mono uppercase tracking-wider bg-emerald-100 text-[#15803D] border border-emerald-300 leading-none">
+                      BÔNUS
+                    </span>
+                    <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                      Checklist de Implementação no Google
+                    </h4>
+                  </div>
+                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                    Saiba quais ajustes fazer primeiro, coloque as melhorias em prática e acompanhe seu progresso.
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
+                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 47</span>
+              </div>
+            </div>
 
-          {/* Highlights Box */}
-          <div className="text-left max-w-md mx-auto space-y-3.5 bg-neutral-50 dark:bg-neutral-900/60 p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 mb-8">
-            {features.map((feat) => (
-              <div key={feat.id} className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
-                <span className="text-sm font-semibold font-sans text-neutral-800 dark:text-neutral-200">
-                  {feat.text}
+            {/* ITEM 04 — BÔNUS: GRUPO */}
+            <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left bg-[#F0FDF4]/90">
+              <div className="flex items-start gap-3 min-w-0">
+                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
+                <div className="min-w-0">
+                  <div className="flex items-center flex-wrap gap-2">
+                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold font-mono uppercase tracking-wider bg-emerald-100 text-[#15803D] border border-emerald-300 leading-none">
+                      BÔNUS
+                    </span>
+                    <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                      Grupo Exclusivo de Empresários no WhatsApp
+                    </h4>
+                  </div>
+                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                    Troque experiências sobre o Google e conecte-se com outros donos de negócios.
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
+                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 47</span>
+              </div>
+            </div>
+
+            {/* Rodapé da tabela: Valor de referência das entregas vs R$ 441 */}
+            <div className="py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between gap-3 text-left bg-neutral-50/70">
+              <span className="text-[15px] sm:text-[16px] font-bold text-[#171717] font-sans leading-snug">
+                Valor de referência das entregas
+              </span>
+              <div className="shrink-0 whitespace-nowrap pl-2 text-right">
+                <span className="text-[16px] sm:text-[18px] font-bold text-red-600 line-through decoration-red-500 font-mono tracking-tight">
+                  R$ 441
                 </span>
               </div>
-            ))}
-          </div>
-
-          {/* Pricing Stack */}
-          <div className="mb-8">
-            <span className="block text-sm sm:text-base font-mono text-neutral-400 line-through mb-1 font-semibold">
-              {ofData.anchorPrice}
-            </span>
-            <span className="block text-4xl sm:text-6xl font-extrabold font-mono text-neutral-900 dark:text-neutral-100 tracking-tight">
-              {ofData.currentPrice}
-            </span>
-            <span className="block text-xs font-mono text-neutral-500 mt-2">
-              {ofData.paymentDetails}
-            </span>
-          </div>
-
-          {/* CTA Button */}
-          <div className="max-w-md mx-auto">
-            <a
-              href={checkoutUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-                  (window as any).fbq('track', 'InitiateCheckout');
-                }
-              }}
-              className="w-full py-4 px-8 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-sm sm:text-base font-bold transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2"
-            >
-              <span>{ofData.ctaText}</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
-            {/* Post-purchase details */}
-            <div className="mt-6 text-left p-4 bg-neutral-50 dark:bg-neutral-900/40 rounded-xl border border-neutral-200/80 dark:border-neutral-800 space-y-1.5 text-xs font-sans text-neutral-600 dark:text-neutral-400">
-              <span className="block font-mono font-bold text-neutral-800 dark:text-neutral-200 mb-1">
-                Após a confirmação da compra:
-              </span>
-              <p>• Você preenche o formulário da empresa.</p>
-              <p>• Agenda sua Sessão Estratégica.</p>
-              <p>• Nossa equipe inicia a preparação da sua análise.</p>
             </div>
+
           </div>
         </div>
 
-        {/* Garantia Section Block */}
-        <div className="mt-12 p-8 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-3xl flex flex-col sm:flex-row items-center gap-6 shadow-sm">
-          <div className="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center shrink-0">
-            <ShieldCheck className="w-8 h-8 text-[#16A34A]" />
+        {/* Título de transição entre a tabela de entregáveis e a seção de compra */}
+        {/* Espaçamento vertical perfeitamente simétrico: 40px acima e 40px abaixo no desktop; 28px no mobile */}
+        <div className="text-center max-w-2xl mx-auto py-[28px] sm:py-[40px]">
+          <h3 className="text-base sm:text-lg lg:text-[20px] font-bold text-[#171717] font-sans tracking-tight leading-snug m-0">
+            Hoje você leva tudo por menos de um quarto desse valor
+          </h3>
+        </div>
+
+        {/* ========================================================== */}
+        {/* PARTE 2 — SEÇÃO DE OFERTA (Fundo Bege-Claro Integrado)    */}
+        {/* ========================================================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.04fr] gap-10 lg:gap-[60px] items-start max-w-[1140px] mx-auto">
+          
+          {/* COLUNA ESQUERDA: Imagem Horizontal Moderada + 4 Benefícios */}
+          <div className="w-full max-w-[520px] mx-auto lg:mx-0">
+            
+            {/* Frame horizontal proporcional (aspect-ratio 16/10 ~520x325) */}
+            <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-300/80 shadow-md bg-[#E8E4DE]">
+              <img
+                src="https://res.cloudinary.com/nds7zozp/image/upload/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg"
+                alt="Análise Estratégica da Empresa - Relatórios e Diagnóstico"
+                className="w-full h-full object-cover object-center block"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            {/* 4 Benefícios abaixo da imagem em 2 colunas com alto contraste (#171717) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 pt-6 sm:pt-7 text-left px-0.5">
+              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+                <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
+                <span>Diagnóstico da Saúde do Perfil</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+                <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
+                <span>Orientação Prática com Especialista</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+                <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
+                <span>Plano de Ajustes Prioritários</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+                <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
+                <span>Grupo Exclusivo de Empresários no WhatsApp</span>
+              </div>
+            </div>
+
           </div>
-          <div className="text-center sm:text-left space-y-2">
-            <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100 font-sans">
-              Garantia de 7 dias
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-sans">
-              Se você entender que a Análise Estratégica não faz sentido para sua empresa, basta solicitar o cancelamento dentro do prazo de 7 dias e devolveremos 100% do valor pago.
-            </p>
+
+          {/* COLUNA DIREITA: Box de Compra Branco de Alto Contraste */}
+          <div className="w-full">
+            <div className="bg-white border border-neutral-200/80 rounded-2xl p-7 sm:p-9 lg:p-10 shadow-md flex flex-col justify-between text-center space-y-5 text-[#171717]">
+              
+              {/* Topo do Box */}
+              <div className="space-y-1.5">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#171717] font-sans">
+                  Sua Análise Estratégica Completa
+                </h3>
+                <p className="text-xs sm:text-[13px] text-[#6B7280] font-sans max-w-sm mx-auto leading-relaxed">
+                  Descubra o que pode estar limitando sua presença no Google e receba orientação para melhorar seu Perfil da Empresa.
+                </p>
+                <div className="text-xs sm:text-sm font-sans text-neutral-500 pt-1">
+                  De <span className="line-through decoration-red-500 font-bold text-[15px] sm:text-[16px] text-red-600">R$ 441</span> em entregas por apenas:
+                </div>
+              </div>
+
+              {/* Preço Principal com R$ perfeitamente alinhado ao topo visível do 97 */}
+              <div className="space-y-2 pt-1 pb-0">
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-neutral-500 font-semibold block">
+                  INVESTIMENTO ÚNICO
+                </span>
+                <div className="flex justify-center">
+                  <div className="inline-flex items-start justify-center gap-[3px] leading-none">
+                    <span className="text-lg sm:text-xl lg:text-[22px] font-semibold text-neutral-800 select-none leading-none pt-2 sm:pt-2.5 lg:pt-3">
+                      R$
+                    </span>
+                    <span className="text-6xl sm:text-7xl lg:text-[80px] font-black text-[#171717] tracking-tight leading-none">
+                      97
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Principal */}
+              <div className="space-y-2.5 pt-1 flex flex-col items-center">
+                <a
+                  href={checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+                      (window as any).fbq('track', 'InitiateCheckout');
+                    }
+                  }}
+                  className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
+                >
+                  QUERO ATRAIR MAIS CLIENTES
+                </a>
+
+                {/* Linha discreta de segurança Hotmart com ícone de cadeado */}
+                <div className="flex items-center justify-center gap-1.5 text-xs text-neutral-500 font-sans">
+                  <Lock className="w-3.5 h-3.5 text-neutral-400 shrink-0" />
+                  <span>Pagamento seguro pela Hotmart.</span>
+                </div>
+
+                {/* Texto de apoio */}
+                <p className="text-xs text-neutral-500 font-sans pt-1">
+                  Após a compra, receba as instruções por e-mail e tenha acesso imediato à área de membros.
+                </p>
+              </div>
+
+              {/* Divisória horizontal sutil */}
+              <div className="w-full h-px bg-neutral-200/80 my-1" />
+
+              {/* Bloco de Garantia de 7 dias com composição horizontal */}
+              <div className="flex items-center justify-center gap-3.5 text-left pt-1">
+                <div className="w-11 h-11 rounded-full bg-[#F6F3EF] border border-[#16A34A]/30 flex flex-col items-center justify-center shrink-0 leading-none">
+                  <span className="text-sm font-black font-mono text-[#16A34A] leading-none">7</span>
+                  <span className="text-[8px] font-bold font-mono uppercase text-[#16A34A] tracking-wider leading-none mt-0.5">DIAS</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-snug">
+                  <strong className="font-semibold text-[#171717]">Garantia incondicional:</strong>{' '}
+                  não gostou, devolvemos 100% do valor.
+                </p>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 };
-
 

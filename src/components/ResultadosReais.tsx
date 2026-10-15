@@ -84,10 +84,10 @@ export const ResultadosReais: React.FC = () => {
               {/* Print Real do Comentário */}
               <div className="w-full overflow-hidden rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 p-5 sm:p-6 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785768022/Sem_t%C3%ADtulo_crcwaj.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1785768022/Sem_t%C3%ADtulo_crcwaj.png 640w"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1791400207/Erik_sq1cet.jpg"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_320/v1791400207/Erik_sq1cet.jpg 320w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791400207/Erik_sq1cet.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791400207/Erik_sq1cet.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791400207/Erik_sq1cet.jpg 640w"
                   sizes="(max-width: 480px) 300px, 360px"
-                  alt="Comentário espontâneo de @emporiosaren no Instagram"
+                  alt="Comentário espontâneo de @eriik.viniciuss no Instagram"
                   width={360}
                   height={320}
                   loading="lazy"

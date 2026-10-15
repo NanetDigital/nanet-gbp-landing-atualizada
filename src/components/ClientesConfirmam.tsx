@@ -1,0 +1,472 @@
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+
+interface DepoimentoItem {
+  id: string;
+  autor: string;
+  image: string;
+  alt: string;
+}
+
+const depoimentos: DepoimentoItem[] = [
+  {
+    id: 'thalita',
+    autor: 'Thalita Traspadini Modolo',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/1_Thalita_yqoexh.jpg',
+    alt: 'Depoimento de Thalita Traspadini Modolo - Avaliação de cliente da Nanet Digital',
+  },
+  {
+    id: 'helder',
+    autor: 'Helder',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg',
+    alt: 'Depoimento de Helder - Avaliação de cliente da Nanet Digital',
+  },
+  {
+    id: 'saren',
+    autor: 'Empório Saren',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg',
+    alt: 'Depoimento do Empório Saren - Avaliação de cliente da Nanet Digital',
+  },
+  {
+    id: 'erik',
+    autor: 'Erik',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/4_Erik_o5bfk8.jpg',
+    alt: 'Depoimento de Erik - Avaliação de cliente da Nanet Digital',
+  },
+  {
+    id: 'cleiton',
+    autor: 'Cleiton de Souza Porto',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/6_Cleiton_rv4uhk.jpg',
+    alt: 'Depoimento de Cleiton de Souza Porto - Avaliação de cliente da Nanet Digital',
+  },
+];
+
+// Curva de transição suave cubic-bezier(0.4, 0, 0.2, 1) para 3 segundos
+function easeTransition(t: number): number {
+  if (t <= 0) return 0;
+  if (t >= 1) return 1;
+  const p1x = 0.4, p1y = 0.0, p2x = 0.2, p2y = 1.0;
+  const cx = 3 * p1x;
+  const bx = 3 * (p2x - p1x) - cx;
+  const ax = 1 - cx - bx;
+  const cy = 3 * p1y;
+  const by = 3 * (p2y - p1y) - cy;
+  const ay = 1 - cy - by;
+
+  let x = t;
+  for (let i = 0; i < 5; i++) {
+    const currentX = ((ax * x + bx) * x + cx) * x;
+    const dx = (3 * ax * x + 2 * bx) * x + cx;
+    if (Math.abs(dx) < 1e-6) break;
+    x -= (currentX - t) / dx;
+  }
+  x = Math.max(0, Math.min(1, x));
+  return ((ay * x + by) * x + cy) * x;
+}
+
+// Curva de alinhamento suave (snap) ao soltar o arraste
+function easeOutQuad(t: number): number {
+  const clamped = Math.max(0, Math.min(1, t));
+  return clamped * (2 - clamped);
+}
+
+type CarouselPhase =
+  | { type: 'HOLD'; elapsed: number; cardIndex: number }
+  | { type: 'TRANSITION'; elapsed: number; fromIndex: number; toIndex: number }
+  | { type: 'DRAGGING' }
+  | { type: 'SNAPPING'; elapsed: number; duration: number; startOffset: number; targetOffset: number; targetIndex: number };
+
+export const ClientesConfirmam: React.FC = () => {
+  const [isDraggingUI, setIsDraggingUI] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const firstSeqRef = useRef<HTMLDivElement>(null);
+
+  // Offset e dimensões físicas
+  const offsetRef = useRef<number>(0);
+  const seqWidthRef = useRef<number>(1700);
+  const cardDistanceRef = useRef<number>(340);
+
+  // Máquina de estados da animação
+  const phaseRef = useRef<CarouselPhase>({ type: 'HOLD', elapsed: 0, cardIndex: 0 });
+
+  // Flags de controle
+  const isHoveredRef = useRef<boolean>(false);
+  const isDraggingRef = useRef<boolean>(false);
+  const isMouseDownRef = useRef<boolean>(false);
+
+  // Arraste
+  const dragStartXRef = useRef<number>(0);
+  const dragStartOffsetRef = useRef<number>(0);
+  const touchStartXRef = useRef<number>(0);
+  const touchStartYRef = useRef<number>(0);
+  const touchDirectionRef = useRef<'horizontal' | 'vertical' | null>(null);
+
+  // Mede as dimensões reais dos cards e espaçamentos no DOM
+  const updateDimensions = useCallback(() => {
+    if (firstSeqRef.current) {
+      const seqEl = firstSeqRef.current;
+      const totalWidth = seqEl.offsetWidth;
+      if (totalWidth > 0) {
+        seqWidthRef.current = totalWidth;
+        const children = seqEl.children;
+        if (children.length >= 2) {
+          const firstChild = children[0] as HTMLElement;
+          const secondChild = children[1] as HTMLElement;
+          const dist = secondChild.offsetLeft - firstChild.offsetLeft;
+          if (dist > 0) {
+            cardDistanceRef.current = dist;
+            return;
+          }
+        }
+        cardDistanceRef.current = totalWidth / 5;
+      }
+    }
+  }, []);
+
+  // Loop de Animação Autorizado via requestAnimationFrame
+  useEffect(() => {
+    let animationFrameId: number;
+    let lastTimestamp: number | null = null;
+
+    updateDimensions();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+    });
+    if (firstSeqRef.current) {
+      resizeObserver.observe(firstSeqRef.current);
+    }
+
+    const step = (timestamp: number) => {
+      if (lastTimestamp === null) {
+        lastTimestamp = timestamp;
+      }
+      const deltaMs = Math.min(80, timestamp - lastTimestamp);
+      const deltaSeconds = deltaMs / 1000;
+      lastTimestamp = timestamp;
+
+      const seqWidth = seqWidthRef.current || 1700;
+      const cardDistance = cardDistanceRef.current || seqWidth / 5;
+
+      const currentPhase = phaseRef.current;
+
+      // Se houver hover do mouse no desktop durante HOLD ou TRANSITION, pausa o relógio
+      const isPausedByHover = isHoveredRef.current && (currentPhase.type === 'HOLD' || currentPhase.type === 'TRANSITION');
+
+      if (!isPausedByHover) {
+        if (currentPhase.type === 'HOLD') {
+          // 1 segundo de pausa com o card perfeitamente alinhado
+          currentPhase.elapsed += deltaSeconds;
+          offsetRef.current = currentPhase.cardIndex * cardDistance;
+
+          if (currentPhase.elapsed >= 1.0) {
+            phaseRef.current = {
+              type: 'TRANSITION',
+              elapsed: 0,
+              fromIndex: currentPhase.cardIndex,
+              toIndex: currentPhase.cardIndex + 1,
+            };
+          }
+        } else if (currentPhase.type === 'TRANSITION') {
+          // 3 segundos de transição suave até o próximo card
+          currentPhase.elapsed += deltaSeconds;
+          const progress = Math.min(1, currentPhase.elapsed / 3.0);
+          const eased = easeTransition(progress);
+          const startX = currentPhase.fromIndex * cardDistance;
+          const endX = currentPhase.toIndex * cardDistance;
+          offsetRef.current = startX + (endX - startX) * eased;
+
+          if (currentPhase.elapsed >= 3.0) {
+            // Transição completada: normaliza o cardIndex e entra em HOLD de 1 segundo
+            const nextIndex = ((currentPhase.toIndex % 5) + 5) % 5;
+            offsetRef.current = nextIndex * cardDistance;
+            phaseRef.current = {
+              type: 'HOLD',
+              elapsed: 0,
+              cardIndex: nextIndex,
+            };
+          }
+        } else if (currentPhase.type === 'SNAPPING') {
+          // Alinhamento suave ao soltar o arraste
+          currentPhase.elapsed += deltaSeconds;
+          const progress = Math.min(1, currentPhase.elapsed / currentPhase.duration);
+          const eased = easeOutQuad(progress);
+          offsetRef.current = currentPhase.startOffset + (currentPhase.targetOffset - currentPhase.startOffset) * eased;
+
+          if (currentPhase.elapsed >= currentPhase.duration) {
+            // Alinhamento concluído: normaliza o índice e inicia imediatamente a pausa de 1 segundo
+            const normalizedIndex = ((currentPhase.targetIndex % 5) + 5) % 5;
+            offsetRef.current = normalizedIndex * cardDistance;
+            phaseRef.current = {
+              type: 'HOLD',
+              elapsed: 0,
+              cardIndex: normalizedIndex,
+            };
+          }
+        }
+      }
+
+      // Aplica o deslocamento físico na GPU (3 sequências: Prepend, Principal, Append)
+      if (trackRef.current) {
+        const translateX = -(seqWidth + offsetRef.current);
+        trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      }
+
+      animationFrameId = requestAnimationFrame(step);
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      resizeObserver.disconnect();
+    };
+  }, [updateDimensions]);
+
+  // Função auxiliar disparada ao soltar o arraste (Touch ou Mouse)
+  const finishDrag = useCallback(() => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsDraggingUI(false);
+
+    const seqWidth = seqWidthRef.current || 1700;
+    const cardDistance = cardDistanceRef.current || seqWidth / 5;
+
+    const currentOffset = offsetRef.current;
+    // Identifica o card mais próximo
+    const nearestIndex = Math.round(currentOffset / cardDistance);
+    const targetOffset = nearestIndex * cardDistance;
+    const distanceToSnap = Math.abs(targetOffset - currentOffset);
+
+    // Duração do snap proporcional à distância (entre 180ms e 320ms)
+    const duration = distanceToSnap < 2 ? 0.05 : Math.min(0.32, Math.max(0.18, (distanceToSnap / cardDistance) * 0.32));
+
+    phaseRef.current = {
+      type: 'SNAPPING',
+      elapsed: 0,
+      duration,
+      startOffset: currentOffset,
+      targetOffset,
+      targetIndex: nearestIndex,
+    };
+  }, []);
+
+  // Eventos de Toque no Mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length !== 1) return;
+    touchStartXRef.current = e.touches[0].clientX;
+    touchStartYRef.current = e.touches[0].clientY;
+    touchDirectionRef.current = null;
+    dragStartOffsetRef.current = offsetRef.current;
+    dragStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length !== 1) return;
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+
+    if (touchDirectionRef.current === null) {
+      const diffX = Math.abs(currentX - touchStartXRef.current);
+      const diffY = Math.abs(currentY - touchStartYRef.current);
+
+      if (diffX < 6 && diffY < 6) return;
+
+      if (diffY >= diffX) {
+        // Gesto vertical: preserva 100% a rolagem vertical padrão da página
+        touchDirectionRef.current = 'vertical';
+        return;
+      } else {
+        // Gesto horizontal: assume o controle do carrossel
+        touchDirectionRef.current = 'horizontal';
+        isDraggingRef.current = true;
+        setIsDraggingUI(true);
+        phaseRef.current = { type: 'DRAGGING' };
+        dragStartOffsetRef.current = offsetRef.current;
+        dragStartXRef.current = currentX;
+      }
+    }
+
+    if (touchDirectionRef.current === 'horizontal' && isDraggingRef.current) {
+      const delta = currentX - dragStartXRef.current;
+      offsetRef.current = dragStartOffsetRef.current - delta;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (touchDirectionRef.current === 'horizontal') {
+      finishDrag();
+    }
+    touchDirectionRef.current = null;
+  };
+
+  // Eventos de Mouse no Desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return; // Apenas botão principal (esquerdo)
+    isMouseDownRef.current = true;
+    dragStartXRef.current = e.clientX;
+    dragStartOffsetRef.current = offsetRef.current;
+  };
+
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isMouseDownRef.current) return;
+      const delta = e.clientX - dragStartXRef.current;
+
+      if (!isDraggingRef.current && Math.abs(delta) > 3) {
+        isDraggingRef.current = true;
+        setIsDraggingUI(true);
+        phaseRef.current = { type: 'DRAGGING' };
+        dragStartOffsetRef.current = offsetRef.current;
+        dragStartXRef.current = e.clientX;
+      }
+
+      if (isDraggingRef.current) {
+        offsetRef.current = dragStartOffsetRef.current - (e.clientX - dragStartXRef.current);
+      }
+    };
+
+    const onMouseUp = () => {
+      if (isMouseDownRef.current) {
+        isMouseDownRef.current = false;
+        if (isDraggingRef.current) {
+          finishDrag();
+        }
+      }
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+  }, [finishDrag]);
+
+  // Pausa automática no hover do mouse (Desktop)
+  const handleMouseEnter = () => {
+    isHoveredRef.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isHoveredRef.current = false;
+  };
+
+  return (
+    <section
+      id="clientes-confirmam"
+      aria-label="Depoimentos de clientes da Nanet"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-[#F6F3EF] border-b border-neutral-200/80 overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-10 sm:space-y-12">
+          {/* Header da Seção */}
+          <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
+              Quem já contratou a Nanet recomenda
+            </h2>
+
+            <p className="text-base sm:text-lg text-[#6B7280] font-sans leading-relaxed max-w-2xl mx-auto">
+              Veja o que clientes reais dizem sobre o trabalho da nossa equipe.
+            </p>
+          </div>
+
+          {/* Faixa Contínua Interativa */}
+          <div
+            ref={containerRef}
+            className={`depoimentos-marquee-container relative w-full overflow-hidden select-none ${
+              isDraggingUI ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            aria-label="Faixa de depoimentos de clientes da Nanet Digital. Deslize para voltar às avaliações anteriores."
+          >
+            <div
+              ref={trackRef}
+              className="depoimentos-marquee-track flex w-max items-center"
+              style={{ transform: 'translate3d(-33.333333%, 0, 0)' }}
+            >
+              {/* Sequência 1 (Prepend para loop e arraste para avaliações anteriores) */}
+              <div
+                className="flex shrink-0 items-center gap-4 sm:gap-5 pr-4 sm:pr-5"
+                aria-hidden="true"
+              >
+                {depoimentos.map((item) => (
+                  <div
+                    key={`prep-${item.id}`}
+                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      width={400}
+                      height={300}
+                      loading="lazy"
+                      decoding="async"
+                      draggable={false}
+                      className="w-full h-full object-contain select-none pointer-events-none block rounded-xl"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Sequência 2 (Principal - 5 avaliações ordenadas) */}
+              <div
+                ref={firstSeqRef}
+                className="flex shrink-0 items-center gap-4 sm:gap-5 pr-4 sm:pr-5"
+              >
+                {depoimentos.map((item, index) => (
+                  <div
+                    key={`orig-${item.id}`}
+                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      width={400}
+                      height={300}
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      draggable={false}
+                      className="w-full h-full object-contain select-none pointer-events-none block rounded-xl"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Sequência 3 (Append para loop contínuo infinito) */}
+              <div
+                className="flex shrink-0 items-center gap-4 sm:gap-5 pr-4 sm:pr-5"
+                aria-hidden="true"
+              >
+                {depoimentos.map((item) => (
+                  <div
+                    key={`app-${item.id}`}
+                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      width={400}
+                      height={300}
+                      loading="lazy"
+                      decoding="async"
+                      draggable={false}
+                      className="w-full h-full object-contain select-none pointer-events-none block rounded-xl"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

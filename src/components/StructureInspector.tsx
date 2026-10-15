@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 
 const sections = [
   { id: 'hero', name: '1. Hero' },
-  { id: 'oportunidade', name: '2. Oportunidade' },
-  { id: 'problema', name: '3. Problema' },
-  { id: 'solucao', name: '4. Solução' },
-  { id: 'como-funciona', name: '5. Como Funciona' },
-  { id: 'o-que-voce-recebe', name: '6. O que Você Recebe' },
-  { id: 'provas', name: '7. Provas' },
-  { id: 'oferta', name: '8. Oferta' },
-  { id: 'faq', name: '9. FAQ' },
-  { id: 'cta-final', name: '10. CTA Final' },
-  { id: 'rodape', name: '11. Rodapé' },
+  { id: 'transicao', name: '2. Transição' },
+  { id: 'incluso-analise', name: '3. O Que Está Incluso' },
+  { id: 'demonstracao', name: '4. Demonstração' },
+  { id: 'clientes-confirmam', name: '5. Validação Social' },
+  { id: 'problema', name: '6. Problema' },
+  { id: 'solucao', name: '7. Solução' },
+  { id: 'como-funciona', name: '8. Como Funciona' },
+  { id: 'provas', name: '9. Provas' },
+  { id: 'oferta', name: '10. Oferta' },
+  { id: 'faq', name: '11. FAQ' },
+  { id: 'cta-final', name: '12. CTA Final' },
+  { id: 'rodape', name: '13. Rodapé' },
 ];
 
 export const StructureInspector: React.FC = () => {

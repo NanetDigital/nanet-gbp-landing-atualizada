@@ -39,9 +39,8 @@ export const TermosDeUso: React.FC<PageProps> = ({ onBack }) => {
             Termos de Uso
           </h1>
           <div className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-xs sm:text-sm font-mono text-neutral-600 dark:text-neutral-400 space-y-1">
-            <p><strong className="text-neutral-900 dark:text-neutral-200">Empresa:</strong> Nanet</p>
+            <p><strong className="text-neutral-900 dark:text-neutral-200">Empresa:</strong> Nanet Digital</p>
             <p><strong className="text-neutral-900 dark:text-neutral-200">CNPJ:</strong> 65.262.598/0001-32</p>
-            <p><strong className="text-neutral-900 dark:text-neutral-200">Última atualização:</strong> 04/08/2026</p>
           </div>
         </div>
 
@@ -49,91 +48,91 @@ export const TermosDeUso: React.FC<PageProps> = ({ onBack }) => {
         <div className="space-y-8 text-neutral-600 dark:text-neutral-300 leading-relaxed text-sm sm:text-base font-sans">
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              1. Objeto
+              1. Sobre estes Termos
             </h2>
             <p>
-              Estes Termos de Uso regulam o acesso e a utilização do website da <strong>Nanet</strong> (CNPJ 65.262.598/0001-32), apresentando as condições gerais para navegação, solicitação de Análise Estratégica da Empresa e agendamento de Sessões Estratégicas sobre o Perfil da Empresa no Google.
+              Estes Termos estabelecem as condições de uso do site e de contratação dos serviços da Nanet Digital.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              2. Aceitação dos Termos
+              2. Sobre o Serviço
             </h2>
             <p>
-              Ao navegar por este site ou contratar nossos serviços consultivos, você declara ter lido, compreendido e concordado integralmente com todos os termos e condições aqui estabelecidos. Caso não concorde com qualquer disposição, orientamos interromper a navegação.
+              A Análise Estratégica da Empresa oferece diagnóstico do Perfil da Empresa no Google, orientação com especialista, plano de ajustes prioritários e acesso ao grupo exclusivo de empresários no WhatsApp.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              3. Informações disponibilizadas
+              3. Contratação e Pagamento
             </h2>
             <p>
-              Os materiais, artigos, diagnósticos demonstrativos e descrições técnicas apresentados neste site visam prestar esclarecimentos estratégicos sobre a presença de empresas no Google. A Nanet busca manter todas as informações atualizadas e precisas com base nos dados públicos fornecidos pelas plataformas de busca.
+              O serviço custa R$ 97, em pagamento único realizado pela Hotmart.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              4. Limitação de responsabilidade
+              4. Entrega do Serviço
             </h2>
             <p>
-              Os resultados de visibilidade e captação de clientes dependem de diversos fatores externos, incluindo atualizações de algoritmos de terceiros (como o Google), engajamento do público e atendimento prestado pela própria empresa contratante. A Nanet não garante volume fixo de faturamento nem se responsabiliza por decisões operacionais tomadas autonomamente pelo usuário.
+              Após a confirmação da compra, o cliente recebe as instruções para fornecer as informações necessárias e receber sua análise e orientação.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              5. Propriedade intelectual
+              5. Garantia e Reembolso
             </h2>
             <p>
-              Todos os elementos deste site — incluindo a marca <strong>Nanet</strong>, logos, textos, layout, gráficos, estruturas de diagnósticos e o Método Algoritmo+ — são de propriedade exclusiva da Nanet ou licenciados de forma apropriada. É proibida a reprodução, cópia ou distribuição sem autorização prévia por escrito.
+              O cliente tem garantia incondicional de 7 dias e pode solicitar reembolso pelos canais de atendimento ou pela Hotmart, sem prejuízo de seus direitos legais.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              6. Uso permitido do site
+              6. Resultados e Responsabilidades
             </h2>
             <p>
-              O usuário compromete-se a utilizar o site de forma lícita e ética, abstendo-se de praticar qualquer ato que possa danificar a infraestrutura, sobrecarregar os servidores ou violar direitos de terceiros.
+              Os resultados dependem das condições de cada empresa e da aplicação das recomendações, sem garantia de posicionamento no Google, novos clientes ou faturamento.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              7. Links externos
+              7. Uso dos Materiais
             </h2>
             <p>
-              Nosso site pode conter links para serviços externos de terceiros (como o WhatsApp). A Nanet não exerce controle sobre o conteúdo ou práticas de privacidade desses sites de terceiros e recomenda a leitura dos respectivos termos ao acessá-los.
+              Os materiais fornecidos pela Nanet Digital destinam-se ao uso do cliente e não podem ser comercializados ou distribuídos sem autorização, ressalvados os direitos previstos em lei.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              8. Alterações dos Termos
+              8. Serviços de Terceiros
             </h2>
             <p>
-              A Nanet reserva-se o direito de alterar estes Termos de Uso a qualquer momento para refletir atualizações operacionais ou legislativas. O uso continuado do site após modificações constitui concordância com os novos termos.
+              A Nanet Digital utiliza plataformas como Hotmart, WhatsApp e Google, respeitando as condições de cada serviço, sem possuir afiliação com o Google.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              9. Legislação aplicável
+              9. Atualizações
             </h2>
             <p>
-              Estes Termos de Uso são regidos e interpretados segundo as leis da República Federativa do Brasil.
+              Estes Termos podem ser atualizados conforme necessário, respeitando as condições das contratações já realizadas e a legislação brasileira.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              10. Contato
+              10. Atendimento
             </h2>
             <p>
-              Para esclarecimentos sobre estes Termos de Uso, entre em contato através do nosso suporte oficial no WhatsApp.
+              Dúvidas sobre o serviço, a contratação ou o reembolso podem ser esclarecidas pelo WhatsApp Suporte disponível no rodapé do site.
             </p>
           </section>
         </div>
