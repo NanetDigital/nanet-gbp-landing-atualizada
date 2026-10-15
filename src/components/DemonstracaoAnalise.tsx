@@ -252,13 +252,23 @@ export const DemonstracaoAnalise: React.FC = () => {
             <div className="w-full h-full overflow-hidden rounded-xl relative">
               {/* Slides Track */}
               <div
-                className="flex transition-transform duration-400 ease-out items-center h-full w-full pointer-events-none"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                className="flex h-full w-full items-center transition-transform duration-400 ease-out will-change-transform pointer-events-none"
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                  WebkitTransform: `translateX(-${currentIndex * 100}%)`,
+                }}
               >
                 {slides.map((slide, index) => (
                   <div
                     key={slide.id}
-                    className="w-full h-full shrink-0 flex items-center justify-center p-0 overflow-hidden"
+                    className="h-full w-full min-w-0 max-w-full flex items-center justify-center p-0 m-0 overflow-hidden box-border"
+                    style={{
+                      flex: '0 0 100%',
+                      width: '100%',
+                      minWidth: 0,
+                      maxWidth: '100%',
+                      boxSizing: 'border-box',
+                    }}
                     aria-hidden={currentIndex !== index}
                   >
                     <img
@@ -270,7 +280,12 @@ export const DemonstracaoAnalise: React.FC = () => {
                       height={slide.height}
                       loading={index === 0 ? 'eager' : 'lazy'}
                       decoding="async"
-                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl mx-auto block select-none pointer-events-none"
+                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl block select-none pointer-events-none"
+                      style={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                      }}
                     />
                   </div>
                 ))}
