@@ -116,8 +116,8 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
         {/* ========================================================== */}
         <div className="md:hidden flex flex-col space-y-5">
           
-          {/* BLOCO 1: IDENTIFICAÇÃO (Centralizado) */}
-          <div className="flex flex-col items-center text-center space-y-1.5">
+          {/* BLOCO 1: IDENTIFICAÇÃO E CONTATO (Centralizado) */}
+          <div className="flex flex-col items-center text-center space-y-2">
             <div className="flex items-center pb-0.5">
               <img
                 src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
@@ -136,13 +136,24 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
             <span className="text-[12px] text-[#B8C0CC] font-mono">
               CNPJ: 65.262.598/0001-32
             </span>
+            <div className="pt-0.5">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
+                <span>WhatsApp Suporte</span>
+              </a>
+            </div>
           </div>
 
           {/* DIVISÓRIA MOBILE 1 */}
           <div className="w-full h-px bg-[#39414C]" />
 
-          {/* BLOCO 2: RECURSOS E CONTATO (Centralizado) */}
-          <div className="flex flex-col items-center text-center space-y-2.5">
+          {/* BLOCO 2: RECURSOS (Centralizado) */}
+          <div className="flex flex-col items-center text-center space-y-2">
             <span className="text-[15px] font-semibold text-[#F3F4F6] font-sans tracking-tight">
               Recursos
             </span>
@@ -164,19 +175,6 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
               >
                 Termos de Uso
               </button>
-            </div>
-
-            {/* WhatsApp Suporte Discreto */}
-            <div className="pt-0.5">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
-              >
-                <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-                <span>WhatsApp Suporte</span>
-              </a>
             </div>
           </div>
 

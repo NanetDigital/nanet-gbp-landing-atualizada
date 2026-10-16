@@ -12,11 +12,11 @@ export const Autoridade: React.FC = () => {
         <div className="bg-[#1A1D24] border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-9 text-white shadow-none">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 lg:gap-10 text-center sm:text-left">
             
-            {/* Foto Original de Leandro Alves à Esquerda */}
+            {/* Foto Original de Leandro Pires à Esquerda */}
             <div className="shrink-0 flex items-center justify-center">
               <img
                 src="https://res.cloudinary.com/nds7zozp/image/upload/v1791701835/leandro_alves_evrgch.png"
-                alt="Leandro Alves - Fundador da Nanet"
+                alt="Leandro Pires - Fundador da Nanet"
                 width={165}
                 height={165}
                 loading="lazy"
@@ -40,7 +40,7 @@ export const Autoridade: React.FC = () => {
 
               {/* Descrição com negritos pontuais estritos (alinhado à esquerda no mobile) */}
               <p className="text-left text-sm sm:text-[15px] lg:text-base text-neutral-300 font-sans leading-relaxed mt-2.5 sm:mt-3">
-                Leandro Alves, fundador da Nanet, e sua equipe trabalham há <strong className="font-bold text-white">mais de 5 anos</strong> com Perfis da Empresa no Google. Já analisaram e ajustaram <strong className="font-bold text-white">mais de 300 empresas locais</strong>, acumulando <strong className="font-bold text-white">mais de 200 mil interações com clientes</strong>. Essa experiência ajuda a identificar o que pode estar limitando sua presença nas buscas e mostrar quais ajustes priorizar, sem você precisar descobrir tudo sozinho.
+                Leandro Pires, fundador da Nanet, e sua equipe trabalham há <strong className="font-bold text-white">mais de 5 anos</strong> com Perfis da Empresa no Google. Já analisaram e ajustaram <strong className="font-bold text-white">mais de 300 empresas locais</strong>, acumulando <strong className="font-bold text-white">mais de 200 mil interações com clientes</strong>. Essa experiência ajuda a identificar o que pode estar limitando sua presença nas buscas e mostrar quais ajustes priorizar, sem você precisar descobrir tudo sozinho.
               </p>
 
               {/* Indicadores em linha única no desktop, sem cartões separados (editorial limpo) */}

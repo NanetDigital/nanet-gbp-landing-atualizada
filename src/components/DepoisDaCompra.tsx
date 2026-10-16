@@ -32,7 +32,7 @@ export const DepoisDaCompra: React.FC = () => {
               Confira seu e-mail
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Receba as instruções para agendar sua análise e começar.
+              Receba o <strong className="font-bold text-[#171717]">acesso à sua área de membros na Hotmart</strong>, com as instruções para agendar sua Análise Estratégica com o especialista.
             </p>
           </div>
 
@@ -48,11 +48,11 @@ export const DepoisDaCompra: React.FC = () => {
               Escolha seu horário
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Agende sua orientação prática e envie os dados da empresa. Nossa equipe cuida da análise.
+              Agende sua orientação e envie os dados da empresa. <strong className="font-bold text-[#171717]">Nossa equipe realiza a análise para você.</strong>
             </p>
           </div>
 
-          {/* CARD 03 — PASSO 03 — Saiba o que melhorar */}
+          {/* CARD 03 — PASSO 03 — Descubra por onde começar */}
           <div className="bg-[#F6F3EF] border border-neutral-200/80 rounded-2xl p-7 sm:p-8 lg:p-9 shadow-none flex flex-col items-center text-center justify-start">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border border-[#16A34A]/25 shadow-xs flex items-center justify-center shrink-0 mb-5 sm:mb-6">
               <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-[#16A34A]" strokeWidth={2} />
@@ -61,10 +61,10 @@ export const DepoisDaCompra: React.FC = () => {
               PASSO 03
             </span>
             <h3 className="text-base sm:text-lg font-bold text-[#171717] font-sans mb-2 tracking-tight">
-              Saiba o que melhorar
+              Descubra por onde começar
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Receba sua análise, entenda os ajustes prioritários com o especialista e tire dúvidas no grupo de WhatsApp.
+              Receba sua Análise Estratégica e entenda quais ajustes priorizar para <strong className="font-bold text-[#171717]">melhorar sua presença no Google.</strong>
             </p>
           </div>
 

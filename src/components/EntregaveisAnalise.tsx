@@ -37,7 +37,7 @@ export const EntregaveisAnalise: React.FC = () => {
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Veja em quais regiões sua empresa aparece nas buscas locais e identifique onde você está perdendo oportunidades de <strong className="font-bold text-[#171717]">ser encontrado por quem procura o que você vende</strong>.
+                Veja em quais posições sua empresa aparece nas buscas da sua região e identifique <strong className="font-bold text-[#171717]">onde ela pode ter mais chances de conquistar clientes no Google</strong>.
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export const EntregaveisAnalise: React.FC = () => {
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Identifique quais concorrentes estão aparecendo no seu lugar, entenda <strong className="font-bold text-[#171717]">o que eles fazem melhor</strong> e veja o que pode ajustar para <strong className="font-bold text-[#171717]">melhorar seu posicionamento nas buscas e atrair mais clientes</strong>.
+                Identifique quais concorrentes estão aparecendo no seu lugar, entenda <strong className="font-bold text-[#171717]">o que eles fazem melhor</strong> e descubra o que pode ajustar para <strong className="font-bold text-[#171717]">ser encontrado por quem procura o que você vende</strong>.
               </p>
             </div>
 
@@ -109,11 +109,11 @@ export const EntregaveisAnalise: React.FC = () => {
               </div>
 
               <h3 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
-                Saiba o que ajustar para ter mais chances de ser escolhido
+                Aumente suas chances de ser escolhido
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Entenda a saúde do seu Perfil da Empresa no Google, identifique <strong className="font-bold text-[#171717]">o que pode estar limitando seus resultados</strong> e saiba o que priorizar para <strong className="font-bold text-[#171717]">transmitir confiança e conquistar clientes</strong> que pesquisam pelo que você vende.
+                Entenda facilmente a saúde do seu Perfil da Empresa no Google com uma <strong className="font-bold text-[#171717]">pontuação de 0 a 100</strong>, descubra <strong className="font-bold text-[#171717]">o que pode estar limitando seus resultados</strong> e quais ajustes priorizar para <strong className="font-bold text-[#171717]">fortalecer sua presença nas buscas</strong>.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ export const EntregaveisAnalise: React.FC = () => {
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Na Orientação Prática com Especialista, entenda <strong className="font-bold text-[#171717]">como ajustar seu Perfil da Empresa no Google de forma simples</strong> para melhorar seu posicionamento e atrair mais clientes, <strong className="font-bold text-[#171717]">sem perder tempo</strong> tentando descobrir tudo sozinho ou fazendo ajustes no escuro.
+                Na Orientação Prática com Especialista, entenda como ajustar seu Perfil da Empresa no Google de forma simples para <strong className="font-bold text-[#171717]">melhorar seu posicionamento e atrair mais clientes</strong>.
               </p>
 
               {/* Texto complementar de autoridade */}
