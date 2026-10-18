@@ -113,7 +113,7 @@ export const EntregaveisAnalise: React.FC = () => {
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Entenda facilmente a saúde do seu Perfil da Empresa no Google com uma <strong className="font-bold text-[#171717]">pontuação de 0 a 100</strong>, descubra <strong className="font-bold text-[#171717]">o que pode estar limitando seus resultados</strong> e quais ajustes priorizar para <strong className="font-bold text-[#171717]">fortalecer sua presença nas buscas</strong>.
+                Entenda facilmente a saúde do seu Perfil da Empresa no Google com uma <strong className="font-bold text-[#171717]">pontuação de 0 a 100</strong>, descubra <strong className="font-bold text-[#171717]">o que pode estar limitando seus resultados</strong> e quais ajustes fazer para <strong className="font-bold text-[#171717]">fortalecer sua presença nas buscas</strong>.
               </p>
             </div>
 

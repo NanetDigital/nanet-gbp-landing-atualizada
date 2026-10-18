@@ -131,10 +131,11 @@ export const ClientesConfirmam: React.FC = () => {
     }
   }, []);
 
-  // Loop de Animação Autorizado via requestAnimationFrame
+  // Loop de Animação Autorizado via requestAnimationFrame com controle de visibilidade
   useEffect(() => {
     let animationFrameId: number;
     let lastTimestamp: number | null = null;
+    let isVisible = false;
 
     updateDimensions();
 
@@ -145,7 +146,13 @@ export const ClientesConfirmam: React.FC = () => {
       resizeObserver.observe(firstSeqRef.current);
     }
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const step = (timestamp: number) => {
+      if (!isVisible) return;
+
       if (lastTimestamp === null) {
         lastTimestamp = timestamp;
       }
@@ -162,7 +169,7 @@ export const ClientesConfirmam: React.FC = () => {
       // Permite a pausa por hover exclusivamente em dispositivos com mouse real
       const isPausedByHover = isHoveredRef.current && hasFinePointer() && (currentPhase.type === 'HOLD' || currentPhase.type === 'TRANSITION');
 
-      if (!isPausedByHover) {
+      if (!isPausedByHover && !prefersReducedMotion) {
         if (currentPhase.type === 'HOLD') {
           // 1 segundo de pausa com o card perfeitamente alinhado
           currentPhase.elapsed += deltaSeconds;
@@ -213,6 +220,22 @@ export const ClientesConfirmam: React.FC = () => {
             };
           }
         }
+      } else if (currentPhase.type === 'SNAPPING') {
+        // Permite snap mesmo se reduzido movimento
+        currentPhase.elapsed += deltaSeconds;
+        const progress = Math.min(1, currentPhase.elapsed / currentPhase.duration);
+        const eased = easeOutQuad(progress);
+        offsetRef.current = currentPhase.startOffset + (currentPhase.targetOffset - currentPhase.startOffset) * eased;
+
+        if (currentPhase.elapsed >= currentPhase.duration) {
+          const normalizedIndex = ((currentPhase.targetIndex % 5) + 5) % 5;
+          offsetRef.current = normalizedIndex * cardDistance;
+          phaseRef.current = {
+            type: 'HOLD',
+            elapsed: 0,
+            cardIndex: normalizedIndex,
+          };
+        }
       }
 
       // Aplica o deslocamento físico na GPU (3 sequências: Prepend, Principal, Append)
@@ -221,14 +244,35 @@ export const ClientesConfirmam: React.FC = () => {
         trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
 
-      animationFrameId = requestAnimationFrame(step);
+      if (isVisible) {
+        animationFrameId = requestAnimationFrame(step);
+      }
     };
 
-    animationFrameId = requestAnimationFrame(step);
+    // IntersectionObserver: pausa rAF completamente quando a seção estiver fora da tela
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        const isNowVisible = entry.isIntersecting;
+        isVisible = isNowVisible;
+        if (isNowVisible) {
+          lastTimestamp = null;
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = requestAnimationFrame(step);
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      },
+      { rootMargin: '250px 0px' }
+    );
+
+    if (containerRef.current) {
+      intersectionObserver.observe(containerRef.current);
+    }
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
     };
   }, [updateDimensions]);
 
@@ -382,7 +426,7 @@ export const ClientesConfirmam: React.FC = () => {
           {/* Header da Seção */}
           <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-              Quem já contratou a Nanet recomenda
+              Empresas que já fizeram a Análise Estratégica recomendam
             </h2>
 
             <p className="text-base sm:text-lg text-[#6B7280] font-sans leading-relaxed max-w-2xl mx-auto">
@@ -449,7 +493,7 @@ export const ClientesConfirmam: React.FC = () => {
                       alt={item.alt}
                       width={400}
                       height={300}
-                      loading={index < 3 ? 'eager' : 'lazy'}
+                      loading="lazy"
                       decoding="async"
                       draggable={false}
                       className="w-full h-full object-contain select-none pointer-events-none block rounded-xl"

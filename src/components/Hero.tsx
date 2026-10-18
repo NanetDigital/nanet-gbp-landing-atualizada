@@ -71,11 +71,14 @@ export const Hero: React.FC = () => {
           <div className="w-full flex items-center justify-center self-center mt-[26px] sm:mt-7 lg:mt-0 mb-0">
             <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px] xl:max-w-[460px] overflow-hidden rounded-2xl border border-white/10 shadow-lg bg-[#1A1D24] mx-auto">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 1000w"
+                sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 460px"
                 alt="Clientes pesquisando empresas locais no Google"
                 width={500}
                 height={500}
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 className="w-full h-auto object-cover rounded-2xl block"
               />

@@ -7,41 +7,27 @@
     <!-- Preconnect to Cloudinary CDN for critical branding assets -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <!-- Responsive Preload for Hero Image (matches srcset & sizes to prevent duplicate downloads) -->
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 1000w"
+      imagesizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 460px"
+      fetchpriority="high"
+    />
+    <!-- Google Fonts: Inter & Plus Jakarta Sans with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Meta Pixel Code with Deferred Script Loading (Preserves all tracking, events & attribution) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
+    <!-- Meta Pixel Code (Asynchronous, Non-blocking, Immediate attribution capture) -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];
-
-      var pixelLoaded = false;
-      function injectPixel() {
-        if (pixelLoaded) return;
-        pixelLoaded = true;
-        t=b.createElement(e);t.async=!0;
-        t.src=v;
-        s=b.getElementsByTagName(e)[0];
-        if(s && s.parentNode) {
-          s.parentNode.insertBefore(t,s);
-        } else {
-          b.head.appendChild(t);
-        }
-      }
-
-      if ('requestIdleCallback' in f) {
-        requestIdleCallback(function() { setTimeout(injectPixel, 1200); }, { timeout: 2500 });
-      } else {
-        f.addEventListener('load', function() { setTimeout(injectPixel, 1200); }, { once: true });
-      }
-      ['touchstart', 'pointerdown', 'scroll', 'click'].forEach(function(evt) {
-        f.addEventListener(evt, injectPixel, { once: true, passive: true });
-      });
-      }(window, document,'script',
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
       fbq('init', '2152455252205453');
@@ -78,7 +64,7 @@
 
               <div>
                 <h1 class="text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[44px] font-semibold tracking-tight text-white leading-[1.12] lg:leading-[1.14] font-sans text-left">
-                  O pior não é faltar cliente. É ter cliente procurando pelo que você vende e <strong class="font-extrabold text-white">comprar do seu concorrente primeiro.</strong>
+                  O pior não é faltar cliente. É ter cliente procurando pelo que você vende e <strong class="font-bold text-white">comprar do seu concorrente primeiro.</strong>
                 </h1>
               </div>
 
@@ -102,9 +88,9 @@
                   href="https://pay.hotmart.com/V106938201T"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full sm:w-auto inline-flex items-center justify-center min-h-[48px] sm:min-h-[50px] py-3 sm:py-3.5 px-6 sm:px-8 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-sm sm:text-base font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap"
+                  class="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
                 >
-                  QUERO ATRAIR MAIS CLIENTES PELO GOOGLE
+                  QUERO ATRAIR MAIS CLIENTES
                 </a>
               </div>
             </div>
@@ -112,11 +98,14 @@
             <div class="w-full flex items-center justify-center self-center mt-[26px] sm:mt-7 lg:mt-0 mb-0">
               <div class="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px] xl:max-w-[460px] overflow-hidden rounded-2xl border border-white/10 shadow-lg bg-[#1A1D24] mx-auto">
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg"
+                  srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 1000w"
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 460px"
                   alt="Clientes pesquisando empresas locais no Google"
                   width="500"
                   height="500"
                   loading="eager"
+                  fetchpriority="high"
                   decoding="async"
                   class="w-full h-auto object-cover rounded-2xl block"
                 />
@@ -127,6 +116,39 @@
         </div>
       </section>
     </div>
+    <!-- Early parameter preservation for pre-rendered links before React hydrates (Strictly allowlisted) -->
+    <script>
+      (function(){
+        try {
+          if (window.location.search) {
+            var allowed = [
+              'utm_source',
+              'utm_medium',
+              'utm_campaign',
+              'utm_content',
+              'utm_term',
+              'utm_id',
+              'fbclid',
+              'gclid',
+              'sck',
+              'src'
+            ];
+            var urlParams = new URLSearchParams(window.location.search);
+            var links = document.querySelectorAll('a[href*="pay.hotmart.com"]');
+            links.forEach(function(link) {
+              var url = new URL(link.href);
+              allowed.forEach(function(param) {
+                var val = urlParams.get(param);
+                if (val !== null && val.trim() !== '') {
+                  url.searchParams.set(param, val);
+                }
+              });
+              link.href = url.toString();
+            });
+          }
+        } catch(e){}
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
