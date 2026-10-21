@@ -50,7 +50,7 @@ export const CTAPosFAQ: React.FC = () => {
               rel="noopener noreferrer"
               onClick={() => {
                 if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-                  (window as any).fbq('track', 'InitiateCheckout');
+                  (window as any).fbq('trackCustom', 'ClickCheckout');
                 }
               }}
               className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"

@@ -410,7 +410,7 @@ export const Provas: React.FC = () => {
               rel="noopener noreferrer"
               onClick={() => {
                 if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-                  (window as any).fbq('track', 'InitiateCheckout');
+                  (window as any).fbq('trackCustom', 'ClickCheckout');
                 }
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center h-[58px] px-9 sm:px-12 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-base sm:text-lg font-semibold border border-[#16A34A] transition-all duration-250 ease-out hover:-translate-y-[2px] shadow-sm hover:shadow-md active:translate-y-0 cursor-pointer"

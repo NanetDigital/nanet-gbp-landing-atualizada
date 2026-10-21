@@ -121,7 +121,7 @@ export const ResultadosReais: React.FC = () => {
               rel="noopener noreferrer"
               onClick={() => {
                 if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-                  (window as any).fbq('track', 'InitiateCheckout');
+                  (window as any).fbq('trackCustom', 'ClickCheckout');
                 }
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center h-[54px] px-8 sm:px-10 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-base font-semibold border border-[#16A34A] transition-all shadow-sm hover:shadow-md cursor-pointer"
