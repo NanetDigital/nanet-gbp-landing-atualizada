@@ -96,7 +96,9 @@ export const Hero: React.FC = () => {
           {/* COLUNA DIREITA (DESKTOP) — Imagem Ilustrativa de Pesquisa no Google */}
           <div className="flex flex-col items-center justify-center">
             <img
-              src="https://res.cloudinary.com/nds7zozp/image/upload/v1792609276/Design_sem_nome_9_dhkgb6.png"
+              src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
+              srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
               alt="Pesquisa de empresa no Google Maps no celular"
               width={500}
               height={600}
@@ -149,14 +151,16 @@ export const Hero: React.FC = () => {
           {/* 4. IMAGEM ILUSTRATIVA DO CELULAR */}
           <div className="w-full max-w-[320px] sm:max-w-[360px] mx-auto flex justify-center py-1">
             <img
-              src="https://res.cloudinary.com/nds7zozp/image/upload/v1792609276/Design_sem_nome_9_dhkgb6.png"
+              src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
+              srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
               alt="Pesquisa de empresa no Google Maps no celular"
               width={500}
               height={600}
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-full max-h-[260px] sm:max-h-[300px] object-contain rounded-xl drop-shadow-xl"
+              className="w-full max-h-[260px] sm:max-h-[300px] object-contain rounded-2xl drop-shadow-xl"
             />
           </div>
 
