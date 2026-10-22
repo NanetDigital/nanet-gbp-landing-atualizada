@@ -49,8 +49,12 @@ export const EntregaveisAnalise: React.FC = () => {
                 className="w-full overflow-hidden rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex items-center justify-center p-2"
               >
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742871/2_of6tif.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742871/2_of6tif.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1790742871/2_of6tif.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742871/2_of6tif.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790742871/2_of6tif.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742871/2_of6tif.png 1000w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 634px, 528px"
                   alt="Posição nas Buscas Locais"
+                  width={640}
+                  height={360}
                   className="w-full h-auto object-contain block mx-auto rounded-xl"
                   loading="lazy"
                   decoding="async"
@@ -87,8 +91,12 @@ export const EntregaveisAnalise: React.FC = () => {
                 className="w-full overflow-hidden rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex items-center justify-center p-2"
               >
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/3_orftbb.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/3_orftbb.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1790742870/3_orftbb.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/3_orftbb.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790742870/3_orftbb.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/3_orftbb.png 1000w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 634px, 528px"
                   alt="Análise dos Concorrentes"
+                  width={640}
+                  height={360}
                   className="w-full h-auto object-contain block mx-auto rounded-xl"
                   loading="lazy"
                   decoding="async"
@@ -125,8 +133,12 @@ export const EntregaveisAnalise: React.FC = () => {
                 className="w-full overflow-hidden rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex items-center justify-center p-2"
               >
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/1_kn2sua.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/1_kn2sua.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1790742870/1_kn2sua.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/1_kn2sua.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790742870/1_kn2sua.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/1_kn2sua.png 1000w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 634px, 528px"
                   alt="Diagnóstico e Ajustes do Perfil"
+                  width={640}
+                  height={360}
                   className="w-full h-auto object-contain block mx-auto rounded-xl"
                   loading="lazy"
                   decoding="async"
@@ -170,8 +182,12 @@ export const EntregaveisAnalise: React.FC = () => {
                 className="w-full overflow-hidden rounded-2xl bg-white border border-neutral-200/80 shadow-xs flex items-center justify-center p-2"
               >
                 <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/4_tb3hmk.png"
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/4_tb3hmk.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1790742870/4_tb3hmk.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/4_tb3hmk.png 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790742870/4_tb3hmk.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790742870/4_tb3hmk.png 1000w"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 634px, 528px"
                   alt="Orientação Prática com Especialista"
+                  width={640}
+                  height={360}
                   className="w-full h-auto object-contain block mx-auto rounded-xl"
                   loading="lazy"
                   decoding="async"

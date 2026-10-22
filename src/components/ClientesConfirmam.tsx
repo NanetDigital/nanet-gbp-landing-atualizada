@@ -4,6 +4,7 @@ interface DepoimentoItem {
   id: string;
   autor: string;
   image: string;
+  srcSet: string;
   alt: string;
 }
 
@@ -11,31 +12,36 @@ const depoimentos: DepoimentoItem[] = [
   {
     id: 'thalita',
     autor: 'Thalita Traspadini Modolo',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/1_Thalita_yqoexh.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791497189/1_Thalita_yqoexh.jpg',
+    srcSet: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791497189/1_Thalita_yqoexh.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/1_Thalita_yqoexh.jpg 640w',
     alt: 'Depoimento de Thalita Traspadini Modolo - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'helder',
     autor: 'Helder',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg',
+    srcSet: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg 640w',
     alt: 'Depoimento de Helder - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'saren',
     autor: 'Empório Saren',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg',
+    srcSet: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg 640w',
     alt: 'Depoimento do Empório Saren - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'erik',
     autor: 'Erik',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/4_Erik_o5bfk8.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791497189/4_Erik_o5bfk8.jpg',
+    srcSet: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791497189/4_Erik_o5bfk8.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/4_Erik_o5bfk8.jpg 640w',
     alt: 'Depoimento de Erik - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'cleiton',
     autor: 'Cleiton de Souza Porto',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/6_Cleiton_rv4uhk.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791497189/6_Cleiton_rv4uhk.jpg',
+    srcSet: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1791497189/6_Cleiton_rv4uhk.jpg 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/6_Cleiton_rv4uhk.jpg 640w',
     alt: 'Depoimento de Cleiton de Souza Porto - Avaliação de cliente da Nanet Digital',
   },
 ];
@@ -523,9 +529,11 @@ export const ClientesConfirmam: React.FC = () => {
                   >
                     <img
                       src={item.image}
+                      srcSet={item.srcSet}
+                      sizes="(max-width: 640px) 300px, 340px"
                       alt=""
-                      width={400}
-                      height={300}
+                      width={340}
+                      height={255}
                       loading="lazy"
                       decoding="async"
                       draggable={false}
@@ -547,9 +555,11 @@ export const ClientesConfirmam: React.FC = () => {
                   >
                     <img
                       src={item.image}
+                      srcSet={item.srcSet}
+                      sizes="(max-width: 640px) 300px, 340px"
                       alt={item.alt}
-                      width={400}
-                      height={300}
+                      width={340}
+                      height={255}
                       loading="lazy"
                       decoding="async"
                       draggable={false}
@@ -571,9 +581,11 @@ export const ClientesConfirmam: React.FC = () => {
                   >
                     <img
                       src={item.image}
+                      srcSet={item.srcSet}
+                      sizes="(max-width: 640px) 300px, 340px"
                       alt=""
-                      width={400}
-                      height={300}
+                      width={340}
+                      height={255}
                       loading="lazy"
                       decoding="async"
                       draggable={false}

@@ -15,42 +15,42 @@ const slides: SlideItem[] = [
   {
     id: 'diagnostico',
     image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790537425/Design_sem_nome_8_xmtfhz.png',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790537425/Design_sem_nome_8_xmtfhz.png',
     srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790537425/Design_sem_nome_8_xmtfhz.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790537425/Design_sem_nome_8_xmtfhz.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790537425/Design_sem_nome_8_xmtfhz.png 1000w',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790537425/Design_sem_nome_8_xmtfhz.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790537425/Design_sem_nome_8_xmtfhz.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790537425/Design_sem_nome_8_xmtfhz.png 640w',
     alt: 'Diagnóstico da Saúde do Perfil da Empresa no Google',
-    width: 1000,
-    height: 562,
+    width: 480,
+    height: 270,
   },
   {
     id: 'posicao',
     image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535462/2_zv795u.png',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535462/2_zv795u.png',
     srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535462/2_zv795u.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790535462/2_zv795u.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535462/2_zv795u.png 1000w',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790535462/2_zv795u.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535462/2_zv795u.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790535462/2_zv795u.png 640w',
     alt: 'Mapa de Posição nas Buscas Locais no Google',
-    width: 1000,
-    height: 562,
+    width: 480,
+    height: 270,
   },
   {
     id: 'concorrentes',
     image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535459/3_g3h8pv.png',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/3_g3h8pv.png',
     srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/3_g3h8pv.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790535459/3_g3h8pv.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535459/3_g3h8pv.png 1000w',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790535459/3_g3h8pv.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/3_g3h8pv.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790535459/3_g3h8pv.png 640w',
     alt: 'Ranking e Comparação de Concorrentes no Google',
-    width: 1000,
-    height: 562,
+    width: 480,
+    height: 270,
   },
   {
     id: 'prioridades',
     image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535459/4_mqlpjy.png',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/4_mqlpjy.png',
     srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/4_mqlpjy.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790535459/4_mqlpjy.png 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1790535459/4_mqlpjy.png 1000w',
+      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790535459/4_mqlpjy.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/4_mqlpjy.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790535459/4_mqlpjy.png 640w',
     alt: 'Plano de Prioridades de Melhoria e Ajustes no Perfil',
-    width: 1000,
-    height: 640,
+    width: 480,
+    height: 307,
   },
 ];
 

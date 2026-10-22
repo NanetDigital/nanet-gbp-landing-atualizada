@@ -77,10 +77,12 @@ export const BonusChecklist: React.FC = () => {
                 <div className="w-full max-w-[300px] sm:max-w-[320px] lg:w-[330px] xl:w-[340px] mx-auto lg:mr-0 rounded-2xl bg-[#121318] border border-white/10 shadow-lg p-3.5 sm:p-4 flex flex-col items-center justify-center">
                   <div className="w-full rounded-xl overflow-hidden bg-white/95 p-2 sm:p-2.5 shadow-inner flex items-center justify-center">
                     <img
-                      src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1790535459/4_mqlpjy.png"
+                      src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/4_mqlpjy.png"
+                      srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790535459/4_mqlpjy.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535459/4_mqlpjy.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790535459/4_mqlpjy.png 640w"
+                      sizes="(max-width: 640px) 300px, 340px"
                       alt="Checklist de Implementação no Google - Bônus 01"
-                      width={800}
-                      height={800}
+                      width={340}
+                      height={340}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-auto max-h-[320px] lg:max-h-[335px] object-contain block mx-auto rounded-lg"

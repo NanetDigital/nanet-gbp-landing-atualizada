@@ -16,10 +16,26 @@
       imagesizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
       fetchpriority="high"
     />
-    <!-- Google Fonts: Inter & Plus Jakarta Sans with display=swap -->
+    <!-- Google Fonts: Inter & Plus Jakarta Sans with display=swap (asynchronous stylesheet to eliminate ~600ms render block) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      />
+    </noscript>
     <!-- Meta Pixel Code (Asynchronous, Non-blocking, Immediate attribution capture) -->
     <script>
       !function(f,b,e,v,n,t,s)

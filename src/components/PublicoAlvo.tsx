@@ -46,10 +46,15 @@ export const PublicoAlvo: React.FC = () => {
           <div className="lg:col-span-5 w-full flex justify-center">
             <div className="w-full max-w-[360px] sm:max-w-[390px] lg:max-w-none rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1792004746/pesquisa_google_gah03o.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1792004746/pesquisa_google_gah03o.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1792004746/pesquisa_google_gah03o.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1792004746/pesquisa_google_gah03o.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_768/v1792004746/pesquisa_google_gah03o.png 768w"
+                sizes="(max-width: 640px) 360px, (max-width: 1024px) 390px, 480px"
                 alt="Pesquisa no Google para negócios locais"
+                width={480}
+                height={360}
                 referrerPolicy="no-referrer"
                 loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-contain rounded-xl"
               />
             </div>

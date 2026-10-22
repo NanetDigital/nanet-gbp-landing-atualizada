@@ -149,8 +149,12 @@ export const Oferta: React.FC<OfertaProps> = () => {
             {/* Frame horizontal proporcional (aspect-ratio 16/10 ~520x325) */}
             <div className="w-full aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-300/80 shadow-md bg-[#E8E4DE]">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1040/v1791695397/Gemini_Generated_Image_gigf20gigf20gigf_wscbhi.jpg 1040w"
+                sizes="(max-width: 640px) 100vw, 520px"
                 alt="Análise Estratégica da Empresa - Relatórios e Diagnóstico"
+                width={520}
+                height={325}
                 className="w-full h-full object-cover object-center block"
                 loading="lazy"
                 decoding="async"
