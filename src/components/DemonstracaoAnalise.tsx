@@ -80,7 +80,7 @@ const beneficiosCards: BeneficioCard[] = [
         <strong className="font-bold text-[#171717]">
           Conhecer a saúde do seu Perfil do Google
         </strong>
-        , com pontuação de 0 a 100 e pontos de atenção.
+        , com análise de 20 critérios e pontuação de 0 a 100.
       </>
     ),
     icon: Users,
