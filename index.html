@@ -7,14 +7,8 @@
     <!-- Preconnect to Cloudinary CDN for critical branding assets -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <!-- Responsive Preload for Hero Image (matches srcset & sizes to prevent duplicate downloads) -->
-    <link
-      rel="preload"
-      as="image"
-      imagesrcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 1000w"
-      imagesizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 460px"
-      fetchpriority="high"
-    />
+    <!-- Preload Hero Image for immediate LCP delivery -->
+    <link rel="preload" as="image" href="https://res.cloudinary.com/nds7zozp/image/upload/v1792609276/Design_sem_nome_9_dhkgb6.png" fetchpriority="high" />
     <!-- Google Fonts: Inter & Plus Jakarta Sans with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,69 +44,182 @@
       <!-- Critical Above-the-Fold Content pre-rendered for immediate LCP/FCP on mobile -->
       <section
         id="hero"
-        class="w-full py-12 sm:py-14 lg:py-16 bg-[#121318] border-b border-white/10 overflow-hidden"
+        aria-label="Análise Estratégica da Empresa - Nanet Digital"
+        class="w-full py-10 sm:py-12 lg:pt-7 lg:pb-10 xl:pt-8 xl:pb-12 bg-[#121318] border-b border-white/10 overflow-hidden"
       >
-        <div class="max-w-[1140px] mx-auto px-5 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-[57%_1fr] gap-y-0 lg:gap-x-10 xl:gap-x-12 items-center">
+        <div class="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
+
+          <!-- FORMATO DESKTOP: Layout de duas colunas (>= 1024px) -->
+          <div class="hidden lg:grid lg:grid-cols-[55%_45%] xl:grid-cols-[56%_44%] gap-8 xl:gap-12 items-center">
             
-            <div class="flex flex-col justify-center space-y-3 sm:space-y-3.5 lg:space-y-4 max-w-[620px]">
+            <!-- COLUNA ESQUERDA (DESKTOP) -->
+            <div class="flex flex-col justify-start space-y-3.5 xl:space-y-4 text-left">
+              
+              <!-- 1. Identificação do público -->
               <div class="flex justify-start">
-                <span class="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#16A34A]/20 border border-[#16A34A]/40 text-[11px] sm:text-xs font-mono font-bold text-[#4ade80] tracking-wider uppercase w-fit">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#16A34A]/20 border border-[#16A34A]/40 text-xs font-mono font-bold text-[#4ade80] tracking-wider uppercase w-fit">
                   PARA EMPRESAS COM PERFIL NO GOOGLE MEU NEGÓCIO
                 </span>
               </div>
 
+              <!-- 2. Headline Principal -->
               <div>
-                <h1 class="text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[44px] font-semibold tracking-tight text-white leading-[1.12] lg:leading-[1.14] font-sans text-left">
-                  O pior não é faltar cliente. É ter cliente procurando pelo que você vende e <strong class="font-bold text-white">comprar do seu concorrente primeiro.</strong>
+                <h1 class="text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-left">
+                  Descubra onde sua empresa aparece no <span class="text-[#4ade80]">Google Maps</span> e como se compara aos concorrentes da sua região
                 </h1>
               </div>
 
-              <p class="text-base sm:text-[17px] text-gray-300 font-normal leading-relaxed font-sans text-left max-w-[560px]">
-                Descubra como sua empresa aparece no Google, quais concorrentes estão na sua frente e <strong class="font-semibold text-white">o que ajustar para atrair mais clientes.</strong>
-              </p>
+              <!-- 3. Três Benefícios -->
+              <ul class="space-y-2.5 text-left pt-1">
+                <li class="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Veja sua posição diante dos concorrentes</strong> em diferentes pontos da região.</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Descubra a saúde do seu Perfil do Google</strong>, com nota de 0 a 100 e pontos que merecem atenção.</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Saiba quais melhorias priorizar</strong> com a interpretação dos resultados por um especialista.</span>
+                </li>
+              </ul>
 
-              <div class="text-left pt-0.5">
-                <span class="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-gray-400 font-semibold block">
-                  INVESTIMENTO ÚNICO
+              <!-- 4. Nome da Oferta e Oferta Resumida (com divider ---) -->
+              <div class="pt-3 border-t border-white/10 space-y-0.5">
+                <span class="text-xs font-mono font-bold uppercase tracking-wider text-white block">
+                  ANÁLISE ESTRATÉGICA DA EMPRESA
                 </span>
-                <div class="mt-0.5 flex items-baseline">
-                  <span class="text-3xl sm:text-[38px] lg:text-[40px] font-black text-white tracking-tight font-sans leading-none">
+                <p class="text-xs sm:text-sm text-gray-300 font-sans leading-relaxed">
+                  2 relatórios personalizados + 30 minutos com especialista
+                </p>
+              </div>
+
+              <!-- 5. Preço e Pagamento único -->
+              <div class="text-left">
+                <div class="flex items-baseline gap-2.5">
+                  <span class="text-3xl xl:text-[38px] font-black text-white tracking-tight font-sans leading-none">
                     R$ 97
+                  </span>
+                  <span class="text-xs font-sans text-neutral-400">
+                    Pagamento único
                   </span>
                 </div>
               </div>
 
-              <div class="w-full text-left pt-0.5 sm:pt-1">
+              <!-- 6. Botão CTA -->
+              <div class="w-full text-left">
                 <a
                   href="https://pay.hotmart.com/V106938201T"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
+                  class="w-full sm:w-[320px] inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
                 >
-                  QUERO ATRAIR MAIS CLIENTES
+                  QUERO RECEBER MINHA ANÁLISE
                 </a>
               </div>
             </div>
 
-            <div class="w-full flex items-center justify-center self-center mt-[26px] sm:mt-7 lg:mt-0 mb-0">
-              <div class="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px] xl:max-w-[460px] overflow-hidden rounded-2xl border border-white/10 shadow-lg bg-[#1A1D24] mx-auto">
-                <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg"
-                  srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 800w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_1000/v1791294877/Customer_searching_local_busines__20260923152333_dgf4fi.jpg 1000w"
-                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 460px"
-                  alt="Clientes pesquisando empresas locais no Google"
-                  width="500"
-                  height="500"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                  class="w-full h-auto object-cover rounded-2xl block"
-                />
-              </div>
+            <!-- COLUNA DIREITA (DESKTOP) — Imagem Ilustrativa de Pesquisa no Google -->
+            <div class="flex flex-col items-center justify-center">
+              <img
+                src="https://res.cloudinary.com/nds7zozp/image/upload/v1792609276/Design_sem_nome_9_dhkgb6.png"
+                alt="Pesquisa de empresa no Google Maps no celular"
+                width="500"
+                height="600"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="w-full max-w-[380px] xl:max-w-[420px] max-h-[480px] object-contain rounded-2xl drop-shadow-2xl"
+              />
             </div>
 
           </div>
+
+          <!-- FORMATO MOBILE: Apresentação Centralizada (< 1024px) -->
+          <div class="block lg:hidden space-y-5 sm:space-y-6">
+            
+            <!-- 1. IDENTIFICAÇÃO DO PÚBLICO CENTRALIZADA -->
+            <div class="text-center">
+              <span class="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#16A34A]/20 border border-[#16A34A]/40 text-[11px] sm:text-xs font-mono font-bold text-[#4ade80] tracking-wider uppercase w-fit mx-auto">
+                PARA EMPRESAS COM PERFIL NO GOOGLE MEU NEGÓCIO
+              </span>
+            </div>
+
+            <!-- 2. HEADLINE PRINCIPAL CENTRALIZADA -->
+            <div class="text-center px-1">
+              <h1 class="text-[25px] sm:text-[28px] font-bold tracking-tight text-white leading-[1.2] font-sans">
+                Descubra onde sua empresa aparece no <span class="text-[#4ade80]">Google Maps</span> e como se compara aos concorrentes da sua região
+              </h1>
+            </div>
+
+            <!-- 3. TRÊS BENEFÍCIOS (CONJUNTO CENTRALIZADO, TEXTOS À ESQUERDA) -->
+            <div class="w-full max-w-[440px] mx-auto text-left px-2">
+              <ul class="space-y-2.5 text-left">
+                <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Veja sua posição diante dos concorrentes</strong> em diferentes pontos da região.</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Descubra a saúde do seu Perfil do Google</strong>, com nota de 0 a 100 e pontos que merecem atenção.</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
+                  <span class="text-[#16A34A] font-bold shrink-0 mt-0.5">✓</span>
+                  <span><strong class="font-semibold text-white">Saiba quais melhorias priorizar</strong> com a interpretação dos resultados por um especialista.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4. IMAGEM ILUSTRATIVA DO CELULAR -->
+            <div class="w-full max-w-[320px] sm:max-w-[360px] mx-auto flex justify-center py-1">
+              <img
+                src="https://res.cloudinary.com/nds7zozp/image/upload/v1792609276/Design_sem_nome_9_dhkgb6.png"
+                alt="Pesquisa de empresa no Google Maps no celular"
+                width="500"
+                height="600"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="w-full max-h-[260px] sm:max-h-[300px] object-contain rounded-2xl drop-shadow-xl"
+              />
+            </div>
+
+            <!-- 5 e 6. NOME DA OFERTA E OFERTA RESUMIDA -->
+            <div class="text-center max-w-[400px] mx-auto space-y-1 px-2 pt-3 border-t border-white/10">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-white block">
+                ANÁLISE ESTRATÉGICA DA EMPRESA
+              </span>
+              <p class="text-xs sm:text-sm text-gray-300 font-sans leading-relaxed">
+                2 relatórios personalizados + 30 minutos com especialista
+              </p>
+            </div>
+
+            <!-- 7, 8, 9 e 10. PREÇO, PAGAMENTO ÚNICO, BOTÃO CTA E TEXTO DE APOIO -->
+            <div class="text-center max-w-[360px] mx-auto px-2 !mt-3.5 sm:!mt-4 space-y-3.5">
+              <!-- Bloco de Preço Centralizado em Coluna -->
+              <div class="flex flex-col items-center justify-center">
+                <span class="text-3xl sm:text-[36px] font-black text-white tracking-tight font-sans leading-none whitespace-nowrap">
+                  R$ 97
+                </span>
+                <span class="text-xs font-sans text-neutral-400 mt-1">
+                  Pagamento único
+                </span>
+              </div>
+
+              <!-- Botão CTA -->
+              <a
+                href="https://pay.hotmart.com/V106938201T"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
+              >
+                QUERO RECEBER MINHA ANÁLISE
+              </a>
+            </div>
+
+          </div>
+
         </div>
       </section>
     </div>

@@ -32,7 +32,7 @@ export const DepoisDaCompra: React.FC = () => {
               Confira seu e-mail
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Receba o <strong className="font-bold text-[#171717]">acesso à sua área de membros na Hotmart</strong>, com as instruções para agendar sua Análise Estratégica com o especialista.
+              Receba o <strong className="font-bold text-[#171717]">acesso à área de membros na Hotmart</strong> e as instruções para enviar os dados da empresa e agendar sua orientação.
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export const DepoisDaCompra: React.FC = () => {
               Escolha seu horário
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Agende sua orientação e envie os dados da empresa. <strong className="font-bold text-[#171717]">Nossa equipe realiza a análise para você.</strong>
+              Forneça as informações necessárias da empresa e escolha um horário disponível. <strong className="font-bold text-[#171717]">Nossa equipe prepara seus dois relatórios personalizados.</strong>
             </p>
           </div>
 
@@ -64,10 +64,17 @@ export const DepoisDaCompra: React.FC = () => {
               Descubra por onde começar
             </h3>
             <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
-              Receba sua Análise Estratégica e entenda quais ajustes priorizar para <strong className="font-bold text-[#171717]">melhorar sua presença no Google.</strong>
+              Durante a orientação agendada de 30 minutos, <strong className="font-bold text-[#171717]">o especialista apresenta e entrega os relatórios</strong> e explica as prioridades identificadas.
             </p>
           </div>
 
+        </div>
+
+        {/* Informação sutil sobre prazo de entrega */}
+        <div className="text-center mt-8 sm:mt-10">
+          <p className="text-xs sm:text-sm text-[#6B7280] font-sans">
+            Entrega em até <strong className="font-semibold text-[#171717]">7 dias úteis</strong> após o envio das informações da empresa.
+          </p>
         </div>
 
       </div>

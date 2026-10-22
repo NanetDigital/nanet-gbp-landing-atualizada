@@ -55,7 +55,7 @@ export const CTAPosFAQ: React.FC = () => {
               }}
               className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
             >
-              QUERO ATRAIR MAIS CLIENTES
+              QUERO RECEBER MINHA ANÁLISE
             </a>
 
             {/* 6. Linha discreta de segurança e garantia */}
@@ -68,11 +68,7 @@ export const CTAPosFAQ: React.FC = () => {
 
         {/* Frase curta e discreta abaixo do card */}
         <p className="text-[13px] sm:text-sm text-neutral-600 font-sans mt-5 sm:mt-6 text-center max-w-[500px] mx-auto leading-relaxed sm:leading-normal px-2 sm:px-0">
-          Enquanto você não sabe o que melhorar no Google,{' '}
-          <strong className="font-semibold text-[#171717]">
-            pode estar perdendo clientes para seus concorrentes.
-          </strong>{' '}
-          Descubra por onde começar.
+          Entenda como sua empresa aparece nas buscas locais, conheça os pontos de atenção do seu Perfil do Google e descubra quais melhorias priorizar.
         </p>
 
       </div>

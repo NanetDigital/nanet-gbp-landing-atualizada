@@ -2,26 +2,24 @@ import React from 'react';
 
 const PONTOS_IDENTIFICACAO = [
   {
-    prefix: 'Tem um negócio local e quer ',
-    bold: 'atrair mais clientes pelo Google',
-    suffix: '.',
+    prefix: 'Já possui um ',
+    bold: 'Perfil da Empresa no Google',
+    suffix: ' e quer entender como aparece nas buscas da região.',
   },
   {
-    prefix: 'Já tem um Perfil da Empresa no Google, mas ',
-    bold: 'não sabe se está sendo encontrado pelos clientes certos',
-    suffix: '.',
+    prefix: 'Vê ',
+    bold: 'concorrentes no Google Maps',
+    suffix: ' e deseja comparar suas posições.',
   },
   {
-    prefix: 'Vê concorrentes aparecendo nas buscas e quer ',
-    bold: 'descobrir o que melhorar para ganhar mais visibilidade',
-    suffix: '.',
+    prefix: 'Quer identificar ',
+    bold: 'pontos fracos, razoáveis e bons',
+    suffix: ' no seu Perfil do Google.',
   },
   {
-    prefix: 'Quer ',
-    bold: 'saber quais ajustes fazer primeiro',
-    middle: ', com orientação de um especialista, ',
-    bold2: 'sem perder tempo tentando descobrir sozinho',
-    suffix: '.',
+    prefix: 'Precisa de ',
+    bold: 'orientação profissional',
+    suffix: ' para decidir quais melhorias priorizar.',
   },
 ];
 

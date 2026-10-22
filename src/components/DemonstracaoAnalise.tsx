@@ -65,11 +65,10 @@ const beneficiosCards: BeneficioCard[] = [
     id: 'oportunidades',
     content: (
       <>
-        Descobrir se sua empresa está perdendo clientes para os concorrentes e{' '}
         <strong className="font-bold text-[#171717]">
-          o que precisa ajustar para ser encontrada
-        </strong>
-        .
+          Ver sua posição diante dos concorrentes
+        </strong>{' '}
+        em diferentes pontos da região, para uma busca local analisada.
       </>
     ),
     icon: Search,
@@ -78,10 +77,10 @@ const beneficiosCards: BeneficioCard[] = [
     id: 'concorrentes',
     content: (
       <>
-        Entender quais concorrentes estão sendo encontrados primeiro e onde sua empresa pode{' '}
         <strong className="font-bold text-[#171717]">
-          ganhar mais clientes.
+          Conhecer a saúde do seu Perfil do Google
         </strong>
+        , com pontuação de 0 a 100 e pontos de atenção.
       </>
     ),
     icon: Users,
@@ -90,10 +89,10 @@ const beneficiosCards: BeneficioCard[] = [
     id: 'prioridades',
     content: (
       <>
-        Saber como ajustar seu perfil no Google de forma simples para atrair clientes,{' '}
         <strong className="font-bold text-[#171717]">
-          sem perder tempo tentando descobrir o que fazer.
-        </strong>
+          Entender quais melhorias priorizar
+        </strong>{' '}
+        com a interpretação dos relatórios por um especialista.
       </>
     ),
     icon: ListChecks,
@@ -230,10 +229,10 @@ export const DemonstracaoAnalise: React.FC = () => {
         {/* Título e Subtítulo Acima do Carrossel */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-            Veja como é a análise que você vai receber
+            Veja exemplos reais dos relatórios que você vai receber
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#6B7280] font-sans leading-relaxed max-w-2xl mx-auto">
-            Conheça os pontos que avaliamos no seu Perfil da Empresa no Google e descubra o que precisa melhorar.
+            Com orientação de um especialista para <strong className="font-bold text-[#171717]">saber o que priorizar e como ajustar</strong>.
           </p>
         </div>
 
@@ -304,7 +303,7 @@ export const DemonstracaoAnalise: React.FC = () => {
 
         {/* 3. Headline Compacta */}
         <h3 className="mt-3 text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-[#171717] font-sans leading-snug text-center max-w-2xl mx-auto">
-          Com sua Análise Estratégica você será capaz de:
+          Com sua Análise Estratégica você vai:
         </h3>
 
         {/* 4. Três Cards Compactos */}
@@ -337,7 +336,7 @@ export const DemonstracaoAnalise: React.FC = () => {
             }}
             className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
           >
-            QUERO ATRAIR MAIS CLIENTES
+            QUERO RECEBER MINHA ANÁLISE
           </a>
         </div>
       </div>

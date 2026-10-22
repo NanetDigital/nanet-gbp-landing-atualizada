@@ -4,7 +4,7 @@ export const EntregaveisAnalise: React.FC = () => {
   return (
     <section
       id="entregaveis-analise"
-      aria-label="Ajuste seu Perfil da Empresa no Google de forma eficiente"
+      aria-label="Veja tudo que você vai receber com a Análise Estratégica da Empresa"
       className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-neutral-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14 lg:space-y-16">
@@ -13,7 +13,7 @@ export const EntregaveisAnalise: React.FC = () => {
         {/* ========================================================== */}
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-            Ajuste seu Perfil da Empresa no Google de forma eficiente
+            Veja tudo que você vai receber com a Análise Estratégica da Empresa
           </h2>
         </div>
 
@@ -33,11 +33,11 @@ export const EntregaveisAnalise: React.FC = () => {
               </div>
 
               <h3 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
-                Descubra onde você pode conquistar novos clientes
+                Descubra sua posição nas buscas locais
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Veja em quais posições sua empresa aparece nas buscas da sua região e identifique <strong className="font-bold text-[#171717]">onde ela pode ter mais chances de conquistar clientes no Google</strong>.
+                Veja <strong className="font-bold text-[#171717]">em quais posições sua empresa aparece</strong> para uma busca local analisada, em diferentes pontos da região.
               </p>
             </div>
 
@@ -71,11 +71,11 @@ export const EntregaveisAnalise: React.FC = () => {
               </div>
 
               <h3 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
-                Saiba quais concorrentes estão à frente e como ganhar espaço
+                Compare sua empresa com os concorrentes
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Identifique quais concorrentes estão aparecendo no seu lugar, entenda <strong className="font-bold text-[#171717]">o que eles fazem melhor</strong> e descubra o que pode ajustar para <strong className="font-bold text-[#171717]">ser encontrado por quem procura o que você vende</strong>.
+                Veja <strong className="font-bold text-[#171717]">como sua posição se compara à de concorrentes</strong> encontrados na sua região.
               </p>
             </div>
 
@@ -109,11 +109,11 @@ export const EntregaveisAnalise: React.FC = () => {
               </div>
 
               <h3 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
-                Aumente suas chances de ser escolhido
+                Conheça a saúde do seu Perfil do Google
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Entenda facilmente a saúde do seu Perfil da Empresa no Google com uma <strong className="font-bold text-[#171717]">pontuação de 0 a 100</strong>, descubra <strong className="font-bold text-[#171717]">o que pode estar limitando seus resultados</strong> e quais ajustes fazer para <strong className="font-bold text-[#171717]">fortalecer sua presença nas buscas</strong>.
+                Receba uma avaliação de 20 critérios do seu Perfil do Google, com pontuação de 0 a 100 calculada e <strong className="font-bold text-[#171717]">identificação dos pontos que merecem atenção</strong>.
               </p>
             </div>
 
@@ -147,17 +147,17 @@ export const EntregaveisAnalise: React.FC = () => {
               </div>
 
               <h3 className="text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
-                Transforme a análise em um plano de ação claro
+                Entenda quais melhorias priorizar
               </h3>
 
               <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
-                Na Orientação Prática com Especialista, entenda como ajustar seu Perfil da Empresa no Google de forma simples para <strong className="font-bold text-[#171717]">melhorar seu posicionamento e atrair mais clientes</strong>.
+                Durante uma orientação profissional de 30 minutos, um especialista apresenta e entrega seus dois relatórios, explica os resultados e <strong className="font-bold text-[#171717]">indica os ajustes prioritários</strong>.
               </p>
 
               {/* Texto complementar de autoridade */}
               <div className="pt-4 border-t border-neutral-200/80">
                 <p className="text-sm sm:text-base text-[#6B7280] font-sans leading-relaxed">
-                  Orientação baseada na experiência prática acumulada em <strong className="font-bold text-[#171717]">mais de 300 empresas locais analisadas e ajustadas</strong>.
+                  Orientação baseada na experiência prática acumulada em mais de 300 empresas locais analisadas e ajustadas.
                 </p>
               </div>
             </div>

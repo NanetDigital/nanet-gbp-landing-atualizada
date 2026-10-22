@@ -44,22 +44,22 @@ export const BonusChecklist: React.FC = () => {
 
                 {/* Descrição */}
                 <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-gray-300 font-sans leading-relaxed">
-                  Tenha um guia prático para <strong className="font-bold text-white">saber o que ajustar, como implementar as melhorias e acompanhar sua evolução</strong> no Google.
+                  Use o checklist para fazer os ajustes por prioridade e <strong className="font-bold text-white">acompanhar a implementação de forma simples.</strong>
                 </p>
 
                 {/* 3 Bullets / Benefícios */}
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
-                    <span>Saiba quais ajustes priorizar</span>
+                    <span>Organize os pontos de atenção por prioridade.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
-                    <span>Siga um passo a passo simples para aplicar as melhorias</span>
+                    <span>Registre os ajustes realizados.</span>
                   </li>
                   <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
-                    <span>Acompanhe o que já foi ajustado e o que ainda precisa de atenção</span>
+                    <span>Acompanhe o que ainda precisa de atenção.</span>
                   </li>
                 </ul>
 

@@ -33,16 +33,16 @@ export const Oferta: React.FC<OfertaProps> = () => {
           {/* Único Box Compacto e Horizontal — Tabela Branca Elegante */}
           <div className="max-w-[760px] mx-auto bg-white border border-neutral-200/90 rounded-2xl shadow-sm overflow-hidden">
             
-            {/* ITEM 01 — DIAGNÓSTICO */}
+            {/* ITEM 01 — DIAGNÓSTICO PERSONALIZADO */}
             <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left">
               <div className="flex items-start gap-3 min-w-0">
                 <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
                 <div className="min-w-0">
                   <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
-                    Diagnóstico da Saúde do Perfil
+                    Diagnóstico Personalizado
                   </h4>
                   <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
-                    Descubra o que pode estar impedindo sua empresa de aparecer melhor no Google.
+                    Inclui Relatório Geogrid (posição e concorrentes) e Relatório de Saúde do Perfil do Google.
                   </p>
                 </div>
               </div>
@@ -51,16 +51,16 @@ export const Oferta: React.FC<OfertaProps> = () => {
               </div>
             </div>
 
-            {/* ITEM 02 — ORIENTAÇÃO */}
+            {/* ITEM 02 — ORIENTAÇÃO PROFISSIONAL */}
             <div className="py-3.5 px-4 sm:px-6 flex items-start sm:items-center justify-between gap-3 sm:gap-4 border-b border-neutral-200/70 text-left">
               <div className="flex items-start gap-3 min-w-0">
                 <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
                 <div className="min-w-0">
                   <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
-                    Orientação Prática com Especialista
+                    Orientação Profissional de 30 Minutos
                   </h4>
                   <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
-                    Entenda o que melhorar e como colocar os ajustes em prática.
+                    Um especialista apresenta e entrega os dois relatórios, interpreta os resultados e indica as melhorias prioritárias.
                   </p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                     </h4>
                   </div>
                   <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
-                    Saiba quais ajustes fazer primeiro, coloque as melhorias em prática e acompanhe seu progresso.
+                    Material de apoio para organizar e acompanhar os ajustes recomendados.
                   </p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                     </h4>
                   </div>
                   <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
-                    Troque experiências sobre o Google e conecte-se com outros donos de negócios.
+                    Espaço para trocar experiências com outros empresários locais.
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
         {/* ========================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.04fr] gap-10 lg:gap-[60px] items-start max-w-[1140px] mx-auto">
           
-          {/* COLUNA ESQUERDA: Imagem Horizontal Moderada + 4 Benefícios */}
+          {/* COLUNA ESQUERDA: Imagem Horizontal Moderada + 5 Entregáveis */}
           <div className="w-full max-w-[520px] mx-auto lg:mx-0">
             
             {/* Frame horizontal proporcional (aspect-ratio 16/10 ~520x325) */}
@@ -157,23 +157,27 @@ export const Oferta: React.FC<OfertaProps> = () => {
               />
             </div>
 
-            {/* 4 Benefícios abaixo da imagem em 2 colunas com alto contraste (#171717) */}
+            {/* 5 Entregáveis abaixo da imagem em 2 colunas com alto contraste (#171717) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 pt-6 sm:pt-7 text-left px-0.5">
               <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
-                <span>Diagnóstico da Saúde do Perfil</span>
+                <span>Relatório Geogrid</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
-                <span>Orientação Prática com Especialista</span>
+                <span>Relatório de Saúde do Perfil</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
-                <span>Plano de Ajustes Prioritários</span>
+                <span>Orientação profissional de 30 minutos</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
-                <span>Grupo Exclusivo de Empresários no WhatsApp</span>
+                <span>Checklist de implementação</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans sm:col-span-2">
+                <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
+                <span>Grupo exclusivo de WhatsApp</span>
               </div>
             </div>
 
@@ -189,7 +193,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                   Sua Análise Estratégica Completa
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#6B7280] font-sans max-w-sm mx-auto leading-relaxed">
-                  Descubra o que pode estar limitando sua presença no Google e receba orientação para melhorar seu Perfil da Empresa.
+                  Entenda como sua empresa aparece nas buscas locais, conheça os pontos de atenção do seu Perfil do Google e descubra quais melhorias priorizar.
                 </p>
                 <div className="text-xs sm:text-sm font-sans text-neutral-500 pt-1">
                   De <span className="line-through decoration-red-500 font-bold text-[15px] sm:text-[16px] text-red-600">R$ 441</span> em entregas por apenas:
@@ -226,7 +230,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                   }}
                   className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
                 >
-                  QUERO ATRAIR MAIS CLIENTES
+                  QUERO RECEBER MINHA ANÁLISE
                 </a>
 
                 {/* Linha discreta de segurança Hotmart com ícone de cadeado */}

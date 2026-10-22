@@ -13,24 +13,24 @@ const faqItems: FAQItem[] = [
     question: 'Eu já tenho um Perfil da Empresa no Google. Essa análise ainda faz sentido?',
     answer: (
       <>
-        Sim. Ter um perfil não significa que sua empresa esteja aproveitando todas as oportunidades. Você vai descobrir{' '}
+        Sim. Ter um perfil não garante visibilidade nem bom posicionamento nas buscas da sua região. A análise{' '}
         <strong className="font-bold text-[#171717]">
-          onde sua empresa aparece, quais concorrentes estão à frente e o que precisa melhorar
-        </strong>{' '}
-        para ter mais chances de ser encontrada e escolhida.
+          revela onde sua empresa aparece no Google Maps em relação aos concorrentes e avalia 20 critérios do seu Perfil
+        </strong>
+        , indicando exatamente o que merece atenção.
       </>
     ),
   },
   {
     id: 'faq-2',
-    question: 'Preciso entender de Google ou marketing?',
+    question: 'Preciso entender de Google ou de marketing?',
     answer: (
       <>
-        Não. A análise foi feita para empresários, não para especialistas em marketing. Na Orientação Prática com Especialista, explicamos{' '}
+        Não. Os relatórios são{' '}
         <strong className="font-bold text-[#171717]">
-          o que encontramos, quais ajustes priorizar e como começar
+          interpretados e explicados de forma clara e acessível durante a orientação de 30 minutos com o especialista
         </strong>
-        , de forma simples e prática.
+        , indicando as melhorias prioritárias sem complicação técnica.
       </>
     ),
   },
@@ -39,15 +39,11 @@ const faqItems: FAQItem[] = [
     question: 'A análise é automática ou feita por um especialista?',
     answer: (
       <>
-        Utilizamos ferramentas profissionais para levantar os dados, mas sua análise{' '}
+        Os dados e relatórios são gerados por ferramentas especializadas e{' '}
         <strong className="font-bold text-[#171717]">
-          não é apenas um relatório automático
+          interpretados por um especialista da Nanet Digital
         </strong>
-        .{' '}
-        <strong className="font-bold text-[#171717]">
-          Um especialista da equipe Nanet analisa o cenário da sua empresa
-        </strong>{' '}
-        e apresenta os principais pontos e prioridades durante a Orientação Prática com Especialista.
+        , que conduz a orientação e responde às suas dúvidas.
       </>
     ),
   },
@@ -56,11 +52,11 @@ const faqItems: FAQItem[] = [
     question: 'Quando vou receber minha análise?',
     answer: (
       <>
-        Após a compra, você recebe por e-mail o acesso à área de membros para{' '}
+        Após a confirmação da compra, você acessa a área de membros na Hotmart para enviar os dados da empresa e agendar a orientação.{' '}
         <strong className="font-bold text-[#171717]">
-          escolher o melhor dia e horário e enviar as informações da sua empresa
-        </strong>
-        . Nossa equipe prepara a análise e apresenta seus relatórios na Orientação Prática com Especialista, no dia agendado.
+          A entrega dos relatórios e a realização da orientação acontecem em até 7 dias úteis
+        </strong>{' '}
+        após o envio das informações.
       </>
     ),
   },
@@ -69,11 +65,11 @@ const faqItems: FAQItem[] = [
     question: 'Vocês também fazem os ajustes identificados na análise?',
     answer: (
       <>
-        A implementação não está incluída. Você recebe{' '}
+        A Análise Estratégica é um serviço de diagnóstico e orientação.{' '}
         <strong className="font-bold text-[#171717]">
-          os relatórios, as prioridades e o Checklist de Ajustes
-        </strong>{' '}
-        para saber o que precisa ser feito. Se preferir contar com nossa equipe para realizar a implementação, poderá conversar sobre essa possibilidade após a análise.
+          A implementação das melhorias fica a critério da sua empresa
+        </strong>
+        , orientada pelo Checklist de Implementação incluído como bônus.
       </>
     ),
   },

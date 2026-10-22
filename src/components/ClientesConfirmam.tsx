@@ -100,7 +100,6 @@ export const ClientesConfirmam: React.FC = () => {
   const isHoveredRef = useRef<boolean>(false);
   const isDraggingRef = useRef<boolean>(false);
   const isMouseDownRef = useRef<boolean>(false);
-  const lastTouchTimeRef = useRef<number>(0);
 
   // Arraste
   const dragStartXRef = useRef<number>(0);
@@ -111,65 +110,58 @@ export const ClientesConfirmam: React.FC = () => {
 
   // Mede as dimensões reais dos cards e espaçamentos no DOM
   const updateDimensions = useCallback(() => {
+    let measuredDistance = 0;
     if (firstSeqRef.current) {
       const seqEl = firstSeqRef.current;
-      const totalWidth = seqEl.offsetWidth;
-      if (totalWidth > 0) {
-        seqWidthRef.current = totalWidth;
-        const children = seqEl.children;
-        if (children.length >= 2) {
-          const firstChild = children[0] as HTMLElement;
-          const secondChild = children[1] as HTMLElement;
-          const dist = secondChild.offsetLeft - firstChild.offsetLeft;
-          if (dist > 0) {
-            cardDistanceRef.current = dist;
-            return;
-          }
+      const children = seqEl.children;
+      if (children.length >= 2) {
+        const firstChild = children[0] as HTMLElement;
+        const secondChild = children[1] as HTMLElement;
+        const dist = secondChild.offsetLeft - firstChild.offsetLeft;
+        if (dist > 50) {
+          measuredDistance = dist;
         }
-        cardDistanceRef.current = totalWidth / 5;
+      } else if (seqEl.offsetWidth > 0) {
+        measuredDistance = seqEl.offsetWidth / 5;
       }
+    }
+    // Fallback inteligente caso ainda não calculado
+    if (measuredDistance <= 0 && typeof window !== 'undefined') {
+      const viewportW = window.innerWidth || 1200;
+      const cardW = Math.min(viewportW * 0.82, viewportW >= 1024 ? 340 : (viewportW >= 768 ? 330 : 320));
+      const gap = viewportW >= 640 ? 20 : 16;
+      measuredDistance = cardW + gap;
+    }
+    if (measuredDistance > 0) {
+      cardDistanceRef.current = measuredDistance;
+      // 5 cards por sequência, o loop perfeito ocorre exatamente em 5 * cardDistance
+      seqWidthRef.current = measuredDistance * 5;
     }
   }, []);
 
-  // Loop de Animação Autorizado via requestAnimationFrame com controle de visibilidade
+  // Loop de Animação Original v65 via requestAnimationFrame Contínuo
   useEffect(() => {
-    let animationFrameId: number;
-    let lastTimestamp: number | null = null;
-    let isVisible = false;
-
     updateDimensions();
 
-    const resizeObserver = new ResizeObserver(() => {
-      updateDimensions();
-    });
-    if (firstSeqRef.current) {
-      resizeObserver.observe(firstSeqRef.current);
-    }
-
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let animationFrameId: number;
+    let lastTimestamp: number | null = null;
 
     const step = (timestamp: number) => {
-      if (!isVisible) return;
-
       if (lastTimestamp === null) {
         lastTimestamp = timestamp;
       }
-      const deltaMs = Math.min(80, timestamp - lastTimestamp);
-      const deltaSeconds = deltaMs / 1000;
+      const deltaSeconds = Math.min((timestamp - lastTimestamp) / 1000, 0.1);
       lastTimestamp = timestamp;
 
-      const seqWidth = seqWidthRef.current || 1700;
-      const cardDistance = cardDistanceRef.current || seqWidth / 5;
+      const cardDistance = cardDistanceRef.current || 340;
+      const seqWidth = seqWidthRef.current || cardDistance * 5;
 
       const currentPhase = phaseRef.current;
 
-      // Se houver hover do mouse no desktop durante HOLD ou TRANSITION, pausa o relógio
-      // Permite a pausa por hover exclusivamente em dispositivos com mouse real
-      const isPausedByHover = isHoveredRef.current && hasFinePointer() && (currentPhase.type === 'HOLD' || currentPhase.type === 'TRANSITION');
+      // Pausa por hover exclusivamente se tiver ponteiro fino (mouse desktop)
+      const isPausedByHover = isHoveredRef.current && hasFinePointer();
 
-      if (!isPausedByHover && !prefersReducedMotion) {
+      if (!isPausedByHover) {
         if (currentPhase.type === 'HOLD') {
           // 1 segundo de pausa com o card perfeitamente alinhado
           currentPhase.elapsed += deltaSeconds;
@@ -210,7 +202,6 @@ export const ClientesConfirmam: React.FC = () => {
           offsetRef.current = currentPhase.startOffset + (currentPhase.targetOffset - currentPhase.startOffset) * eased;
 
           if (currentPhase.elapsed >= currentPhase.duration) {
-            // Alinhamento concluído: normaliza o índice e inicia imediatamente a pausa de 1 segundo
             const normalizedIndex = ((currentPhase.targetIndex % 5) + 5) % 5;
             offsetRef.current = normalizedIndex * cardDistance;
             phaseRef.current = {
@@ -220,22 +211,6 @@ export const ClientesConfirmam: React.FC = () => {
             };
           }
         }
-      } else if (currentPhase.type === 'SNAPPING') {
-        // Permite snap mesmo se reduzido movimento
-        currentPhase.elapsed += deltaSeconds;
-        const progress = Math.min(1, currentPhase.elapsed / currentPhase.duration);
-        const eased = easeOutQuad(progress);
-        offsetRef.current = currentPhase.startOffset + (currentPhase.targetOffset - currentPhase.startOffset) * eased;
-
-        if (currentPhase.elapsed >= currentPhase.duration) {
-          const normalizedIndex = ((currentPhase.targetIndex % 5) + 5) % 5;
-          offsetRef.current = normalizedIndex * cardDistance;
-          phaseRef.current = {
-            type: 'HOLD',
-            elapsed: 0,
-            cardIndex: normalizedIndex,
-          };
-        }
       }
 
       // Aplica o deslocamento físico na GPU (3 sequências: Prepend, Principal, Append)
@@ -244,48 +219,39 @@ export const ClientesConfirmam: React.FC = () => {
         trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
 
-      if (isVisible) {
-        animationFrameId = requestAnimationFrame(step);
-      }
+      animationFrameId = requestAnimationFrame(step);
     };
 
-    // IntersectionObserver: pausa rAF completamente quando a seção estiver fora da tela
-    const intersectionObserver = new IntersectionObserver(
-      ([entry]) => {
-        const isNowVisible = entry.isIntersecting;
-        isVisible = isNowVisible;
-        if (isNowVisible) {
-          lastTimestamp = null;
-          cancelAnimationFrame(animationFrameId);
-          animationFrameId = requestAnimationFrame(step);
-        } else {
-          cancelAnimationFrame(animationFrameId);
-        }
-      },
-      { rootMargin: '250px 0px' }
-    );
+    animationFrameId = requestAnimationFrame(step);
 
-    if (containerRef.current) {
-      intersectionObserver.observe(containerRef.current);
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions();
+    });
+
+    if (firstSeqRef.current) {
+      resizeObserver.observe(firstSeqRef.current);
     }
+
+    const handleResize = () => {
+      updateDimensions();
+    };
+    window.addEventListener('resize', handleResize);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
-      intersectionObserver.disconnect();
+      window.removeEventListener('resize', handleResize);
     };
   }, [updateDimensions]);
 
-  // Função auxiliar disparada ao soltar o arraste (Touch ou Mouse)
+  // Função disparada ao soltar o arraste (Touch ou Mouse)
   const finishDrag = useCallback(() => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
     isHoveredRef.current = false;
     setIsDraggingUI(false);
 
-    const seqWidth = seqWidthRef.current || 1700;
-    const cardDistance = cardDistanceRef.current || seqWidth / 5;
-
+    const cardDistance = cardDistanceRef.current || 340;
     const currentOffset = offsetRef.current;
     // Identifica o card mais próximo
     const nearestIndex = Math.round(currentOffset / cardDistance);
@@ -307,7 +273,6 @@ export const ClientesConfirmam: React.FC = () => {
 
   // Eventos de Toque no Mobile
   const handleTouchStart = (e: React.TouchEvent) => {
-    lastTouchTimeRef.current = Date.now();
     isHoveredRef.current = false;
     if (e.touches.length !== 1) return;
     touchStartXRef.current = e.touches[0].clientX;
@@ -350,7 +315,6 @@ export const ClientesConfirmam: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
-    lastTouchTimeRef.current = Date.now();
     isHoveredRef.current = false;
     if (touchDirectionRef.current === 'horizontal') {
       finishDrag();
@@ -360,8 +324,6 @@ export const ClientesConfirmam: React.FC = () => {
 
   // Eventos de Mouse no Desktop
   const handleMouseDown = (e: React.MouseEvent) => {
-    // Ignora eventos de mouse sintetizados logo após toques em dispositivos touch
-    if (Date.now() - lastTouchTimeRef.current < 1000) return;
     if (!hasFinePointer()) return;
     if (e.button !== 0) return; // Apenas botão principal (esquerdo)
     isMouseDownRef.current = true;
@@ -407,7 +369,6 @@ export const ClientesConfirmam: React.FC = () => {
   // Pausa automática no hover do mouse (Desktop exclusivo com mouse real)
   const handleMouseEnter = () => {
     if (!hasFinePointer()) return;
-    if (Date.now() - lastTouchTimeRef.current < 1000) return;
     isHoveredRef.current = true;
   };
 
@@ -422,16 +383,12 @@ export const ClientesConfirmam: React.FC = () => {
       className="w-full py-16 sm:py-20 lg:py-24 bg-[#F6F3EF] border-b border-neutral-200/80 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-10 sm:space-y-12">
+        <div className="space-y-8 sm:space-y-10">
           {/* Header da Seção */}
-          <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-              Empresas que já fizeram a Análise Estratégica recomendam
+              Resultados de empresas que fizeram a Análise Estratégica
             </h2>
-
-            <p className="text-base sm:text-lg text-[#6B7280] font-sans leading-relaxed max-w-2xl mx-auto">
-              Veja o que clientes reais dizem sobre o trabalho da nossa equipe.
-            </p>
           </div>
 
           {/* Faixa Contínua Interativa */}
@@ -483,7 +440,7 @@ export const ClientesConfirmam: React.FC = () => {
                 ref={firstSeqRef}
                 className="flex shrink-0 items-center gap-4 sm:gap-5 pr-4 sm:pr-5"
               >
-                {depoimentos.map((item, index) => (
+                {depoimentos.map((item) => (
                   <div
                     key={`orig-${item.id}`}
                     className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
