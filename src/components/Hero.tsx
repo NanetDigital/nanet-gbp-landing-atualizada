@@ -1,5 +1,4 @@
 import React from 'react';
-import { Check } from 'lucide-react';
 import { useCheckoutUrl } from '../utils/tracking';
 
 export const Hero: React.FC = () => {
@@ -41,21 +40,10 @@ export const Hero: React.FC = () => {
               </h1>
             </div>
 
-            {/* 3. Três Benefícios */}
-            <ul className="space-y-2.5 text-left pt-1">
-              <li className="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Veja sua posição diante dos concorrentes</strong> em diferentes pontos da região.</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Descubra a saúde do seu Perfil do Google</strong>, com nota de 0 a 100 e pontos que merecem atenção.</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-sm xl:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Saiba quais melhorias priorizar</strong> com a interpretação dos resultados por um especialista.</span>
-              </li>
-            </ul>
+            {/* 3. Nova Subheadline */}
+            <p className="text-base xl:text-[17px] text-gray-300 font-sans leading-relaxed max-w-xl">
+              Veja como sua posição varia nas buscas locais, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e saiba o que melhorar primeiro com a orientação de um especialista.
+            </p>
 
             {/* 4. Nome da Oferta e Oferta Resumida (com divider ---) */}
             <div className="pt-3 border-t border-white/10 space-y-0.5">
@@ -130,22 +118,11 @@ export const Hero: React.FC = () => {
             </h1>
           </div>
 
-          {/* 3. TRÊS BENEFÍCIOS (CONJUNTO CENTRALIZADO, TEXTOS À ESQUERDA) */}
-          <div className="w-full max-w-[440px] mx-auto text-left px-2">
-            <ul className="space-y-2.5 text-left">
-              <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Veja sua posição diante dos concorrentes</strong> em diferentes pontos da região.</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Descubra a saúde do seu Perfil do Google</strong>, com nota de 0 a 100 e pontos que merecem atenção.</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-gray-200 font-sans leading-snug">
-                <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span><strong className="font-semibold text-white">Saiba quais melhorias priorizar</strong> com a interpretação dos resultados por um especialista.</span>
-              </li>
-            </ul>
+          {/* 3. Nova Subheadline Centralizada */}
+          <div className="text-center px-2 max-w-[440px] mx-auto">
+            <p className="text-[14px] sm:text-[15px] text-gray-300 font-sans leading-relaxed">
+              Veja como sua posição varia nas buscas locais, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e saiba o que melhorar primeiro com a orientação de um especialista.
+            </p>
           </div>
 
           {/* 4. IMAGEM ILUSTRATIVA DO CELULAR */}
