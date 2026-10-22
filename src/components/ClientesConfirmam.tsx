@@ -11,31 +11,31 @@ const depoimentos: DepoimentoItem[] = [
   {
     id: 'thalita',
     autor: 'Thalita Traspadini Modolo',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/1_Thalita_yqoexh.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/1_Thalita_yqoexh.jpg',
     alt: 'Depoimento de Thalita Traspadini Modolo - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'helder',
     autor: 'Helder',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791499396/Cards_de_depoimentos_da_Nanet_Digital_1_a9ia03.jpg',
     alt: 'Depoimento de Helder - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'saren',
     autor: 'Empório Saren',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497710/Cards_de_depoimentos_da_Nanet_Digital_cya3gs.jpg',
     alt: 'Depoimento do Empório Saren - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'erik',
     autor: 'Erik',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/4_Erik_o5bfk8.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/4_Erik_o5bfk8.jpg',
     alt: 'Depoimento de Erik - Avaliação de cliente da Nanet Digital',
   },
   {
     id: 'cleiton',
     autor: 'Cleiton de Souza Porto',
-    image: 'https://res.cloudinary.com/nds7zozp/image/upload/v1791497189/6_Cleiton_rv4uhk.jpg',
+    image: 'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1791497189/6_Cleiton_rv4uhk.jpg',
     alt: 'Depoimento de Cleiton de Souza Porto - Avaliação de cliente da Nanet Digital',
   },
 ];
@@ -101,6 +101,13 @@ export const ClientesConfirmam: React.FC = () => {
   const isDraggingRef = useRef<boolean>(false);
   const isMouseDownRef = useRef<boolean>(false);
 
+  // Visibilidade, animação e acessibilidade
+  const isIntersectingRef = useRef<boolean>(false);
+  const isDocumentVisibleRef = useRef<boolean>(true);
+  const prefersReducedMotionRef = useRef<boolean>(false);
+  const animationFrameIdRef = useRef<number | null>(null);
+  const lastTimestampRef = useRef<number | null>(null);
+
   // Arraste
   const dragStartXRef = useRef<number>(0);
   const dragStartOffsetRef = useRef<number>(0);
@@ -139,19 +146,35 @@ export const ClientesConfirmam: React.FC = () => {
     }
   }, []);
 
-  // Loop de Animação Original v65 via requestAnimationFrame Contínuo
-  useEffect(() => {
-    updateDimensions();
+  const stopLoop = useCallback(() => {
+    if (animationFrameIdRef.current !== null) {
+      cancelAnimationFrame(animationFrameIdRef.current);
+      animationFrameIdRef.current = null;
+    }
+    lastTimestampRef.current = null;
+    if (trackRef.current) {
+      trackRef.current.style.willChange = 'auto';
+    }
+  }, []);
 
-    let animationFrameId: number;
-    let lastTimestamp: number | null = null;
+  const startLoop = useCallback(() => {
+    if (animationFrameIdRef.current !== null) return;
+    if (!isIntersectingRef.current || !isDocumentVisibleRef.current || prefersReducedMotionRef.current) {
+      return;
+    }
+
+    if (trackRef.current) {
+      trackRef.current.style.willChange = 'transform';
+    }
+
+    lastTimestampRef.current = null;
 
     const step = (timestamp: number) => {
-      if (lastTimestamp === null) {
-        lastTimestamp = timestamp;
+      if (lastTimestampRef.current === null) {
+        lastTimestampRef.current = timestamp;
       }
-      const deltaSeconds = Math.min((timestamp - lastTimestamp) / 1000, 0.1);
-      lastTimestamp = timestamp;
+      const deltaSeconds = Math.min((timestamp - lastTimestampRef.current) / 1000, 0.1);
+      lastTimestampRef.current = timestamp;
 
       const cardDistance = cardDistanceRef.current || 340;
       const seqWidth = seqWidthRef.current || cardDistance * 5;
@@ -219,10 +242,83 @@ export const ClientesConfirmam: React.FC = () => {
         trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
 
-      animationFrameId = requestAnimationFrame(step);
+      if (isIntersectingRef.current && isDocumentVisibleRef.current && !prefersReducedMotionRef.current) {
+        animationFrameIdRef.current = requestAnimationFrame(step);
+      } else {
+        stopLoop();
+      }
     };
 
-    animationFrameId = requestAnimationFrame(step);
+    animationFrameIdRef.current = requestAnimationFrame(step);
+  }, [stopLoop]);
+
+  // Ciclo de vida com IntersectionObserver, visibilidade e redimensionamento
+  useEffect(() => {
+    updateDimensions();
+
+    if (typeof window === 'undefined') return;
+
+    // 1. Verificação de preferência por redução de movimento
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    prefersReducedMotionRef.current = mediaQuery.matches;
+
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      prefersReducedMotionRef.current = e.matches;
+      if (e.matches) {
+        stopLoop();
+      } else if (isIntersectingRef.current && isDocumentVisibleRef.current) {
+        startLoop();
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleMotionChange);
+
+    // 2. Pausa quando a aba do navegador estiver oculta
+    const handleVisibilityChange = () => {
+      const isVisible = !document.hidden;
+      isDocumentVisibleRef.current = isVisible;
+      if (isVisible) {
+        if (isIntersectingRef.current && !prefersReducedMotionRef.current) {
+          startLoop();
+        }
+      } else {
+        stopLoop();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // 3. IntersectionObserver: executa exclusivamente quando a seção está próxima ou na viewport
+    const target = containerRef.current;
+    let observer: IntersectionObserver | null = null;
+
+    if (target && 'IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          const isIntersecting = entry.isIntersecting;
+          isIntersectingRef.current = isIntersecting;
+
+          if (isIntersecting) {
+            updateDimensions();
+            if (isDocumentVisibleRef.current && !prefersReducedMotionRef.current) {
+              startLoop();
+            }
+          } else {
+            stopLoop();
+          }
+        },
+        {
+          root: null,
+          rootMargin: '200px 0px', // Retoma suavemente 200px antes de entrar no viewport
+          threshold: 0,
+        }
+      );
+      observer.observe(target);
+    } else {
+      isIntersectingRef.current = true;
+      startLoop();
+    }
 
     const resizeObserver = new ResizeObserver(() => {
       updateDimensions();
@@ -238,11 +334,14 @@ export const ClientesConfirmam: React.FC = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      stopLoop();
+      mediaQuery.removeEventListener('change', handleMotionChange);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (observer) observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
     };
-  }, [updateDimensions]);
+  }, [updateDimensions, startLoop, stopLoop]);
 
   // Função disparada ao soltar o arraste (Touch ou Mouse)
   const finishDrag = useCallback(() => {
@@ -269,7 +368,8 @@ export const ClientesConfirmam: React.FC = () => {
       targetOffset,
       targetIndex: nearestIndex,
     };
-  }, []);
+    startLoop();
+  }, [startLoop]);
 
   // Eventos de Toque no Mobile
   const handleTouchStart = (e: React.TouchEvent) => {
