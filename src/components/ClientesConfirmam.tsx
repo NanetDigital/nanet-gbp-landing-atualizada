@@ -98,6 +98,7 @@ export const ClientesConfirmam: React.FC = () => {
   const offsetRef = useRef<number>(0);
   const seqWidthRef = useRef<number>(1700);
   const cardDistanceRef = useRef<number>(340);
+  const centerOffsetRef = useRef<number>(0);
 
   // Máquina de estados da animação
   const phaseRef = useRef<CarouselPhase>({ type: 'HOLD', elapsed: 0, cardIndex: 0 });
@@ -121,36 +122,59 @@ export const ClientesConfirmam: React.FC = () => {
   // Mede as dimensões reais dos cards e espaçamentos no DOM
   const updateDimensions = useCallback(() => {
     let measuredDistance = 0;
+    let measuredCardWidth = 0;
+
     if (firstSeqRef.current) {
       const seqEl = firstSeqRef.current;
       const children = seqEl.children;
       if (children.length >= 2) {
         const firstChild = children[0] as HTMLElement;
         const secondChild = children[1] as HTMLElement;
+        measuredCardWidth = firstChild.offsetWidth;
         const dist = secondChild.offsetLeft - firstChild.offsetLeft;
         if (dist > 50) {
           measuredDistance = dist;
         }
+      } else if (children.length === 1) {
+        measuredCardWidth = (children[0] as HTMLElement).offsetWidth;
       }
       if (measuredDistance <= 0 && seqEl.offsetWidth > 0) {
         measuredDistance = seqEl.offsetWidth / 5;
       }
     }
+
+    const viewportW = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const isMobile = viewportW < 640;
+
     // Fallback instantâneo caso o DOM ainda esteja calculando layout
-    if (measuredDistance <= 0 && typeof window !== 'undefined') {
-      const viewportW = window.innerWidth || 1200;
-      const cardW = Math.min(viewportW * 0.82, viewportW >= 1024 ? 340 : (viewportW >= 768 ? 330 : 320));
-      const gap = viewportW >= 640 ? 20 : 16;
-      measuredDistance = cardW + gap;
+    if (measuredCardWidth <= 0) {
+      measuredCardWidth = isMobile
+        ? viewportW * 0.94
+        : (viewportW >= 1024 ? 340 : (viewportW >= 768 ? 330 : 320));
     }
-    if (measuredDistance > 0) {
-      cardDistanceRef.current = measuredDistance;
-      seqWidthRef.current = measuredDistance * 5;
+    if (measuredDistance <= 0) {
+      const gap = viewportW >= 640 ? 20 : 16;
+      measuredDistance = measuredCardWidth + gap;
+    }
+
+    cardDistanceRef.current = measuredDistance;
+    seqWidthRef.current = measuredDistance * 5;
+
+    // Calcula o deslocamento de centralização para mobile (< 640px)
+    // No mobile, centraliza exatamente 1 card por vez na largura do container (margens de ~3% em cada lado)
+    // No desktop e tablet (>= 640px), centerOffset é 0 (alinhamento padrão à esquerda)
+    const containerW = containerRef.current?.offsetWidth || viewportW;
+    const centerOffset = isMobile ? Math.max(0, (containerW - measuredCardWidth) / 2) : 0;
+    centerOffsetRef.current = centerOffset;
+
+    // Se estiver em estado HOLD, reposiciona suavemente no card atual sem salto
+    if (phaseRef.current.type === 'HOLD') {
+      offsetRef.current = phaseRef.current.cardIndex * measuredDistance;
     }
 
     // Inicializa a posição física na Sequência 2 (Principal)
     if (trackRef.current) {
-      const initialTranslate = -(seqWidthRef.current + offsetRef.current);
+      const initialTranslate = -(seqWidthRef.current + offsetRef.current) + centerOffsetRef.current;
       trackRef.current.style.transform = `translate3d(${initialTranslate}px, 0, 0)`;
     }
   }, []);
@@ -188,6 +212,7 @@ export const ClientesConfirmam: React.FC = () => {
 
       const cardDistance = cardDistanceRef.current || 340;
       const seqWidth = seqWidthRef.current || cardDistance * 5;
+      const centerOffset = centerOffsetRef.current || 0;
       const currentPhase = phaseRef.current;
 
       // Pausa por hover EXCLUSIVAMENTE em Desktop real (>= 1024px) com cursor fino
@@ -249,7 +274,7 @@ export const ClientesConfirmam: React.FC = () => {
 
       // Aplica o deslocamento físico direto na GPU (3 sequências: Prepend, Principal, Append)
       if (trackRef.current) {
-        const translateX = -(seqWidth + offsetRef.current);
+        const translateX = -(seqWidth + offsetRef.current) + centerOffset;
         trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
 
@@ -277,11 +302,15 @@ export const ClientesConfirmam: React.FC = () => {
     if (firstSeqRef.current) {
       resizeObserver.observe(firstSeqRef.current);
     }
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
 
     const handleResize = () => {
       updateDimensions();
     };
     window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
     // Instrumentação de diagnóstico em tempo real no console e em window.__CAROUSEL_TEST_RESULTS__
     const startTime = performance.now();
@@ -323,6 +352,7 @@ export const ClientesConfirmam: React.FC = () => {
       stopLoop();
       resizeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
       clearTimeout(timer2s);
       clearTimeout(timer5s);
       clearTimeout(timer10s);
@@ -470,10 +500,10 @@ export const ClientesConfirmam: React.FC = () => {
       aria-label="Depoimentos de clientes da Nanet"
       className="w-full py-16 sm:py-20 lg:py-24 bg-[#F6F3EF] border-b border-neutral-200/80 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="space-y-8 sm:space-y-10">
           {/* Header da Seção */}
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
               Resultados de empresas que fizeram a Análise Estratégica
             </h2>
@@ -506,12 +536,12 @@ export const ClientesConfirmam: React.FC = () => {
                 {depoimentos.map((item) => (
                   <div
                     key={`prep-${item.id}`}
-                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                    className="w-[94vw] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
                   >
                     <img
                       src={item.image}
                       srcSet={item.srcSet}
-                      sizes="(max-width: 640px) 300px, 340px"
+                      sizes="(max-width: 640px) 94vw, 340px"
                       alt=""
                       width={340}
                       height={255}
@@ -532,12 +562,12 @@ export const ClientesConfirmam: React.FC = () => {
                 {depoimentos.map((item) => (
                   <div
                     key={`orig-${item.id}`}
-                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                    className="w-[94vw] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
                   >
                     <img
                       src={item.image}
                       srcSet={item.srcSet}
-                      sizes="(max-width: 640px) 300px, 340px"
+                      sizes="(max-width: 640px) 94vw, 340px"
                       alt={item.alt}
                       width={340}
                       height={255}
@@ -558,12 +588,12 @@ export const ClientesConfirmam: React.FC = () => {
                 {depoimentos.map((item) => (
                   <div
                     key={`app-${item.id}`}
-                    className="w-[min(82vw,320px)] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
+                    className="w-[94vw] sm:w-[320px] md:w-[330px] lg:w-[340px] aspect-[4/3] shrink-0 flex items-center justify-center rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-xs p-1"
                   >
                     <img
                       src={item.image}
                       srcSet={item.srcSet}
-                      sizes="(max-width: 640px) 300px, 340px"
+                      sizes="(max-width: 640px) 94vw, 340px"
                       alt=""
                       width={340}
                       height={255}
