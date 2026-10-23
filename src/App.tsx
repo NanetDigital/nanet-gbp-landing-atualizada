@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Hero } from './components/Hero';
 
 // Code-splitting below-the-fold components to reduce initial JS execution and bundle size
@@ -29,6 +29,8 @@ export default function App() {
     return Boolean(window.location.hash);
   });
 
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
@@ -50,36 +52,78 @@ export default function App() {
   useEffect(() => {
     if (loadRemainingSections) return;
 
-    const triggerRemaining = () => {
-      setLoadRemainingSections(true);
-    };
-
-    // 1. Ao menor sinal de interação do usuário (toque, rolagem ou movimento de mouse)
-    window.addEventListener('scroll', triggerRemaining, { passive: true, once: true });
-    window.addEventListener('touchstart', triggerRemaining, { passive: true, once: true });
-    window.addEventListener('mousemove', triggerRemaining, { passive: true, once: true });
-
-    // 2. Ou após o carregamento inicial quando o navegador estiver ocioso
+    let triggered = false;
     let idleId: number | null = null;
     let timeoutId: number | null = null;
+    let observer: IntersectionObserver | null = null;
 
-    if ('requestIdleCallback' in window) {
-      idleId = (window as any).requestIdleCallback(triggerRemaining, { timeout: 1500 });
-    } else {
-      timeoutId = setTimeout(triggerRemaining, 1200) as unknown as number;
-    }
+    const triggerRemaining = () => {
+      if (triggered) return;
+      triggered = true;
+      setLoadRemainingSections(true);
+      cleanup();
+    };
 
-    return () => {
+    const cleanup = () => {
       window.removeEventListener('scroll', triggerRemaining);
       window.removeEventListener('touchstart', triggerRemaining);
-      window.removeEventListener('mousemove', triggerRemaining);
+      window.removeEventListener('touchmove', triggerRemaining);
+      window.removeEventListener('wheel', triggerRemaining);
+      window.removeEventListener('keydown', triggerRemaining);
+      window.removeEventListener('pointerdown', triggerRemaining);
+      window.removeEventListener('load', scheduleIdle);
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
       if (idleId !== null && 'cancelIdleCallback' in window) {
         (window as any).cancelIdleCallback(idleId);
+        idleId = null;
       }
       if (timeoutId !== null) {
         clearTimeout(timeoutId);
+        timeoutId = null;
       }
     };
+
+    // 1. Ao menor sinal de interação ou intenção do usuário
+    window.addEventListener('scroll', triggerRemaining, { passive: true, once: true });
+    window.addEventListener('touchstart', triggerRemaining, { passive: true, once: true });
+    window.addEventListener('touchmove', triggerRemaining, { passive: true, once: true });
+    window.addEventListener('wheel', triggerRemaining, { passive: true, once: true });
+    window.addEventListener('keydown', triggerRemaining, { passive: true, once: true });
+    window.addEventListener('pointerdown', triggerRemaining, { passive: true, once: true });
+
+    // 2. Disparo por aproximação visual via IntersectionObserver (1000px antes das seções profundas)
+    if (typeof IntersectionObserver !== 'undefined' && sentinelRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            triggerRemaining();
+          }
+        },
+        { rootMargin: '1000px 0px' }
+      );
+      observer.observe(sentinelRef.current);
+    }
+
+    // 3. Fallback ocioso seguro: pós-carregamento inicial sem disputa de banda com a primeira dobra
+    const scheduleIdle = () => {
+      if (triggered) return;
+      if ('requestIdleCallback' in window) {
+        idleId = (window as any).requestIdleCallback(triggerRemaining, { timeout: 4500 });
+      } else {
+        timeoutId = setTimeout(triggerRemaining, 4000) as unknown as number;
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleIdle();
+    } else {
+      window.addEventListener('load', scheduleIdle, { once: true });
+    }
+
+    return cleanup;
   }, [loadRemainingSections]);
 
   const navigateTo = (page: 'landing' | 'privacidade' | 'termos') => {
@@ -126,6 +170,9 @@ export default function App() {
         <Suspense fallback={null}>
           <Oportunidade />
         </Suspense>
+
+        {/* Marcador sentinel para antecipar carregamento das seções profundas por proximidade de rolagem */}
+        <div ref={sentinelRef} className="w-full h-px pointer-events-none" aria-hidden="true" />
 
         {/* 3. Seções mais profundas da página, carregadas progressivamente */}
         {loadRemainingSections && (
