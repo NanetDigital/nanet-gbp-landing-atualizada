@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
               height={600}
               loading="eager"
               fetchPriority="high"
-              decoding="sync"
+              decoding="async"
               className="w-full max-w-[380px] xl:max-w-[420px] max-h-[480px] object-contain rounded-2xl drop-shadow-2xl"
             />
           </div>
@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
                 height={600}
                 loading="eager"
                 fetchPriority="high"
-                decoding="sync"
+                decoding="async"
                 className="w-full max-h-[260px] sm:max-h-[300px] object-contain rounded-2xl block"
               />
             </div>

@@ -4,7 +4,7 @@ export const EntregaveisAnalise: React.FC = () => {
   return (
     <section
       id="entregaveis-analise"
-      aria-label="Veja tudo que você vai receber com a Análise Estratégica da Empresa"
+      aria-label="Veja tudo que você vai receber na sua Análise Estratégica da Empresa"
       className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-neutral-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14 lg:space-y-16">
@@ -13,7 +13,7 @@ export const EntregaveisAnalise: React.FC = () => {
         {/* ========================================================== */}
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-            Veja tudo que você vai receber com a Análise Estratégica da Empresa
+            Veja tudo que você vai receber na sua Análise Estratégica da Empresa
           </h2>
         </div>
 
