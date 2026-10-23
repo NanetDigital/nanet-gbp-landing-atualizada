@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
             <img
               src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
               srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-              sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
+              sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
               alt="Pesquisa de empresa no Google Maps no celular"
               width={500}
               height={600}
@@ -126,20 +126,22 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* 4. IMAGEM ILUSTRATIVA DO CELULAR */}
-          <div className="w-full max-w-[320px] sm:max-w-[360px] mx-auto flex justify-center py-1">
-            <div className="rounded-2xl overflow-hidden flex items-center justify-center drop-shadow-xl">
-              <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-                sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
-                alt="Pesquisa de empresa no Google Maps no celular"
-                width={500}
-                height={600}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full max-h-[260px] sm:max-h-[300px] object-contain rounded-2xl block"
-              />
+          <div className="w-full max-w-[300px] sm:max-w-[340px] mx-auto flex justify-center py-1">
+            <div className="w-full aspect-square drop-shadow-xl flex items-center justify-center">
+              <div className="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
+                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
+                  alt="Pesquisa de empresa no Google Maps no celular"
+                  width={500}
+                  height={500}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="hero-image-el w-full h-full object-cover rounded-2xl block"
+                />
+              </div>
             </div>
           </div>
 

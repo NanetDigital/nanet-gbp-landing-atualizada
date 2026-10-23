@@ -237,7 +237,7 @@ export const DemonstracaoAnalise: React.FC = () => {
         </div>
 
         {/* 1. Demonstração Visual: Container com Largura que Acompanha a Imagem */}
-        <div className="w-full max-w-[320px] md:max-w-[350px] mx-auto select-none">
+        <div className="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto select-none">
           <div
             className="relative w-full aspect-square rounded-2xl border border-neutral-200/80 bg-white p-2 shadow-xs overflow-hidden mx-auto touch-pan-y cursor-pointer"
             onPointerDown={handlePointerDown}
@@ -273,7 +273,7 @@ export const DemonstracaoAnalise: React.FC = () => {
                     <img
                       src={slide.image}
                       srcSet={slide.srcSet}
-                      sizes="(max-width: 350px) 100vw, 350px"
+                      sizes="(max-width: 400px) 100vw, 400px"
                       alt={slide.alt}
                       width={slide.width}
                       height={slide.height}
