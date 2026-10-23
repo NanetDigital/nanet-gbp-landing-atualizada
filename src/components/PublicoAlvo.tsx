@@ -77,7 +77,7 @@ export const PublicoAlvo: React.FC = () => {
                     >
                       ✓
                     </span>
-                    <p className="text-sm sm:text-base text-[#4B5563] font-sans leading-relaxed">
+                    <p className="text-[17px] sm:text-[18px] text-[#4B5563] font-sans leading-[1.5]">
                       {item.prefix}
                       <strong className="font-bold text-[#171717]">
                         {item.bold}
@@ -97,17 +97,17 @@ export const PublicoAlvo: React.FC = () => {
 
             {/* Identificação dos Segmentos */}
             <div className="pt-1">
-              <p className="text-sm sm:text-[15px] text-[#4B5563] font-sans leading-relaxed">
+              <p className="text-[17px] sm:text-[17px] text-[#4B5563] font-sans leading-[1.5]">
                 <strong className="font-bold text-[#171717]">Ideal para negócios locais:</strong> restaurantes, clínicas, lojas, comércios de produtos e prestadores de serviços que atendem clientes da sua cidade ou região.
               </p>
             </div>
 
             {/* Filtro do Público — Bloco Discreto e Compacto */}
             <div className="p-3.5 sm:p-4 rounded-xl bg-[#F9FAFB] border border-neutral-200/80 text-left">
-              <h4 className="font-bold text-xs sm:text-[13px] text-[#374151] font-sans mb-2">
+              <h4 className="font-bold text-[14px] text-[#374151] font-sans mb-2">
                 Não é para sua empresa se:
               </h4>
-              <ul className="space-y-1.5 text-xs sm:text-[13px] text-[#6B7280] font-sans leading-relaxed">
+              <ul className="space-y-1.5 text-[14px] text-[#6B7280] font-sans leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span
                     className="text-[#9CA3AF] font-bold text-sm leading-none shrink-0 mt-0.5 select-none"

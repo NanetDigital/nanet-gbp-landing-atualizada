@@ -126,7 +126,7 @@ export const FAQ: React.FC = () => {
                   aria-expanded={isOpen}
                   className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer group"
                 >
-                  <span className="font-sans text-[17px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-snug">
+                  <span className="font-sans text-[22px] lg:text-[23px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-[1.35]">
                     {item.question}
                   </span>
                   <div
@@ -142,7 +142,7 @@ export const FAQ: React.FC = () => {
 
                 {isOpen && (
                   <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 border-t border-neutral-200/60">
-                    <p className="pt-3.5 sm:pt-4 text-sm sm:text-[15px] font-sans text-[#6B7280] leading-relaxed">
+                    <p className="pt-3.5 sm:pt-4 text-[18px] font-normal font-sans text-[#6B7280] leading-[1.5] sm:leading-[1.55]">
                       {item.answer}
                     </p>
                   </div>

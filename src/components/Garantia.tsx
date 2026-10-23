@@ -28,7 +28,7 @@ export const Garantia: React.FC = () => {
               Sua Análise Estratégica sem risco
             </h2>
 
-            <p className="text-sm sm:text-[15px] lg:text-base text-[#6B7280] font-sans leading-relaxed">
+            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5]">
               Você tem <strong className="font-bold text-[#171717]">7 dias após a compra</strong> para avaliar sua decisão. Se achar que a Análise Estratégica não é para você, basta solicitar o reembolso dentro desse prazo e <strong className="font-bold text-[#171717]">receber 100% do valor pago de volta</strong>. Sem precisar justificar.
             </p>
           </div>

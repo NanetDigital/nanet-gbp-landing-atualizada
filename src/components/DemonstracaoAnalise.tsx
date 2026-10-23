@@ -231,7 +231,7 @@ export const DemonstracaoAnalise: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
             Veja exemplos reais dos relatórios que você vai receber
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#6B7280] font-sans leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-3 text-[18px] sm:text-lg text-[#6B7280] font-sans leading-[1.5] max-w-2xl mx-auto">
             Com orientação de um especialista para <strong className="font-bold text-[#171717]">saber o que priorizar e como ajustar</strong>.
           </p>
         </div>
@@ -316,7 +316,7 @@ export const DemonstracaoAnalise: React.FC = () => {
               <div className="w-9 h-9 rounded-xl bg-white border border-[#16A34A]/25 text-[#16A34A] flex items-center justify-center mb-4 shrink-0 shadow-xs">
                 <card.icon className="w-4 h-4 stroke-[2]" />
               </div>
-              <p className="text-[15px] text-[#6B7280] font-sans leading-relaxed">
+              <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5]">
                 {card.content}
               </p>
             </div>
@@ -334,7 +334,7 @@ export const DemonstracaoAnalise: React.FC = () => {
                 (window as any).fbq('trackCustom', 'ClickCheckout');
               }
             }}
-            className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
+            className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
           >
             QUERO RECEBER MINHA ANÁLISE
           </a>

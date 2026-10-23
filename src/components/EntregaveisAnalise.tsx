@@ -36,7 +36,7 @@ export const EntregaveisAnalise: React.FC = () => {
                 Descubra sua posição nas buscas locais
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
+              <p className="text-[18px] font-normal leading-[1.5] sm:leading-relaxed text-[#6B7280] font-sans">
                 Veja <strong className="font-bold text-[#171717]">em quais posições sua empresa aparece</strong> para uma busca local analisada, em diferentes pontos da região.
               </p>
             </div>
@@ -78,7 +78,7 @@ export const EntregaveisAnalise: React.FC = () => {
                 Compare sua empresa com os concorrentes
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
+              <p className="text-[18px] font-normal leading-[1.5] sm:leading-relaxed text-[#6B7280] font-sans">
                 Veja <strong className="font-bold text-[#171717]">como sua posição se compara à de concorrentes</strong> encontrados na sua região.
               </p>
             </div>
@@ -120,7 +120,7 @@ export const EntregaveisAnalise: React.FC = () => {
                 Conheça a saúde do seu Perfil do Google
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
+              <p className="text-[18px] font-normal leading-[1.5] sm:leading-relaxed text-[#6B7280] font-sans">
                 Receba uma avaliação de 20 critérios do seu Perfil do Google, com pontuação de 0 a 100 calculada e <strong className="font-bold text-[#171717]">identificação dos pontos que merecem atenção</strong>.
               </p>
             </div>
@@ -162,13 +162,13 @@ export const EntregaveisAnalise: React.FC = () => {
                 Entenda quais melhorias priorizar
               </h3>
 
-              <p className="text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed text-[#6B7280] font-sans">
+              <p className="text-[18px] font-normal leading-[1.5] sm:leading-relaxed text-[#6B7280] font-sans">
                 Durante uma orientação profissional de 30 minutos, um especialista apresenta e entrega seus dois relatórios, explica os resultados e <strong className="font-bold text-[#171717]">indica os ajustes prioritários</strong>.
               </p>
 
               {/* Texto complementar de autoridade */}
               <div className="pt-4 border-t border-neutral-200/80">
-                <p className="text-sm sm:text-base text-[#6B7280] font-sans leading-relaxed">
+                <p className="text-[16px] sm:text-base text-[#6B7280] font-sans leading-relaxed">
                   Orientação baseada na experiência prática acumulada em mais de 300 empresas locais analisadas e ajustadas.
                 </p>
               </div>

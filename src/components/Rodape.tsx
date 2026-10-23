@@ -141,7 +141,7 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
                 <span>WhatsApp Suporte</span>
@@ -159,7 +159,7 @@ export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
             </span>
             
             {/* Links lado a lado na mesma linha com quebra natural */}
-            <div className="flex flex-wrap items-center justify-center gap-x-2 text-[13px] font-sans text-[#D1D5DB] leading-relaxed">
+            <div className="flex flex-wrap items-center justify-center gap-x-2 text-[14px] font-sans text-[#D1D5DB] leading-relaxed">
               <button
                 type="button"
                 onClick={() => handleLinkClick('Política de Privacidade')}

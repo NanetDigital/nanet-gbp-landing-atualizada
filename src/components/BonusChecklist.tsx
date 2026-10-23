@@ -43,21 +43,21 @@ export const BonusChecklist: React.FC = () => {
                 </h3>
 
                 {/* Descrição */}
-                <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-gray-300 font-sans leading-relaxed">
+                <p className="mt-2.5 sm:mt-3 text-[18px] text-gray-300 font-sans leading-[1.5]">
                   Use o checklist para fazer os ajustes por prioridade e <strong className="font-bold text-white">acompanhar a implementação de forma simples.</strong>
                 </p>
 
                 {/* 3 Bullets / Benefícios */}
                 <ul className="mt-4 space-y-2">
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Organize os pontos de atenção por prioridade.</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Registre os ajustes realizados.</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Acompanhe o que ainda precisa de atenção.</span>
                   </li>
@@ -122,21 +122,21 @@ export const BonusChecklist: React.FC = () => {
                 </h3>
 
                 {/* Descrição */}
-                <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-gray-300 font-sans leading-relaxed">
+                <p className="mt-2.5 sm:mt-3 text-[18px] text-gray-300 font-sans leading-[1.5]">
                   Faça parte de um <strong className="font-bold text-white">grupo exclusivo de empresários locais</strong> para trocar experiências, compartilhar aprendizados sobre o Google e se conectar com outros donos de negócios.
                 </p>
 
                 {/* 3 Bullets / Benefícios */}
                 <ul className="mt-4 space-y-2">
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Acesso a um grupo exclusivo de empresários locais</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Troque experiências sobre melhorias no Google</span>
                   </li>
-                  <li className="flex items-start gap-2.5 text-sm sm:text-[15px] text-white font-sans font-medium">
+                  <li className="flex items-start gap-2.5 text-[17px] sm:text-[17px] text-white font-sans font-medium">
                     <span className="text-[#16A34A] font-bold shrink-0 mt-0.5 text-base leading-none">✓</span>
                     <span>Conexão com empresários que enfrentam desafios parecidos</span>
                   </li>

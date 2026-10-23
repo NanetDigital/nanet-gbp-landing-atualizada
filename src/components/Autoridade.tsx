@@ -34,12 +34,12 @@ export const Autoridade: React.FC = () => {
               </span>
 
               {/* Título Principal */}
-              <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-white tracking-tight leading-snug mt-1.5 sm:mt-2">
+              <h2 className="text-[22px] sm:text-2xl lg:text-[26px] font-bold text-white tracking-tight leading-snug mt-1.5 sm:mt-2">
                 Sua empresa analisada por quem conhece o Google na prática.
               </h2>
 
               {/* Descrição com negritos pontuais estritos (alinhado à esquerda no mobile) */}
-              <p className="text-left text-sm sm:text-[15px] lg:text-base text-neutral-300 font-sans leading-relaxed mt-2.5 sm:mt-3">
+              <p className="text-left text-[18px] text-neutral-300 font-sans leading-[1.5] mt-2.5 sm:mt-3">
                 Leandro Pires, fundador da Nanet, e sua equipe trabalham há <strong className="font-bold text-white">mais de 5 anos</strong> com Perfis da Empresa no Google. Já analisaram e ajustaram <strong className="font-bold text-white">mais de 300 empresas locais</strong>, acumulando <strong className="font-bold text-white">mais de 200 mil interações com clientes</strong>. Essa experiência ajuda a identificar o que pode estar limitando sua presença nas buscas e mostrar quais ajustes priorizar, sem você precisar descobrir tudo sozinho.
               </p>
 
@@ -50,7 +50,7 @@ export const Autoridade: React.FC = () => {
                   <span className="text-2xl sm:text-2xl lg:text-3xl font-bold font-sans tracking-tight text-[#16A34A] block leading-tight">
                     5+
                   </span>
-                  <span className="text-xs text-neutral-400 font-sans block leading-tight mt-1">
+                  <span className="text-[13px] sm:text-xs text-neutral-400 font-sans block leading-tight mt-1">
                     Anos de experiência
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export const Autoridade: React.FC = () => {
                   <span className="text-2xl sm:text-2xl lg:text-3xl font-bold font-sans tracking-tight text-[#16A34A] block leading-tight">
                     300+
                   </span>
-                  <span className="text-xs text-neutral-400 font-sans block leading-tight mt-1">
+                  <span className="text-[13px] sm:text-xs text-neutral-400 font-sans block leading-tight mt-1">
                     Empresas locais analisadas e ajustadas
                   </span>
                 </div>
@@ -70,7 +70,7 @@ export const Autoridade: React.FC = () => {
                   <span className="text-2xl sm:text-2xl lg:text-3xl font-bold font-sans tracking-tight text-[#16A34A] block leading-tight">
                     200 mil+
                   </span>
-                  <span className="text-xs text-neutral-400 font-sans block leading-tight mt-1">
+                  <span className="text-[13px] sm:text-xs text-neutral-400 font-sans block leading-tight mt-1">
                     Interações com clientes para empresas locais
                   </span>
                 </div>

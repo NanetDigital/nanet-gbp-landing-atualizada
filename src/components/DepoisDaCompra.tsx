@@ -28,10 +28,10 @@ export const DepoisDaCompra: React.FC = () => {
             <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
               PASSO 01
             </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#171717] font-sans mb-2 tracking-tight">
+            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
               Confira seu e-mail
             </h3>
-            <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
+            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
               Receba o <strong className="font-bold text-[#171717]">acesso à área de membros na Hotmart</strong> e as instruções para enviar os dados da empresa e agendar sua orientação.
             </p>
           </div>
@@ -44,10 +44,10 @@ export const DepoisDaCompra: React.FC = () => {
             <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
               PASSO 02
             </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#171717] font-sans mb-2 tracking-tight">
+            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
               Escolha seu horário
             </h3>
-            <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
+            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
               Forneça as informações necessárias da empresa e escolha um horário disponível. <strong className="font-bold text-[#171717]">Nossa equipe prepara seus dois relatórios personalizados.</strong>
             </p>
           </div>
@@ -60,10 +60,10 @@ export const DepoisDaCompra: React.FC = () => {
             <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
               PASSO 03
             </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#171717] font-sans mb-2 tracking-tight">
+            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
               Descubra por onde começar
             </h3>
-            <p className="text-sm sm:text-[15px] text-[#6B7280] font-sans leading-relaxed max-w-[280px]">
+            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
               Durante a orientação agendada de 30 minutos, <strong className="font-bold text-[#171717]">o especialista apresenta e entrega os relatórios</strong> e explica as prioridades identificadas.
             </p>
           </div>

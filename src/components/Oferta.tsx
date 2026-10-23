@@ -38,16 +38,16 @@ export const Oferta: React.FC<OfertaProps> = () => {
               <div className="flex items-start gap-3 min-w-0">
                 <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
                 <div className="min-w-0">
-                  <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                  <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
                     Diagnóstico Personalizado
                   </h4>
-                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Inclui Relatório Geogrid (posição e concorrentes) e Relatório de Saúde do Perfil do Google.
                   </p>
                 </div>
               </div>
               <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
-                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 200</span>
+                <span className="text-[16px] sm:text-[17px] font-bold text-red-600 line-through">R$ 200</span>
               </div>
             </div>
 
@@ -56,16 +56,16 @@ export const Oferta: React.FC<OfertaProps> = () => {
               <div className="flex items-start gap-3 min-w-0">
                 <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
                 <div className="min-w-0">
-                  <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                  <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
                     Orientação Profissional de 30 Minutos
                   </h4>
-                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Um especialista apresenta e entrega os dois relatórios, interpreta os resultados e indica as melhorias prioritárias.
                   </p>
                 </div>
               </div>
               <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
-                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 147</span>
+                <span className="text-[16px] sm:text-[17px] font-bold text-red-600 line-through">R$ 147</span>
               </div>
             </div>
 
@@ -78,17 +78,17 @@ export const Oferta: React.FC<OfertaProps> = () => {
                     <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold font-mono uppercase tracking-wider bg-emerald-100 text-[#15803D] border border-emerald-300 leading-none">
                       BÔNUS
                     </span>
-                    <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                    <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
                       Checklist de Implementação no Google
                     </h4>
                   </div>
-                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Material de apoio para organizar e acompanhar os ajustes recomendados.
                   </p>
                 </div>
               </div>
               <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
-                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 47</span>
+                <span className="text-[16px] sm:text-[17px] font-bold text-red-600 line-through">R$ 47</span>
               </div>
             </div>
 
@@ -101,23 +101,23 @@ export const Oferta: React.FC<OfertaProps> = () => {
                     <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold font-mono uppercase tracking-wider bg-emerald-100 text-[#15803D] border border-emerald-300 leading-none">
                       BÔNUS
                     </span>
-                    <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
+                    <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
                       Grupo Exclusivo de Empresários no WhatsApp
                     </h4>
                   </div>
-                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Espaço para trocar experiências com outros empresários locais.
                   </p>
                 </div>
               </div>
               <div className="shrink-0 whitespace-nowrap pt-0.5 sm:pt-0 pl-2">
-                <span className="text-[15px] sm:text-[16px] font-bold text-red-600 line-through">R$ 47</span>
+                <span className="text-[16px] sm:text-[17px] font-bold text-red-600 line-through">R$ 47</span>
               </div>
             </div>
 
             {/* Rodapé da tabela: Valor de referência das entregas vs R$ 441 */}
             <div className="py-3.5 sm:py-4 px-4 sm:px-6 flex items-center justify-between gap-3 text-left bg-neutral-50/70">
-              <span className="text-[15px] sm:text-[16px] font-bold text-[#171717] font-sans leading-snug">
+              <span className="text-[16px] sm:text-[18px] font-bold text-[#171717] font-sans leading-snug">
                 Valor de referência das entregas
               </span>
               <div className="shrink-0 whitespace-nowrap pl-2 text-right">
@@ -163,23 +163,23 @@ export const Oferta: React.FC<OfertaProps> = () => {
 
             {/* 5 Entregáveis abaixo da imagem em 2 colunas com alto contraste (#171717) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 pt-6 sm:pt-7 text-left px-0.5">
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+              <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
                 <span>Relatório Geogrid</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+              <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
                 <span>Relatório de Saúde do Perfil</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+              <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
                 <span>Orientação profissional de 30 minutos</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans">
+              <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
                 <span>Checklist de implementação</span>
               </div>
-              <div className="flex items-center gap-2.5 text-sm sm:text-base font-semibold text-[#171717] font-sans sm:col-span-2">
+              <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans sm:col-span-2">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
                 <span>Grupo exclusivo de WhatsApp</span>
               </div>
@@ -196,7 +196,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                 <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#171717] font-sans">
                   Sua Análise Estratégica Completa
                 </h3>
-                <p className="text-xs sm:text-[13px] text-[#6B7280] font-sans max-w-sm mx-auto leading-relaxed">
+                <p className="text-[15px] sm:text-[15px] text-[#6B7280] font-sans max-w-sm mx-auto leading-relaxed">
                   Entenda como sua empresa aparece nas buscas locais, conheça os pontos de atenção do seu Perfil do Google e descubra quais melhorias priorizar.
                 </p>
                 <div className="text-xs sm:text-sm font-sans text-neutral-500 pt-1">
@@ -232,7 +232,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                       (window as any).fbq('trackCustom', 'ClickCheckout');
                     }
                   }}
-                  className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] max-[350px]:text-[14px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
+                  className="w-full sm:w-[290px] inline-flex items-center justify-center min-h-[52px] sm:min-h-[50px] py-3.5 px-4 sm:px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal sm:whitespace-nowrap leading-snug sm:leading-normal"
                 >
                   QUERO RECEBER MINHA ANÁLISE
                 </a>
