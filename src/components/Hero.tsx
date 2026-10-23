@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
 
           {/* 3. Nova Subheadline Centralizada */}
           <div className="text-center px-2 max-w-[440px] mx-auto">
-            <p className="text-[14px] sm:text-[15px] text-gray-300 font-sans leading-relaxed">
+            <p className="text-[16px] text-gray-300 font-sans leading-relaxed">
               Veja como sua posição varia nas buscas locais, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e saiba o que melhorar primeiro com a orientação de um especialista.
             </p>
           </div>
@@ -173,7 +173,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleCheckoutClick}
-              className="w-full inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
+              className="w-full inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
             >
               QUERO RECEBER MINHA ANÁLISE
             </a>

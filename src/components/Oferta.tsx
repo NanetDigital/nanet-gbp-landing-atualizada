@@ -41,7 +41,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                   <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
                     Diagnóstico Personalizado
                   </h4>
-                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Inclui Relatório Geogrid (posição e concorrentes) e Relatório de Saúde do Perfil do Google.
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                   <h4 className="text-[15px] sm:text-[16px] font-semibold text-[#171717] font-sans leading-snug">
                     Orientação Profissional de 30 Minutos
                   </h4>
-                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Um especialista apresenta e entrega os dois relatórios, interpreta os resultados e indica as melhorias prioritárias.
                   </p>
                 </div>
@@ -82,7 +82,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                       Checklist de Implementação no Google
                     </h4>
                   </div>
-                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Material de apoio para organizar e acompanhar os ajustes recomendados.
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                       Grupo Exclusivo de Empresários no WhatsApp
                     </h4>
                   </div>
-                  <p className="text-[13px] sm:text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[14px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Espaço para trocar experiências com outros empresários locais.
                   </p>
                 </div>

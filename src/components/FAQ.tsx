@@ -126,7 +126,7 @@ export const FAQ: React.FC = () => {
                   aria-expanded={isOpen}
                   className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer group"
                 >
-                  <span className="font-sans text-base sm:text-[17px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-snug">
+                  <span className="font-sans text-[17px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-snug">
                     {item.question}
                   </span>
                   <div
