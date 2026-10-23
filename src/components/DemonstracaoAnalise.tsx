@@ -277,7 +277,7 @@ export const DemonstracaoAnalise: React.FC = () => {
                       alt={slide.alt}
                       width={slide.width}
                       height={slide.height}
-                      loading={index === 0 ? 'eager' : 'lazy'}
+                      loading="lazy"
                       decoding="async"
                       className="block w-full h-full min-w-0 min-h-0 object-contain object-center rounded-xl select-none pointer-events-none max-md:-translate-y-[3%]"
                       style={{

@@ -46,7 +46,7 @@ const depoimentos: DepoimentoItem[] = [
   },
 ];
 
-// Curva de transição suave cubic-bezier(0.4, 0, 0.2, 1) para 3 segundos
+// Curva de transição suave cubic-bezier(0.4, 0, 0.2, 1) para 3 segundos da versão 71
 function easeTransition(t: number): number {
   if (t <= 0) return 0;
   if (t >= 1) return 1;
@@ -69,13 +69,13 @@ function easeTransition(t: number): number {
   return ((ay * x + by) * x + cy) * x;
 }
 
-// Curva de alinhamento suave (snap) ao soltar o arraste
+// Curva de alinhamento suave (snap) ao soltar o arraste da versão 71
 function easeOutQuad(t: number): number {
   const clamped = Math.max(0, Math.min(1, t));
   return clamped * (2 - clamped);
 }
 
-// Verifica se o dispositivo possui um ponteiro fino (mouse real) e suporte a hover
+// Verifica se o dispositivo possui um ponteiro fino (mouse desktop)
 function hasFinePointer(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -107,10 +107,7 @@ export const ClientesConfirmam: React.FC = () => {
   const isDraggingRef = useRef<boolean>(false);
   const isMouseDownRef = useRef<boolean>(false);
 
-  // Visibilidade, animação e acessibilidade
-  const isIntersectingRef = useRef<boolean>(false);
-  const isDocumentVisibleRef = useRef<boolean>(true);
-  const prefersReducedMotionRef = useRef<boolean>(false);
+  // Controle de frames e timestamps
   const animationFrameIdRef = useRef<number | null>(null);
   const lastTimestampRef = useRef<number | null>(null);
 
@@ -134,11 +131,12 @@ export const ClientesConfirmam: React.FC = () => {
         if (dist > 50) {
           measuredDistance = dist;
         }
-      } else if (seqEl.offsetWidth > 0) {
+      }
+      if (measuredDistance <= 0 && seqEl.offsetWidth > 0) {
         measuredDistance = seqEl.offsetWidth / 5;
       }
     }
-    // Fallback inteligente caso ainda não calculado
+    // Fallback instantâneo caso o DOM ainda esteja calculando layout
     if (measuredDistance <= 0 && typeof window !== 'undefined') {
       const viewportW = window.innerWidth || 1200;
       const cardW = Math.min(viewportW * 0.82, viewportW >= 1024 ? 340 : (viewportW >= 768 ? 330 : 320));
@@ -147,8 +145,13 @@ export const ClientesConfirmam: React.FC = () => {
     }
     if (measuredDistance > 0) {
       cardDistanceRef.current = measuredDistance;
-      // 5 cards por sequência, o loop perfeito ocorre exatamente em 5 * cardDistance
       seqWidthRef.current = measuredDistance * 5;
+    }
+
+    // Inicializa a posição física na Sequência 2 (Principal)
+    if (trackRef.current) {
+      const initialTranslate = -(seqWidthRef.current + offsetRef.current);
+      trackRef.current.style.transform = `translate3d(${initialTranslate}px, 0, 0)`;
     }
   }, []);
 
@@ -164,9 +167,10 @@ export const ClientesConfirmam: React.FC = () => {
   }, []);
 
   const startLoop = useCallback(() => {
-    if (animationFrameIdRef.current !== null) return;
-    if (!isIntersectingRef.current || !isDocumentVisibleRef.current || prefersReducedMotionRef.current) {
-      return;
+    // Cancela frame anterior para garantir estritamente 1 único loop ativo
+    if (animationFrameIdRef.current !== null) {
+      cancelAnimationFrame(animationFrameIdRef.current);
+      animationFrameIdRef.current = null;
     }
 
     if (trackRef.current) {
@@ -184,15 +188,16 @@ export const ClientesConfirmam: React.FC = () => {
 
       const cardDistance = cardDistanceRef.current || 340;
       const seqWidth = seqWidthRef.current || cardDistance * 5;
-
       const currentPhase = phaseRef.current;
 
-      // Pausa por hover exclusivamente se tiver ponteiro fino (mouse desktop)
-      const isPausedByHover = isHoveredRef.current && hasFinePointer();
+      // Pausa por hover EXCLUSIVAMENTE em Desktop real (>= 1024px) com cursor fino
+      // No simulador mobile do AI Studio (< 1024px), hover é completamente ignorado para nunca congelar
+      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+      const isPausedByHover = isHoveredRef.current && hasFinePointer() && isDesktop;
 
       if (!isPausedByHover) {
         if (currentPhase.type === 'HOLD') {
-          // 1 segundo de pausa com o card perfeitamente alinhado
+          // ETAPA 1 e 3: 1 segundo de pausa com o card perfeitamente alinhado
           currentPhase.elapsed += deltaSeconds;
           offsetRef.current = currentPhase.cardIndex * cardDistance;
 
@@ -205,7 +210,7 @@ export const ClientesConfirmam: React.FC = () => {
             };
           }
         } else if (currentPhase.type === 'TRANSITION') {
-          // 3 segundos de transição suave até o próximo card
+          // ETAPA 2: 3 segundos de transição suave até o próximo card via cubic-bezier(0.4, 0, 0.2, 1)
           currentPhase.elapsed += deltaSeconds;
           const progress = Math.min(1, currentPhase.elapsed / 3.0);
           const eased = easeTransition(progress);
@@ -214,7 +219,7 @@ export const ClientesConfirmam: React.FC = () => {
           offsetRef.current = startX + (endX - startX) * eased;
 
           if (currentPhase.elapsed >= 3.0) {
-            // Transição completada: normaliza o cardIndex e entra em HOLD de 1 segundo
+            // ETAPA 4: Transição completada: normaliza o cardIndex de 0 a 4 e entra em HOLD de 1 segundo
             const nextIndex = ((currentPhase.toIndex % 5) + 5) % 5;
             offsetRef.current = nextIndex * cardDistance;
             phaseRef.current = {
@@ -224,7 +229,7 @@ export const ClientesConfirmam: React.FC = () => {
             };
           }
         } else if (currentPhase.type === 'SNAPPING') {
-          // Alinhamento suave ao soltar o arraste
+          // Alinhamento suave ao soltar o arraste manual
           currentPhase.elapsed += deltaSeconds;
           const progress = Math.min(1, currentPhase.elapsed / currentPhase.duration);
           const eased = easeOutQuad(progress);
@@ -242,90 +247,29 @@ export const ClientesConfirmam: React.FC = () => {
         }
       }
 
-      // Aplica o deslocamento físico na GPU (3 sequências: Prepend, Principal, Append)
+      // Aplica o deslocamento físico direto na GPU (3 sequências: Prepend, Principal, Append)
       if (trackRef.current) {
         const translateX = -(seqWidth + offsetRef.current);
         trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
 
-      if (isIntersectingRef.current && isDocumentVisibleRef.current && !prefersReducedMotionRef.current) {
-        animationFrameIdRef.current = requestAnimationFrame(step);
-      } else {
-        stopLoop();
-      }
+      // Continua o loop de animação de forma ininterrupta e confiável
+      animationFrameIdRef.current = requestAnimationFrame(step);
     };
 
     animationFrameIdRef.current = requestAnimationFrame(step);
-  }, [stopLoop]);
+  }, []);
 
-  // Ciclo de vida com IntersectionObserver, visibilidade e redimensionamento
+  // Ciclo de vida: inicialização imediata e listeners de redimensionamento
   useEffect(() => {
     updateDimensions();
 
+    // Inicia imediatamente o loop rAF no mount sem barreiras de bloqueio
+    startLoop();
+
     if (typeof window === 'undefined') return;
 
-    // 1. Verificação de preferência por redução de movimento
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    prefersReducedMotionRef.current = mediaQuery.matches;
-
-    const handleMotionChange = (e: MediaQueryListEvent) => {
-      prefersReducedMotionRef.current = e.matches;
-      if (e.matches) {
-        stopLoop();
-      } else if (isIntersectingRef.current && isDocumentVisibleRef.current) {
-        startLoop();
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleMotionChange);
-
-    // 2. Pausa quando a aba do navegador estiver oculta
-    const handleVisibilityChange = () => {
-      const isVisible = !document.hidden;
-      isDocumentVisibleRef.current = isVisible;
-      if (isVisible) {
-        if (isIntersectingRef.current && !prefersReducedMotionRef.current) {
-          startLoop();
-        }
-      } else {
-        stopLoop();
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // 3. IntersectionObserver: executa exclusivamente quando a seção está próxima ou na viewport
-    const target = containerRef.current;
-    let observer: IntersectionObserver | null = null;
-
-    if (target && 'IntersectionObserver' in window) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0];
-          const isIntersecting = entry.isIntersecting;
-          isIntersectingRef.current = isIntersecting;
-
-          if (isIntersecting) {
-            updateDimensions();
-            if (isDocumentVisibleRef.current && !prefersReducedMotionRef.current) {
-              startLoop();
-            }
-          } else {
-            stopLoop();
-          }
-        },
-        {
-          root: null,
-          rootMargin: '200px 0px', // Retoma suavemente 200px antes de entrar no viewport
-          threshold: 0,
-        }
-      );
-      observer.observe(target);
-    } else {
-      isIntersectingRef.current = true;
-      startLoop();
-    }
-
+    // Observador de redimensionamento dos cards para adaptação fluida
     const resizeObserver = new ResizeObserver(() => {
       updateDimensions();
     });
@@ -339,13 +283,50 @@ export const ClientesConfirmam: React.FC = () => {
     };
     window.addEventListener('resize', handleResize);
 
+    // Instrumentação de diagnóstico em tempo real no console e em window.__CAROUSEL_TEST_RESULTS__
+    const startTime = performance.now();
+    const records: Array<{ time: string; phase: string; offset: number; left: number; transform: string }> = [];
+
+    const captureSnapshot = (label: string) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const left = track.getBoundingClientRect().left;
+      const transform = getComputedStyle(track).transform;
+      const phase = phaseRef.current.type;
+      const offset = offsetRef.current;
+      records.push({ time: label, phase, offset, left, transform });
+      console.log(`[Carrossel V71 - ${label}] Fase: ${phase} | Offset: ${offset.toFixed(1)}px | Left: ${left.toFixed(1)}px | Transform: ${transform}`);
+    };
+
+    captureSnapshot('0s (Inicial)');
+
+    const timer2s = setTimeout(() => captureSnapshot('2s (Transição 1)'), 2000);
+    const timer5s = setTimeout(() => captureSnapshot('5s (Transição 2)'), 5000);
+    const timer10s = setTimeout(() => captureSnapshot('10s (Transição 3)'), 10000);
+    const timer12s = setTimeout(() => {
+      captureSnapshot('12s (Final)');
+      const t0 = records[0];
+      const t12 = records[records.length - 1];
+      const deltaTotal = Math.abs(t12.left - t0.left);
+      const isMoving = deltaTotal > 50;
+      console.log(`[Carrossel V71 - Diagnóstico Final] Deslocamento total comprovado: ${deltaTotal.toFixed(1)}px`);
+      console.log(`[Carrossel V71 - Diagnóstico Final] Status: ${isMoving ? 'MOVIMENTO ATIVO E COMPROVADO' : 'PARADO'}`);
+      console.table(records);
+      (window as any).__CAROUSEL_TEST_RESULTS__ = {
+        records,
+        deltaTotal,
+        isMoving,
+      };
+    }, 12000);
+
     return () => {
       stopLoop();
-      mediaQuery.removeEventListener('change', handleMotionChange);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      if (observer) observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
+      clearTimeout(timer2s);
+      clearTimeout(timer5s);
+      clearTimeout(timer10s);
+      clearTimeout(timer12s);
     };
   }, [updateDimensions, startLoop, stopLoop]);
 
@@ -363,7 +344,7 @@ export const ClientesConfirmam: React.FC = () => {
     const targetOffset = nearestIndex * cardDistance;
     const distanceToSnap = Math.abs(targetOffset - currentOffset);
 
-    // Duração do snap proporcional à distância (entre 180ms e 320ms)
+    // Duração do snap proporcional à distância (entre 180ms e 320ms da versão 71)
     const duration = distanceToSnap < 2 ? 0.05 : Math.min(0.32, Math.max(0.18, (distanceToSnap / cardDistance) * 0.32));
 
     phaseRef.current = {
@@ -377,7 +358,7 @@ export const ClientesConfirmam: React.FC = () => {
     startLoop();
   }, [startLoop]);
 
-  // Eventos de Toque no Mobile
+  // Eventos de Toque no Mobile (Arraste horizontal com preservação da rolagem vertical)
   const handleTouchStart = (e: React.TouchEvent) => {
     isHoveredRef.current = false;
     if (e.touches.length !== 1) return;
@@ -400,11 +381,11 @@ export const ClientesConfirmam: React.FC = () => {
       if (diffX < 6 && diffY < 6) return;
 
       if (diffY >= diffX) {
-        // Gesto vertical: preserva 100% a rolagem vertical padrão da página
+        // Gesto predominantemente vertical: preserva 100% a rolagem vertical padrão da página no celular
         touchDirectionRef.current = 'vertical';
         return;
       } else {
-        // Gesto horizontal: assume o controle do carrossel
+        // Gesto horizontal: assume o controle suave do carrossel
         touchDirectionRef.current = 'horizontal';
         isDraggingRef.current = true;
         setIsDraggingUI(true);
@@ -428,10 +409,10 @@ export const ClientesConfirmam: React.FC = () => {
     touchDirectionRef.current = null;
   };
 
-  // Eventos de Mouse no Desktop
+  // Eventos de Mouse no Desktop (Arraste e Pausa)
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!hasFinePointer()) return;
-    if (e.button !== 0) return; // Apenas botão principal (esquerdo)
+    if (e.button !== 0) return;
     isMouseDownRef.current = true;
     dragStartXRef.current = e.clientX;
     dragStartOffsetRef.current = offsetRef.current;
@@ -472,8 +453,9 @@ export const ClientesConfirmam: React.FC = () => {
     };
   }, [finishDrag]);
 
-  // Pausa automática no hover do mouse (Desktop exclusivo com mouse real)
+  // Pausa no hover estritamente para desktop real (>= 1024px)
   const handleMouseEnter = () => {
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
     if (!hasFinePointer()) return;
     isHoveredRef.current = true;
   };
@@ -497,7 +479,7 @@ export const ClientesConfirmam: React.FC = () => {
             </h2>
           </div>
 
-          {/* Faixa Contínua Interativa */}
+          {/* Faixa Interativa por Etapas (Versão 71: HOLD 1s + TRANSITION 3s + Arraste) */}
           <div
             ref={containerRef}
             className={`depoimentos-marquee-container relative w-full overflow-hidden select-none ${
@@ -510,14 +492,13 @@ export const ClientesConfirmam: React.FC = () => {
             onMouseDown={handleMouseDown}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            aria-label="Faixa de depoimentos de clientes da Nanet Digital. Deslize para voltar às avaliações anteriores."
+            aria-label="Faixa de depoimentos de clientes da Nanet Digital. Deslize para navegar pelas avaliações."
           >
             <div
               ref={trackRef}
               className="depoimentos-marquee-track flex w-max items-center"
-              style={{ transform: 'translate3d(-33.333333%, 0, 0)' }}
             >
-              {/* Sequência 1 (Prepend para loop e arraste para avaliações anteriores) */}
+              {/* Sequência 1 (Prepend para loop infinito e navegação reversa) */}
               <div
                 className="flex shrink-0 items-center gap-4 sm:gap-5 pr-4 sm:pr-5"
                 aria-hidden="true"

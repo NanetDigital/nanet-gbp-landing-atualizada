@@ -15,14 +15,9 @@
   overflow-y: hidden !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
-  padding-left: max(0px, calc((100% - min(82vw, 320px)) / 2));
   touch-action: pan-y;
-}
-
-@media (min-width: 640px) {
-  .depoimentos-marquee-container {
-    padding-left: 0;
-  }
+  position: relative !important;
+  width: 100% !important;
 }
 
 .depoimentos-marquee-container::-webkit-scrollbar {
