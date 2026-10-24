@@ -7,9 +7,10 @@
     <meta name="description" content="Descubra onde sua empresa aparece no Google Maps e como se compara aos concorrentes da sua região com a Análise Estratégica da Nanet." />
     <meta property="og:title" content="Nanet | Análise Estratégica" />
     <meta property="og:description" content="Descubra onde sua empresa aparece no Google Maps e como se compara aos concorrentes da sua região com a Análise Estratégica da Nanet." />
-    <!-- Preconnect to Cloudinary CDN for critical branding assets -->
+    <!-- Preconnect to Cloudinary CDN for critical branding assets and Facebook for Pixel -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <!-- Preload Hero Image for immediate LCP delivery with responsive srcset -->
     <link
       rel="preload"
@@ -159,6 +160,7 @@
                   href="https://pay.hotmart.com/V106938201T"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onclick="if(typeof fbq==='function'){fbq('trackCustom','ClickCheckout');}"
                   class="w-full sm:w-[320px] inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
                 >
                   QUERO RECEBER MINHA ANÁLISE
@@ -261,6 +263,7 @@
                 href="https://pay.hotmart.com/V106938201T"
                 target="_blank"
                 rel="noopener noreferrer"
+                onclick="if(typeof fbq==='function'){fbq('trackCustom','ClickCheckout');}"
                 class="w-full inline-flex items-center justify-center min-h-[50px] py-3.5 px-6 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-normal leading-snug"
               >
                 QUERO RECEBER MINHA ANÁLISE
@@ -276,28 +279,54 @@
     <script>
       (function(){
         try {
+          var allowed = [
+            'utm_source',
+            'utm_medium',
+            'utm_campaign',
+            'utm_content',
+            'utm_term',
+            'utm_id',
+            'fbclid',
+            'gclid',
+            'sck',
+            'src'
+          ];
+          var storageKey = 'nanet_tracking_params';
+          var activeParams = {};
+
           if (window.location.search) {
-            var allowed = [
-              'utm_source',
-              'utm_medium',
-              'utm_campaign',
-              'utm_content',
-              'utm_term',
-              'utm_id',
-              'fbclid',
-              'gclid',
-              'sck',
-              'src'
-            ];
             var urlParams = new URLSearchParams(window.location.search);
+            allowed.forEach(function(param) {
+              var val = urlParams.get(param);
+              if (val !== null && val.trim() !== '') {
+                activeParams[param] = val;
+              }
+            });
+
+            if (Object.keys(activeParams).length > 0) {
+              try {
+                var storedJson = sessionStorage.getItem(storageKey);
+                var stored = storedJson ? JSON.parse(storedJson) : {};
+                var merged = Object.assign({}, stored, activeParams);
+                sessionStorage.setItem(storageKey, JSON.stringify(merged));
+                activeParams = merged;
+              } catch(e) {}
+            }
+          } else {
+            try {
+              var storedJson = sessionStorage.getItem(storageKey);
+              if (storedJson) {
+                activeParams = JSON.parse(storedJson) || {};
+              }
+            } catch(e) {}
+          }
+
+          if (Object.keys(activeParams).length > 0) {
             var links = document.querySelectorAll('a[href*="pay.hotmart.com"]');
             links.forEach(function(link) {
               var url = new URL(link.href);
-              allowed.forEach(function(param) {
-                var val = urlParams.get(param);
-                if (val !== null && val.trim() !== '') {
-                  url.searchParams.set(param, val);
-                }
+              Object.keys(activeParams).forEach(function(param) {
+                url.searchParams.set(param, activeParams[param]);
               });
               link.href = url.toString();
             });
