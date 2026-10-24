@@ -107,6 +107,7 @@ export const ClientesConfirmam: React.FC = () => {
   const isHoveredRef = useRef<boolean>(false);
   const isDraggingRef = useRef<boolean>(false);
   const isMouseDownRef = useRef<boolean>(false);
+  const isTouchingRef = useRef<boolean>(false);
 
   // Controle de frames e timestamps
   const animationFrameIdRef = useRef<number | null>(null);
@@ -219,8 +220,11 @@ export const ClientesConfirmam: React.FC = () => {
       // No simulador mobile do AI Studio (< 1024px), hover é completamente ignorado para nunca congelar
       const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
       const isPausedByHover = isHoveredRef.current && hasFinePointer() && isDesktop;
+      // Pausa imediata ao encostar e segurar no mobile
+      const isPausedByTouch = isTouchingRef.current && !isDraggingRef.current;
+      const isPaused = isPausedByHover || isPausedByTouch;
 
-      if (!isPausedByHover) {
+      if (!isPaused && phaseRef.current.type !== 'DRAGGING') {
         if (currentPhase.type === 'HOLD') {
           // ETAPA 1 e 3: 1 segundo de pausa com o card perfeitamente alinhado
           currentPhase.elapsed += deltaSeconds;
@@ -365,6 +369,7 @@ export const ClientesConfirmam: React.FC = () => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
     isHoveredRef.current = false;
+    isTouchingRef.current = false;
     setIsDraggingUI(false);
 
     const cardDistance = cardDistanceRef.current || 340;
@@ -391,12 +396,19 @@ export const ClientesConfirmam: React.FC = () => {
   // Eventos de Toque no Mobile (Arraste horizontal com preservação da rolagem vertical)
   const handleTouchStart = (e: React.TouchEvent) => {
     isHoveredRef.current = false;
-    if (e.touches.length !== 1) return;
+    if (e.touches.length !== 1) {
+      if (isDraggingRef.current) finishDrag();
+      isTouchingRef.current = false;
+      return;
+    }
+    // Pausa imediata ao encostar o dedo na faixa
+    isTouchingRef.current = true;
     touchStartXRef.current = e.touches[0].clientX;
     touchStartYRef.current = e.touches[0].clientY;
     touchDirectionRef.current = null;
     dragStartOffsetRef.current = offsetRef.current;
     dragStartXRef.current = e.touches[0].clientX;
+    isDraggingRef.current = false;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -408,32 +420,62 @@ export const ClientesConfirmam: React.FC = () => {
       const diffX = Math.abs(currentX - touchStartXRef.current);
       const diffY = Math.abs(currentY - touchStartYRef.current);
 
-      if (diffX < 6 && diffY < 6) return;
+      // Limiar mínimo de 3px para resposta instantânea sem atraso perceptível
+      if (diffX < 3 && diffY < 3) return;
 
-      if (diffY >= diffX) {
-        // Gesto predominantemente vertical: preserva 100% a rolagem vertical padrão da página no celular
+      if (diffY > diffX) {
+        // Gesto predominantemente vertical: libera rolagem nativa da página e desativa a pausa
         touchDirectionRef.current = 'vertical';
+        isTouchingRef.current = false;
         return;
       } else {
-        // Gesto horizontal: assume o controle suave do carrossel
+        // Gesto horizontal: assume o controle manual imediato sem esperar HOLD ou TRANSITION
         touchDirectionRef.current = 'horizontal';
         isDraggingRef.current = true;
         setIsDraggingUI(true);
         phaseRef.current = { type: 'DRAGGING' };
-        dragStartOffsetRef.current = offsetRef.current;
         dragStartXRef.current = currentX;
+        dragStartOffsetRef.current = offsetRef.current;
       }
     }
 
     if (touchDirectionRef.current === 'horizontal' && isDraggingRef.current) {
-      const delta = currentX - dragStartXRef.current;
-      offsetRef.current = dragStartOffsetRef.current - delta;
+      const deltaX = currentX - dragStartXRef.current;
+      let newOffset = dragStartOffsetRef.current - deltaX;
+
+      // Loop contínuo infinito e seguro nas duas direções
+      const cardDist = cardDistanceRef.current || 340;
+      const sw = seqWidthRef.current || cardDist * 5;
+
+      while (newOffset < -cardDist * 2) {
+        newOffset += sw;
+        dragStartOffsetRef.current += sw;
+      }
+      while (newOffset >= sw + cardDist * 2) {
+        newOffset -= sw;
+        dragStartOffsetRef.current -= sw;
+      }
+
+      offsetRef.current = newOffset;
+
+      // Resposta física direta no DOM para acompanhamento 1:1 com latência zero
+      if (trackRef.current) {
+        const centerOffset = centerOffsetRef.current || 0;
+        const translateX = -(sw + offsetRef.current) + centerOffset;
+        trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      }
     }
   };
 
-  const handleTouchEnd = () => {
+  const handleTouchEnd = (e: React.TouchEvent) => {
     isHoveredRef.current = false;
-    if (touchDirectionRef.current === 'horizontal') {
+    // Se ainda restar algum dedo na tela, não finaliza ainda
+    if (e.touches && e.touches.length > 0) return;
+
+    const wasDragging = isDraggingRef.current && touchDirectionRef.current === 'horizontal';
+    isTouchingRef.current = false;
+
+    if (wasDragging) {
       finishDrag();
     }
     touchDirectionRef.current = null;
@@ -498,7 +540,7 @@ export const ClientesConfirmam: React.FC = () => {
     <section
       id="clientes-confirmam"
       aria-label="Depoimentos de clientes da Nanet"
-      className="w-full py-16 sm:py-20 lg:py-24 bg-[#F6F3EF] border-b border-neutral-200/80 overflow-hidden"
+      className="w-full pt-16 sm:pt-20 lg:pt-24 pb-0 bg-[#F6F3EF] overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="space-y-8 sm:space-y-10">
@@ -606,6 +648,13 @@ export const ClientesConfirmam: React.FC = () => {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Indicação visual discreta para mobile */}
+          <div className="text-center -mt-4 sm:-mt-5">
+            <p className="text-xs sm:text-sm text-neutral-500 font-sans tracking-wide select-none">
+              Toque e segure para pausar · Deslize para ver
+            </p>
           </div>
         </div>
       </div>

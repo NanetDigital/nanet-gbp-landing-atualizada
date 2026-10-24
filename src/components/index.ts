@@ -19,6 +19,7 @@ export { TermosDeUso } from './TermosDeUso';
 export { SectionHeader } from './SectionHeader';
 export { DemonstracaoAnalise } from './DemonstracaoAnalise';
 export { ClientesConfirmam } from './ClientesConfirmam';
+export { AntesDepois } from './AntesDepois';
 export { EntregaveisAnalise } from './EntregaveisAnalise';
 export { BonusChecklist } from './BonusChecklist';
 export { PublicoAlvo } from './PublicoAlvo';

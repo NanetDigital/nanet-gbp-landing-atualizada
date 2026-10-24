@@ -2,6 +2,7 @@ import React from 'react';
 import { OportunidadeData } from '../types/landing';
 import { DemonstracaoAnalise } from './DemonstracaoAnalise';
 import { ClientesConfirmam } from './ClientesConfirmam';
+import { AntesDepois } from './AntesDepois';
 import { EntregaveisAnalise } from './EntregaveisAnalise';
 import { BonusChecklist } from './BonusChecklist';
 
@@ -24,6 +25,9 @@ export const Oportunidade: React.FC<OportunidadeProps> = () => {
 
       {/* SEÇÃO COMPLETA: Clientes confirmam a experiência */}
       <ClientesConfirmam />
+
+      {/* SEÇÃO COMPLETA: ANTES × DEPOIS */}
+      <AntesDepois />
 
       {/* SEÇÃO: Apresentação detalhada dos 4 entregáveis da Análise Estratégica */}
       <EntregaveisAnalise />

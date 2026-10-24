@@ -1,6 +1,6 @@
 {
-  "name": "Landing Page Architecture",
-  "description": "Estrutura visual minimalista e modular de Landing Page em React, TypeScript e Tailwind CSS.",
+  "name": "Nanet | Análise Estratégica",
+  "description": "Descubra onde sua empresa aparece no Google Maps e como se compara aos concorrentes da sua região com a Análise Estratégica da Nanet.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
