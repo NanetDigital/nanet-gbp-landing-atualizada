@@ -118,7 +118,7 @@ export const BonusChecklist: React.FC = () => {
 
                 {/* Headline */}
                 <h3 className="text-2xl sm:text-[26px] lg:text-[28px] font-bold tracking-tight text-white font-sans leading-[1.2] max-w-xl">
-                  Grupo Exclusivo de Empresários no WhatsApp
+                  Grupo de Empresários no WhatsApp
                 </h3>
 
                 {/* Descrição */}
@@ -168,7 +168,7 @@ export const BonusChecklist: React.FC = () => {
                           Google para Empresas Locais
                         </div>
                         <div className="text-[11px] sm:text-xs text-gray-400 font-sans mt-0.5">
-                          Grupo exclusivo no WhatsApp
+                          Grupo de Empresários no WhatsApp
                         </div>
                       </div>
                     </div>

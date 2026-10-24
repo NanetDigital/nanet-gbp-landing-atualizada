@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
 
             {/* 3. Nova Subheadline */}
             <p className="text-[19px] xl:text-[20px] text-gray-300 font-sans leading-relaxed max-w-xl">
-              Veja como sua posição varia nas buscas locais, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e saiba o que melhorar primeiro com a orientação de um especialista.
+              Veja <strong className="font-bold text-white">como sua posição varia nas buscas locais</strong>, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e <strong className="font-bold text-white">saiba o que melhorar primeiro</strong> com a orientação de um especialista.
             </p>
 
             {/* 4. Nome da Oferta e Oferta Resumida (com divider ---) */}
@@ -83,18 +83,24 @@ export const Hero: React.FC = () => {
 
           {/* COLUNA DIREITA (DESKTOP) — Imagem Ilustrativa de Pesquisa no Google */}
           <div className="flex flex-col items-center justify-center">
-            <img
-              src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
-              srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-              sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
-              alt="Pesquisa de empresa no Google Maps no celular"
-              width={500}
-              height={600}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="w-full max-w-[380px] xl:max-w-[420px] max-h-[480px] object-contain rounded-2xl drop-shadow-2xl"
-            />
+            <div className="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex items-center justify-center">
+              <div className="w-full aspect-square drop-shadow-2xl flex items-center justify-center">
+                <div className="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
+                    srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
+                    alt="Pesquisa de empresa no Google Maps no celular"
+                    width={500}
+                    height={500}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="hero-image-el w-full h-full object-contain rounded-2xl block"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -121,12 +127,12 @@ export const Hero: React.FC = () => {
           {/* 3. Nova Subheadline Centralizada */}
           <div className="text-center px-2 max-w-[440px] mx-auto">
             <p className="text-[18px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
-              Veja como sua posição varia nas buscas locais, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e saiba o que melhorar primeiro com a orientação de um especialista.
+              Veja <strong className="font-bold text-white">como sua posição varia nas buscas locais</strong>, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e <strong className="font-bold text-white">saiba o que melhorar primeiro</strong> com a orientação de um especialista.
             </p>
           </div>
 
           {/* 4. IMAGEM ILUSTRATIVA DO CELULAR */}
-          <div className="w-full max-w-[300px] sm:max-w-[340px] mx-auto flex justify-center py-1">
+          <div className="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex justify-center py-1">
             <div className="w-full aspect-square drop-shadow-xl flex items-center justify-center">
               <div className="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
                 <img
@@ -139,7 +145,7 @@ export const Hero: React.FC = () => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="hero-image-el w-full h-full object-cover rounded-2xl block"
+                  className="hero-image-el w-full h-full object-contain rounded-2xl block"
                 />
               </div>
             </div>

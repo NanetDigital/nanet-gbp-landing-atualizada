@@ -102,7 +102,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                       BÔNUS
                     </span>
                     <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
-                      Grupo Exclusivo de Empresários no WhatsApp
+                      Grupo de Empresários no WhatsApp
                     </h4>
                   </div>
                   <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
@@ -181,7 +181,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
               </div>
               <div className="flex items-center gap-2.5 text-[17px] sm:text-[18px] font-semibold text-[#171717] font-sans sm:col-span-2">
                 <span className="text-[#16A34A] font-bold text-base shrink-0 leading-none">✓</span>
-                <span>Grupo exclusivo de WhatsApp</span>
+                <span>Grupo de Empresários no WhatsApp</span>
               </div>
             </div>
 

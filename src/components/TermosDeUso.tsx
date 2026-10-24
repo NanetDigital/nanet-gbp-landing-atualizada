@@ -60,7 +60,7 @@ export const TermosDeUso: React.FC<PageProps> = ({ onBack }) => {
               2. Sobre o Serviço
             </h2>
             <p>
-              A Análise Estratégica da Empresa oferece diagnóstico do Perfil da Empresa no Google, orientação com especialista, plano de ajustes prioritários e acesso ao grupo exclusivo de empresários no WhatsApp.
+              A Análise Estratégica da Empresa oferece diagnóstico do Perfil da Empresa no Google, orientação com especialista, plano de ajustes prioritários e acesso ao Grupo de Empresários no WhatsApp.
             </p>
           </section>
 

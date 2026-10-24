@@ -38,8 +38,11 @@ export const Autoridade: React.FC = () => {
                 Sua empresa analisada por quem conhece o Google na prática.
               </h2>
 
-              {/* Descrição com negritos pontuais estritos (alinhado à esquerda no mobile) */}
-              <p className="text-left text-[18px] text-neutral-300 font-sans leading-[1.5] mt-2.5 sm:mt-3">
+              {/* Descrição alinhada à esquerda sem hifenização artificial e com quebra natural entre palavras */}
+              <p
+                className="text-left hyphens-none break-normal [overflow-wrap:normal] text-[18px] text-neutral-300 font-sans leading-[1.5] mt-2.5 sm:mt-3"
+                style={{ textAlign: 'left', hyphens: 'none', WebkitHyphens: 'none', wordBreak: 'normal', overflowWrap: 'normal' }}
+              >
                 Leandro Pires, fundador da Nanet, e sua equipe trabalham há <strong className="font-bold text-white">mais de 5 anos</strong> com Perfis da Empresa no Google. Já analisaram e ajustaram <strong className="font-bold text-white">mais de 300 empresas locais</strong>, acumulando <strong className="font-bold text-white">mais de 200 mil interações com clientes</strong>. Essa experiência ajuda a identificar o que pode estar limitando sua presença nas buscas e mostrar quais ajustes priorizar, sem você precisar descobrir tudo sozinho.
               </p>
 

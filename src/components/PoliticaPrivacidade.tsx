@@ -88,7 +88,7 @@ export const PoliticaPrivacidade: React.FC<PageProps> = ({ onBack }) => {
               5. WhatsApp
             </h2>
             <p>
-              Utilizamos o WhatsApp para responder dúvidas, enviar orientações, prestar suporte e disponibilizar o acesso ao grupo exclusivo de empresários.
+              Utilizamos o WhatsApp para responder dúvidas, enviar orientações, prestar suporte e disponibilizar o acesso ao Grupo de Empresários no WhatsApp.
             </p>
           </section>
 
