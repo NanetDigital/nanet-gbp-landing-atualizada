@@ -109,16 +109,17 @@ export const ClientesConfirmam: React.FC = () => {
   const isMouseDownRef = useRef<boolean>(false);
   const isTouchingRef = useRef<boolean>(false);
 
+  // Referências para navegação mobile idêntica a DemonstracaoAnalise.tsx
+  const pointerStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
+  const isPointerDraggingRef = useRef<boolean>(false);
+
   // Controle de frames e timestamps
   const animationFrameIdRef = useRef<number | null>(null);
   const lastTimestampRef = useRef<number | null>(null);
 
-  // Arraste
+  // Arraste desktop
   const dragStartXRef = useRef<number>(0);
   const dragStartOffsetRef = useRef<number>(0);
-  const touchStartXRef = useRef<number>(0);
-  const touchStartYRef = useRef<number>(0);
-  const touchDirectionRef = useRef<'horizontal' | 'vertical' | null>(null);
 
   // Mede as dimensões reais dos cards e espaçamentos no DOM
   const updateDimensions = useCallback(() => {
@@ -220,17 +221,19 @@ export const ClientesConfirmam: React.FC = () => {
       // No simulador mobile do AI Studio (< 1024px), hover é completamente ignorado para nunca congelar
       const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
       const isPausedByHover = isHoveredRef.current && hasFinePointer() && isDesktop;
-      // Pausa imediata ao encostar e segurar no mobile
-      const isPausedByTouch = isTouchingRef.current && !isDraggingRef.current;
+      // Pausa imediata ao encostar o dedo na faixa no mobile
+      const isPausedByTouch = isTouchingRef.current;
       const isPaused = isPausedByHover || isPausedByTouch;
 
       if (!isPaused && phaseRef.current.type !== 'DRAGGING') {
         if (currentPhase.type === 'HOLD') {
-          // ETAPA 1 e 3: 1 segundo de pausa com o card perfeitamente alinhado
+          // Pausa com o card perfeitamente alinhado: 2 segundos no mobile, 1 segundo no desktop
           currentPhase.elapsed += deltaSeconds;
           offsetRef.current = currentPhase.cardIndex * cardDistance;
 
-          if (currentPhase.elapsed >= 1.0) {
+          const holdDuration = isDesktop ? 1.0 : 2.0;
+
+          if (currentPhase.elapsed >= holdDuration) {
             phaseRef.current = {
               type: 'TRANSITION',
               elapsed: 0,
@@ -364,7 +367,7 @@ export const ClientesConfirmam: React.FC = () => {
     };
   }, [updateDimensions, startLoop, stopLoop]);
 
-  // Função disparada ao soltar o arraste (Touch ou Mouse)
+  // Função disparada ao soltar o arraste de mouse no Desktop
   const finishDrag = useCallback(() => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
@@ -393,92 +396,123 @@ export const ClientesConfirmam: React.FC = () => {
     startLoop();
   }, [startLoop]);
 
-  // Eventos de Toque no Mobile (Arraste horizontal com preservação da rolagem vertical)
-  const handleTouchStart = (e: React.TouchEvent) => {
-    isHoveredRef.current = false;
-    if (e.touches.length !== 1) {
-      if (isDraggingRef.current) finishDrag();
-      isTouchingRef.current = false;
-      return;
+  // Navegação mobile unificada idêntica a DemonstracaoAnalise.tsx
+  const navigateToCard = useCallback((direction: 'next' | 'prev' | 'stay') => {
+    const cardDistance = cardDistanceRef.current || 340;
+    const currentOffset = offsetRef.current;
+    const nearestIndex = Math.round(currentOffset / cardDistance);
+
+    let targetIndex = nearestIndex;
+    if (direction === 'next') {
+      targetIndex = nearestIndex + 1;
+    } else if (direction === 'prev') {
+      targetIndex = nearestIndex - 1;
     }
-    // Pausa imediata ao encostar o dedo na faixa
+
+    const targetOffset = targetIndex * cardDistance;
+    const distance = Math.abs(targetOffset - currentOffset);
+
+    // Duração suave proporcional (entre 180ms e 380ms)
+    const duration = distance < 2 ? 0.05 : Math.min(0.38, Math.max(0.22, (distance / cardDistance) * 0.35));
+
+    phaseRef.current = {
+      type: 'SNAPPING',
+      elapsed: 0,
+      duration,
+      startOffset: currentOffset,
+      targetOffset,
+      targetIndex,
+    };
+    startLoop();
+  }, [startLoop]);
+
+  // Ao pressionar (toque mobile): pausa imediatamente o autoplay
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Desktop mouse é tratado exclusivamente pelos handlers de mouse originais
+    if (e.pointerType === 'mouse' || hasFinePointer()) return;
+
     isTouchingRef.current = true;
-    touchStartXRef.current = e.touches[0].clientX;
-    touchStartYRef.current = e.touches[0].clientY;
-    touchDirectionRef.current = null;
-    dragStartOffsetRef.current = offsetRef.current;
-    dragStartXRef.current = e.touches[0].clientX;
-    isDraggingRef.current = false;
+    pointerStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      time: Date.now(),
+    };
+    isPointerDraggingRef.current = false;
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (e.touches.length !== 1) return;
-    const currentX = e.touches[0].clientX;
-    const currentY = e.touches[0].clientY;
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse' || hasFinePointer()) return;
+    if (!pointerStartRef.current) return;
 
-    if (touchDirectionRef.current === null) {
-      const diffX = Math.abs(currentX - touchStartXRef.current);
-      const diffY = Math.abs(currentY - touchStartYRef.current);
+    const deltaX = Math.abs(e.clientX - pointerStartRef.current.x);
+    const deltaY = Math.abs(e.clientY - pointerStartRef.current.y);
 
-      // Limiar mínimo de 3px para resposta instantânea sem atraso perceptível
-      if (diffX < 3 && diffY < 3) return;
-
-      if (diffY > diffX) {
-        // Gesto predominantemente vertical: libera rolagem nativa da página e desativa a pausa
-        touchDirectionRef.current = 'vertical';
-        isTouchingRef.current = false;
-        return;
-      } else {
-        // Gesto horizontal: assume o controle manual imediato sem esperar HOLD ou TRANSITION
-        touchDirectionRef.current = 'horizontal';
-        isDraggingRef.current = true;
-        setIsDraggingUI(true);
-        phaseRef.current = { type: 'DRAGGING' };
-        dragStartXRef.current = currentX;
-        dragStartOffsetRef.current = offsetRef.current;
-      }
-    }
-
-    if (touchDirectionRef.current === 'horizontal' && isDraggingRef.current) {
-      const deltaX = currentX - dragStartXRef.current;
-      let newOffset = dragStartOffsetRef.current - deltaX;
-
-      // Loop contínuo infinito e seguro nas duas direções
-      const cardDist = cardDistanceRef.current || 340;
-      const sw = seqWidthRef.current || cardDist * 5;
-
-      while (newOffset < -cardDist * 2) {
-        newOffset += sw;
-        dragStartOffsetRef.current += sw;
-      }
-      while (newOffset >= sw + cardDist * 2) {
-        newOffset -= sw;
-        dragStartOffsetRef.current -= sw;
-      }
-
-      offsetRef.current = newOffset;
-
-      // Resposta física direta no DOM para acompanhamento 1:1 com latência zero
-      if (trackRef.current) {
-        const centerOffset = centerOffsetRef.current || 0;
-        const translateX = -(sw + offsetRef.current) + centerOffset;
-        trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
-      }
+    if (deltaX > 10 || deltaY > 10) {
+      isPointerDraggingRef.current = true;
     }
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    isHoveredRef.current = false;
-    // Se ainda restar algum dedo na tela, não finaliza ainda
-    if (e.touches && e.touches.length > 0) return;
+  // Ao soltar (toque mobile): swipe, toque lateral ou soltura após segurar
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse' || hasFinePointer()) return;
 
-    const wasDragging = isDraggingRef.current && touchDirectionRef.current === 'horizontal';
     isTouchingRef.current = false;
 
-    if (wasDragging) {
-      finishDrag();
+    if (!pointerStartRef.current) {
+      navigateToCard('stay');
+      return;
     }
-    touchDirectionRef.current = null;
+
+    const { x: startX, y: startY, time: startTime } = pointerStartRef.current;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+    const duration = Date.now() - startTime;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const relativeX = clickX / rect.width;
+
+    pointerStartRef.current = null;
+
+    // 1. Swipe horizontal (> 40px e predominantemente horizontal para não capturar rolagem vertical)
+    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX < 0) {
+        // Deslizar para a esquerda: avançar para a próxima avaliação
+        navigateToCard('next');
+      } else {
+        // Deslizar para a direita: voltar para a avaliação anterior
+        navigateToCard('prev');
+      }
+      return;
+    }
+
+    // 2. Toque rápido nas laterais (< 250ms e sem arraste significativo)
+    if (duration < 250 && !isPointerDraggingRef.current) {
+      if (relativeX < 0.33) {
+        // Toque rápido no lado esquerdo da faixa: voltar uma avaliação
+        navigateToCard('prev');
+        return;
+      } else if (relativeX > 0.66) {
+        // Toque rápido no lado direito da faixa: avançar uma avaliação
+        navigateToCard('next');
+        return;
+      }
+      // Toque rápido no centro (0.33 a 0.66): não mudar de avaliação
+      navigateToCard('stay');
+      return;
+    }
+
+    // 3. Soltura após segurar (ou toque central): reinicia contagem com 2s completos
+    navigateToCard('stay');
+  };
+
+  const handlePointerCancelOrLeave = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse' || hasFinePointer()) return;
+
+    isTouchingRef.current = false;
+    if (pointerStartRef.current) {
+      pointerStartRef.current = null;
+      navigateToCard('stay');
+    }
   };
 
   // Eventos de Mouse no Desktop (Arraste e Pausa)
@@ -551,16 +585,17 @@ export const ClientesConfirmam: React.FC = () => {
             </h2>
           </div>
 
-          {/* Faixa Interativa por Etapas (Versão 71: HOLD 1s + TRANSITION 3s + Arraste) */}
+          {/* Faixa Interativa por Etapas (Autoplay + Pointer Events Mobile + Mouse Desktop) */}
           <div
             ref={containerRef}
-            className={`depoimentos-marquee-container relative w-full overflow-hidden select-none ${
+            className={`depoimentos-marquee-container relative w-full overflow-hidden select-none touch-pan-y ${
               isDraggingUI ? 'cursor-grabbing' : 'cursor-grab'
             }`}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onTouchCancel={handleTouchEnd}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerCancelOrLeave}
+            onPointerLeave={handlePointerCancelOrLeave}
             onMouseDown={handleMouseDown}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
