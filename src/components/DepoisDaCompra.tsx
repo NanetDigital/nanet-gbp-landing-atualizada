@@ -61,7 +61,7 @@ export const DepoisDaCompra: React.FC = () => {
               PASSO 03
             </span>
             <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
-              Descubra por onde começar
+              Receba sua análise
             </h3>
             <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
               Durante a orientação agendada de 30 minutos, <strong className="font-bold text-[#171717]">o especialista apresenta e entrega os relatórios</strong> e explica as prioridades identificadas.
