@@ -13,24 +13,20 @@ interface SlideItem {
 
 const slides: SlideItem[] = [
   {
-    id: 'diagnostico',
-    image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790537425/Design_sem_nome_8_xmtfhz.png',
-    srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790537425/Design_sem_nome_8_xmtfhz.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790537425/Design_sem_nome_8_xmtfhz.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790537425/Design_sem_nome_8_xmtfhz.png 640w',
-    alt: 'Diagnóstico da Saúde do Perfil da Empresa no Google',
-    width: 480,
-    height: 270,
+    id: 'geogrid-real',
+    image: '/geogrid-exemplo-real.webp',
+    srcSet: '/geogrid-exemplo-real.webp 1000w',
+    alt: 'Exemplo Real do Relatório de Ranking Geogrid nas Buscas Locais',
+    width: 1000,
+    height: 1000,
   },
   {
-    id: 'posicao',
-    image:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535462/2_zv795u.png',
-    srcSet:
-      'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_360/v1790535462/2_zv795u.png 360w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_480/v1790535462/2_zv795u.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790535462/2_zv795u.png 640w',
-    alt: 'Mapa de Posição nas Buscas Locais no Google',
-    width: 480,
-    height: 270,
+    id: 'saude-perfil-real',
+    image: '/saude-perfil-exemplo-real.webp',
+    srcSet: '/saude-perfil-exemplo-real.webp 1000w',
+    alt: 'Exemplo Real do Relatório de Saúde do Perfil do Google',
+    width: 1000,
+    height: 1000,
   },
   {
     id: 'concorrentes',
@@ -279,7 +275,7 @@ export const DemonstracaoAnalise: React.FC = () => {
                       height={slide.height}
                       loading="lazy"
                       decoding="async"
-                      className="block w-full h-full min-w-0 min-h-0 object-contain object-center rounded-xl select-none pointer-events-none max-md:-translate-y-[3%]"
+                      className="block w-full h-full min-w-0 min-h-0 object-contain object-center rounded-xl select-none pointer-events-none"
                       style={{
                         width: '100%',
                         height: '100%',

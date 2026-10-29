@@ -32,7 +32,7 @@ export const DepoisDaCompra: React.FC = () => {
               Confira seu e-mail
             </h3>
             <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
-              Receba o <strong className="font-bold text-[#171717]">acesso à área de membros na Hotmart</strong> e as instruções para enviar os dados da empresa e agendar sua orientação.
+              Receba o <strong className="font-bold text-[#171717]">acesso à área de membros na Hotmart</strong> e as instruções para agendar sua orientação e preencher o formulário da empresa.
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export const DepoisDaCompra: React.FC = () => {
               Escolha seu horário
             </h3>
             <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
-              Forneça as informações necessárias da empresa e escolha um horário disponível. <strong className="font-bold text-[#171717]">Nossa equipe prepara seus dois relatórios personalizados.</strong>
+              Escolha um horário disponível e preencha o formulário com os dados da sua empresa. <strong className="font-bold text-[#171717]">Nossa equipe prepara seus dois relatórios personalizados.</strong>
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export const DepoisDaCompra: React.FC = () => {
         {/* Informação sutil sobre prazo de entrega */}
         <div className="text-center mt-8 sm:mt-10">
           <p className="text-xs sm:text-sm text-[#6B7280] font-sans">
-            Entrega em até <strong className="font-semibold text-[#171717]">7 dias úteis</strong> após o envio das informações da empresa.
+            A apresentação dos relatórios e a orientação acontecem em até <strong className="font-semibold text-[#171717]">7 dias úteis</strong> após a confirmação do pagamento e o recebimento completo dos dados da empresa.
           </p>
         </div>
 

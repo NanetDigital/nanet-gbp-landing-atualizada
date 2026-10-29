@@ -39,7 +39,7 @@ export const Oferta: React.FC<OfertaProps> = () => {
                 <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5 sm:mt-1" strokeWidth={2.5} />
                 <div className="min-w-0">
                   <h4 className="text-[18px] sm:text-[19px] lg:text-[20px] font-semibold text-[#171717] font-sans leading-snug">
-                    Diagnóstico Personalizado
+                    2 relatórios personalizados: Ranking Geogrid + Saúde do Perfil do Google
                   </h4>
                   <p className="text-[17px] text-neutral-600 font-sans font-normal mt-0.5 leading-relaxed">
                     Inclui Relatório Geogrid (posição e concorrentes) e Relatório de Saúde do Perfil do Google.

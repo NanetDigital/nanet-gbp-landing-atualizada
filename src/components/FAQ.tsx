@@ -52,11 +52,11 @@ const faqItems: FAQItem[] = [
     question: 'Quando vou receber minha análise?',
     answer: (
       <>
-        Após a confirmação da compra, você acessa a área de membros na Hotmart para enviar os dados da empresa e agendar a orientação.{' '}
+        Após a confirmação da compra, você acessa a área de membros na Hotmart, agenda sua orientação e preenche o formulário com os dados da empresa.{' '}
         <strong className="font-bold text-[#171717]">
-          A entrega dos relatórios e a realização da orientação acontecem em até 7 dias úteis
+          Os dois relatórios são apresentados e entregues durante a orientação profissional de 30 minutos, em até 7 dias úteis
         </strong>{' '}
-        após o envio das informações.
+        após a confirmação do pagamento e o recebimento completo dos dados.
       </>
     ),
   },
@@ -65,11 +65,7 @@ const faqItems: FAQItem[] = [
     question: 'Vocês também fazem os ajustes identificados na análise?',
     answer: (
       <>
-        A Análise Estratégica é um serviço de diagnóstico e orientação.{' '}
-        <strong className="font-bold text-[#171717]">
-          A implementação das melhorias fica a critério da sua empresa
-        </strong>
-        , orientada pelo Checklist de Implementação incluído como bônus.
+        Não. A análise inclui diagnóstico e orientação. A execução das melhorias não está incluída. Você poderá utilizar o Checklist de Implementação, oferecido como bônus, para organizar os ajustes que sua empresa decidir realizar.
       </>
     ),
   },

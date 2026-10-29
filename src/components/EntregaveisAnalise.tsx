@@ -121,7 +121,7 @@ export const EntregaveisAnalise: React.FC = () => {
               </h3>
 
               <p className="text-[18px] font-normal leading-[1.5] sm:leading-relaxed text-[#6B7280] font-sans">
-                Receba uma avaliação de 20 critérios do seu Perfil do Google, com pontuação de 0 a 100 calculada e <strong className="font-bold text-[#171717]">identificação dos pontos que merecem atenção</strong>.
+                Receba uma avaliação do seu Perfil do Google, com <strong className="font-bold text-[#171717]">pontuação de 0 a 100</strong> baseada em 20 critérios, e descubra <strong className="font-bold text-[#171717]">o que melhorar primeiro</strong>, com orientações práticas de um especialista.
               </p>
             </div>
 

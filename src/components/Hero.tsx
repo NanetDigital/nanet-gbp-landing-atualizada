@@ -36,13 +36,13 @@ export const Hero: React.FC = () => {
             {/* 2. Headline Principal */}
             <div>
               <h1 className="text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-left">
-                Descubra onde sua empresa aparece no <span className="text-[#4ade80]">Google Maps</span> e como se compara aos concorrentes da sua região
+                Clientes que procuram o que você vende no Google podem encontrar seu concorrente primeiro
               </h1>
             </div>
 
             {/* 3. Nova Subheadline */}
             <p className="text-[19px] xl:text-[20px] text-gray-300 font-sans leading-relaxed max-w-xl">
-              Veja <strong className="font-bold text-white">como sua posição varia nas buscas locais</strong>, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e <strong className="font-bold text-white">saiba o que melhorar primeiro</strong> com a orientação de um especialista.
+              Veja sua <strong className="font-bold text-white">posição diante dos concorrentes</strong> da sua região, conheça a <strong className="font-bold text-white">nota de saúde do seu Perfil do Google</strong>, de 0 a 100, e saiba <strong className="font-bold text-white">o que melhorar primeiro</strong>.
             </p>
 
             {/* 4. Nome da Oferta e Oferta Resumida (com divider ---) */}
@@ -120,14 +120,14 @@ export const Hero: React.FC = () => {
           {/* 2. HEADLINE PRINCIPAL CENTRALIZADA */}
           <div className="text-center px-1">
             <h1 className="text-[25px] sm:text-[28px] font-bold tracking-tight text-white leading-[1.2] font-sans">
-              Descubra onde sua empresa aparece no <span className="text-[#4ade80]">Google Maps</span> e como se compara aos concorrentes da sua região
+              Clientes que procuram o que você vende no Google podem encontrar seu concorrente primeiro
             </h1>
           </div>
 
           {/* 3. Nova Subheadline Centralizada */}
           <div className="text-center px-2 max-w-[440px] mx-auto">
             <p className="text-[18px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
-              Veja <strong className="font-bold text-white">como sua posição varia nas buscas locais</strong>, descubra a nota de saúde do seu Perfil do Google, de 0 a 100, e <strong className="font-bold text-white">saiba o que melhorar primeiro</strong> com a orientação de um especialista.
+              Veja sua <strong className="font-bold text-white">posição diante dos concorrentes</strong> da sua região, conheça a <strong className="font-bold text-white">nota de saúde do seu Perfil do Google</strong>, de 0 a 100, e saiba <strong className="font-bold text-white">o que melhorar primeiro</strong>.
             </p>
           </div>
 
