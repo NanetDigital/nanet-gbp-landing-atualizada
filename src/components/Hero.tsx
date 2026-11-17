@@ -36,13 +36,13 @@ export const Hero: React.FC = () => {
             {/* 2. Headline Principal */}
             <div>
               <h1 className="text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-left">
-                Clientes que procuram o que você vende no Google podem encontrar seu concorrente primeiro
+                Sua empresa pode estar perdendo clientes para concorrentes no Google
               </h1>
             </div>
 
             {/* 3. Nova Subheadline */}
             <p className="text-[19px] xl:text-[20px] text-gray-300 font-sans leading-relaxed max-w-xl">
-              Veja sua <strong className="font-bold text-white">posição diante dos concorrentes</strong> da sua região, conheça a <strong className="font-bold text-white">nota de saúde do seu Perfil do Google</strong>, de 0 a 100, e saiba <strong className="font-bold text-white">o que melhorar primeiro</strong>.
+              Descubra o que melhorar primeiro para aumentar sua visibilidade, atrair mais clientes e vender mais, sem perder tempo com tentativa e erro
             </p>
 
             {/* 4. Nome da Oferta e Oferta Resumida (com divider ---) */}
@@ -120,14 +120,14 @@ export const Hero: React.FC = () => {
           {/* 2. HEADLINE PRINCIPAL CENTRALIZADA */}
           <div className="text-center px-1">
             <h1 className="text-[25px] sm:text-[28px] font-bold tracking-tight text-white leading-[1.2] font-sans">
-              Clientes que procuram o que você vende no Google podem encontrar seu concorrente primeiro
+              Sua empresa pode estar perdendo clientes para concorrentes no Google
             </h1>
           </div>
 
           {/* 3. Nova Subheadline Centralizada */}
           <div className="text-center px-2 max-w-[440px] mx-auto">
             <p className="text-[18px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
-              Veja sua <strong className="font-bold text-white">posição diante dos concorrentes</strong> da sua região, conheça a <strong className="font-bold text-white">nota de saúde do seu Perfil do Google</strong>, de 0 a 100, e saiba <strong className="font-bold text-white">o que melhorar primeiro</strong>.
+              Descubra o que melhorar primeiro para aumentar sua visibilidade, atrair mais clientes e vender mais, sem perder tempo com tentativa e erro
             </p>
           </div>
 
