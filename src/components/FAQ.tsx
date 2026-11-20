@@ -61,12 +61,12 @@ export const FAQ: React.FC = () => {
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título Centralizado */}
-        <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans text-center mb-8 sm:mb-12 leading-tight">
+        <h2 className="text-[24px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.25] text-center mb-8 sm:mb-10">
           Perguntas Frequentes
         </h2>
 
         {/* Accordion List em Coluna Única */}
-        <div className="space-y-3 sm:space-y-3.5">
+        <div className="space-y-2.5 sm:space-y-3">
           {faqItems.map((item) => {
             const isOpen = openId === item.id;
             return (
@@ -82,10 +82,10 @@ export const FAQ: React.FC = () => {
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}
-                  className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A]/60 focus-visible:ring-inset cursor-pointer group"
+                  className="w-full py-3.5 sm:py-4 px-5 sm:px-6 text-left flex items-center justify-between gap-4 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A]/60 focus-visible:ring-inset cursor-pointer group"
                 >
                   <span
-                    className={`font-sans text-[22px] lg:text-[23px] font-semibold transition-colors leading-[1.35] ${
+                    className={`font-sans text-[16px] lg:text-[18px] font-semibold transition-colors leading-[1.4] ${
                       isOpen
                         ? 'text-[#16A34A]'
                         : 'text-[#171717] group-hover:text-[#16A34A]'
@@ -94,7 +94,7 @@ export const FAQ: React.FC = () => {
                     {item.question}
                   </span>
                   <div
-                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
+                    className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
                       isOpen
                         ? 'bg-[#16A34A]/10 text-[#16A34A] border border-[#16A34A]/45 rotate-180'
                         : 'bg-white text-[#16A34A] border border-neutral-200/80 shadow-xs group-hover:border-[#16A34A]/45'
@@ -105,8 +105,8 @@ export const FAQ: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 border-t border-neutral-200/60">
-                    <p className="pt-3.5 sm:pt-4 text-[18px] font-normal font-sans text-[#6B7280] leading-[1.5] sm:leading-[1.55]">
+                  <div className="px-5 sm:px-6 pb-4 sm:pb-5 pt-0 border-t border-neutral-200/60">
+                    <p className="pt-3 sm:pt-3.5 text-[15px] lg:text-[16px] font-normal font-sans text-[#6B7280] leading-[1.55]">
                       {item.answer}
                     </p>
                   </div>

@@ -13,7 +13,7 @@ export const Rodape: React.FC = () => {
       className="w-full bg-[#000000] text-white"
     >
       {/* Área Principal Centralizada em Coluna Única */}
-      <div className="max-w-[750px] mx-auto px-5 sm:px-6 py-10 sm:py-12 flex flex-col items-center text-center">
+      <div className="max-w-[948px] mx-auto px-5 sm:px-6 py-10 sm:py-12 flex flex-col items-center text-center">
         {/* 1. Logotipo Oficial Análise Algoritmo Mais (letras brancas, sem texto duplicado) */}
         <BrandLogo
           variant="light-text"
@@ -21,33 +21,33 @@ export const Rodape: React.FC = () => {
         />
 
         {/* 2. Contato pelo WhatsApp */}
-        <p className="mt-5 sm:mt-6 text-[14px] sm:text-[15px] text-white/90 font-sans">
+        <p className="mt-6 sm:mt-7 text-[16px] sm:text-[18px] font-normal text-white font-sans leading-snug">
           Tem alguma dúvida? Envie no WhatsApp.
         </p>
         <a
           href={FOOTER_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1.5 inline-flex items-center justify-center gap-1.5 text-[14px] sm:text-[15px] font-semibold text-[#4ADE80] hover:text-[#22c55e] transition-colors font-sans"
+          className="mt-2 inline-flex items-center justify-center gap-2 text-[16px] sm:text-[18px] font-bold text-[#4ADE80] hover:text-[#22c55e] transition-colors font-sans leading-snug"
         >
-          <WhatsAppIcon className="w-4 h-4 shrink-0" />
+          <WhatsAppIcon className="w-[18px] h-[18px] sm:w-5 sm:h-5 shrink-0" />
           <span>Falar com o suporte</span>
         </a>
 
-        {/* 4. CNPJ */}
-        <span className="mt-4 text-[12.5px] sm:text-[13px] text-white/85 font-mono">
+        {/* 3. CNPJ */}
+        <span className="mt-4 sm:mt-5 text-[13px] sm:text-[14px] font-normal text-white font-sans">
           CNPJ: 65.262.598/0001-32
         </span>
 
-        {/* 5. Aviso Legal Centralizado */}
-        <p className="mt-5 max-w-[750px] mx-auto text-[12px] sm:text-[12.5px] text-white/85 font-sans leading-relaxed text-center">
+        {/* 4. Aviso Legal Centralizado */}
+        <p className="mt-6 sm:mt-7 max-w-[900px] mx-auto text-[14px] sm:text-[16px] font-normal text-white/95 font-sans leading-[1.45] text-center">
           Este site não é afiliado ao Google. A Análise Algoritmo Mais oferece relatórios e orientação sobre melhorias no Perfil da Empresa no Google. A compra desse material não garante nenhum tipo de resultado. Os resultados dependem das condições de cada negócio e da aplicação das recomendações.
         </p>
       </div>
 
       {/* Faixa Inferior Cinza-Escura (#242424) */}
-      <div className="w-full bg-[#242424] min-h-[58px] py-4 px-4 flex items-center justify-center text-center">
-        <p className="text-[13px] sm:text-[13.5px] text-white font-sans font-normal">
+      <div className="w-full bg-[#242424] py-4 sm:py-5 px-4 flex items-center justify-center text-center">
+        <p className="text-[16px] sm:text-[18px] text-white font-sans font-normal">
           Todos os direitos reservados © 2026
         </p>
       </div>

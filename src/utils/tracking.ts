@@ -87,3 +87,46 @@ export function useCheckoutUrl(baseUrl: string = 'https://pay.hotmart.com/V10693
 
   return checkoutUrl;
 }
+
+const VIEW_OFERTA_WINDOW_FLAG = '__nanet_view_oferta_fired__';
+let viewOfertaFired = false;
+
+/**
+ * Verifica se o evento personalizado ViewOferta já foi disparado neste carregamento da página.
+ */
+export function hasViewOfertaFired(): boolean {
+  if (viewOfertaFired) return true;
+  if (
+    typeof window !== 'undefined' &&
+    (window as unknown as Record<string, unknown>)[VIEW_OFERTA_WINDOW_FLAG] === true
+  ) {
+    viewOfertaFired = true;
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Dispara o evento personalizado ViewOferta (trackCustom) uma única vez por carregamento da página.
+ * Protegido contra re-renderizações e React StrictMode.
+ */
+export function trackViewOfertaOnce(): boolean {
+  if (typeof window === 'undefined') return false;
+  if (hasViewOfertaFired()) return false;
+
+  viewOfertaFired = true;
+  (window as unknown as Record<string, unknown>)[VIEW_OFERTA_WINDOW_FLAG] = true;
+
+  try {
+    const fbqFn = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+    if (typeof fbqFn === 'function') {
+      fbqFn('trackCustom', 'ViewOferta');
+      return true;
+    }
+  } catch {
+    // Evita erros de console caso o script externo do Pixel esteja bloqueado
+  }
+
+  return false;
+}
+

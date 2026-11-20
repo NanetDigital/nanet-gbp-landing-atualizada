@@ -42,9 +42,9 @@ const entregaveis: EntregavelItem[] = [
   {
     id: 'orientacao',
     containerId: 'entregavel-sessao',
-    title: 'Orientação de 30 minutos: agilize os ajustes',
+    title: 'Orientação de 30 minutos: direção prática',
     description:
-      'Um especialista da Nanet mostra onde fazer os ajustes, esclarece suas dúvidas e indica quais melhorias priorizar para vender mais.',
+      'Um especialista da Nanet esclarece suas dúvidas, mostra o que melhorar primeiro e orienta onde fazer os ajustes de forma rápida para atrair mais clientes.',
     image:
       'https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1790742870/4_tb3hmk.png',
     srcSet:
@@ -99,7 +99,7 @@ export const EntregaveisAnalise: React.FC = () => {
 
           <h2
             ref={titleRef}
-            className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight scroll-mt-10"
+            className="text-[24px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.25] text-center max-w-2xl mx-auto scroll-mt-10"
           >
             Veja tudo que você vai receber com a Análise Algoritmo Mais
           </h2>

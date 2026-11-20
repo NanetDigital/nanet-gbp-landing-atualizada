@@ -23,8 +23,8 @@ export default function App() {
   // Estado para carregamento progressivo das seções mais profundas da página
   const [loadRemainingSections, setLoadRemainingSections] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
-    // Se a URL já contiver uma âncora/hash (ex: #oferta, #faq), carrega tudo imediatamente
-    return Boolean(window.location.hash);
+    // Se a URL já contiver uma âncora/hash (ex: #oferta, #faq) ou o navegador restaurou a rolagem, carrega imediatamente
+    return Boolean(window.location.hash) || window.scrollY > 0;
   });
 
   const sentinelRef = useRef<HTMLDivElement | null>(null);

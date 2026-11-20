@@ -17,7 +17,7 @@ const STEPS = [
   {
     title: 'Tudo pronto',
     description:
-      'Em 30 minutos, saiba onde ajustar primeiro de forma rápida e eficiente.',
+      'Em 30 minutos, receba uma direção prática para saber o que ajustar primeiro de forma rápida.',
     Icon: CheckCircle2,
   },
 ] as const;

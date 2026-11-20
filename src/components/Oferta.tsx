@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import { PreCheckoutCard } from './PreCheckoutCard';
+import { hasViewOfertaFired, trackViewOfertaOnce } from '../utils/tracking';
 
 export interface OfertaProps {
   [key: string]: any;
@@ -16,7 +17,7 @@ const RECAP_ITEMS = [
     price: 'R$ 97,00',
   },
   {
-    label: 'Orientação de 30 minutos: prioridades para vender mais',
+    label: 'Orientação de 30 minutos: direção prática',
     price: 'R$ 147,00',
   },
   {
@@ -34,6 +35,56 @@ const RECAP_ITEMS = [
 ];
 
 export const Oferta: React.FC<OfertaProps> = () => {
+  const recapContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const target = recapContainerRef.current;
+    if (!target || hasViewOfertaFired()) return;
+
+    if (typeof IntersectionObserver !== 'undefined') {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+              trackViewOfertaOnce();
+              observer.disconnect();
+              break;
+            }
+          }
+        },
+        {
+          threshold: [0.25, 0.5, 0.75, 1.0],
+        }
+      );
+
+      observer.observe(target);
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+
+    const checkVisibleFallback = () => {
+      if (hasViewOfertaFired()) {
+        window.removeEventListener('scroll', checkVisibleFallback);
+        return;
+      }
+      const rect = target.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+      if (rect.height > 0 && visibleHeight / rect.height >= 0.25) {
+        trackViewOfertaOnce();
+        window.removeEventListener('scroll', checkVisibleFallback);
+      }
+    };
+
+    checkVisibleFallback();
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', checkVisibleFallback);
+    };
+  }, []);
+
   return (
     <section
       id="oferta"
@@ -45,7 +96,11 @@ export const Oferta: React.FC<OfertaProps> = () => {
         {/* ========================================================== */}
         {/* PARTE 1 — RECAPITULAÇÃO NO FORMATO VTSD                    */}
         {/* ========================================================== */}
-        <div className="w-full">
+        <div
+          id="recapitulacao-oferta"
+          ref={recapContainerRef}
+          className="w-full"
+        >
           {/* Card Branco Principal Centralizado (~800px, cantos ~36px) */}
           <div className="max-w-[800px] mx-auto bg-white border border-neutral-200/90 rounded-[28px] sm:rounded-[36px] px-5 py-7 sm:px-10 sm:py-10 lg:px-12 lg:py-11 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
             <h2 className="text-center max-w-[660px] mx-auto text-[22px] sm:text-[27px] lg:text-[31px] font-bold tracking-tight text-[#171717] font-sans leading-[1.25]">

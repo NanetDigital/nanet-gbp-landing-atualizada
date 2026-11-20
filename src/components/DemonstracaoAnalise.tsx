@@ -35,7 +35,7 @@ export const DemonstracaoAnalise: React.FC = () => {
     <section
       id="demonstracao"
       aria-label="Benefícios da Análise Algoritmo Mais"
-      className="w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 bg-[#F6F3EF] border-b border-neutral-200/80"
+      className="w-full pt-14 sm:pt-16 lg:pt-[72px] pb-16 sm:pb-20 lg:pb-24 bg-[#F6F3EF] border-b border-neutral-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título da Seção de Benefícios */}

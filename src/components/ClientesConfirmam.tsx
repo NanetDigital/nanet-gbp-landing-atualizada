@@ -574,7 +574,7 @@ export const ClientesConfirmam: React.FC = () => {
     <section
       id="clientes-confirmam"
       aria-label="Depoimentos de clientes da Nanet"
-      className="w-full pt-16 sm:pt-20 lg:pt-24 pb-0 bg-white overflow-hidden"
+      className="w-full pt-10 sm:pt-12 lg:pt-14 pb-10 sm:pb-11 lg:pb-12 bg-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="space-y-8 sm:space-y-10">
@@ -683,13 +683,6 @@ export const ClientesConfirmam: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Indicação visual discreta para mobile */}
-          <div className="text-center -mt-4 sm:-mt-5">
-            <p className="text-xs sm:text-sm text-neutral-500 font-sans tracking-wide select-none">
-              Toque e segure para pausar · Deslize para ver
-            </p>
           </div>
         </div>
       </div>
