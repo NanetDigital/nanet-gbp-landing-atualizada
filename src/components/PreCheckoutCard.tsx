@@ -56,9 +56,9 @@ export const PreCheckoutCard: React.FC = () => {
                 (window as any).fbq('trackCustom', 'ClickCheckout');
               }
             }}
-            className="w-full sm:w-[280px] min-h-[52px] inline-flex items-center justify-center py-3 px-5 rounded-[14px] bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] sm:text-[15.5px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-nowrap leading-none"
+            className="w-full max-w-[280px] sm:w-auto sm:min-w-[235px] min-h-[52px] inline-flex items-center justify-center py-3.5 px-8 sm:px-10 rounded-[14px] bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-nowrap leading-none"
           >
-            QUERO RECEBER MINHA ANÁLISE
+            EU QUERO A MINHA
           </a>
 
           {/* Três informações discretas abaixo do botão */}

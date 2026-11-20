@@ -114,7 +114,7 @@ export const ResultadosReais: React.FC = () => {
             Cada empresa possui um cenário diferente, mas todas têm um objetivo em comum: conquistar mais clientes. Nossa Análise Estratégica foi criada para transformar dados oficiais do Google em decisões práticas que geram oportunidades reais de crescimento.
           </p>
 
-          <div className="pt-2">
+          <div className="pt-2 flex justify-center">
             <a
               href={checkoutUrl}
               target="_blank"
@@ -124,9 +124,9 @@ export const ResultadosReais: React.FC = () => {
                   (window as any).fbq('trackCustom', 'ClickCheckout');
                 }
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center h-[54px] px-8 sm:px-10 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-base font-semibold border border-[#16A34A] transition-all shadow-sm hover:shadow-md cursor-pointer"
+              className="w-full max-w-[280px] sm:w-auto sm:min-w-[235px] min-h-[52px] inline-flex items-center justify-center py-3.5 px-8 sm:px-10 rounded-[14px] bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-nowrap leading-none"
             >
-              Quero receber minha análise estratégica
+              EU QUERO A MINHA
             </a>
           </div>
         </div>

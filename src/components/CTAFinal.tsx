@@ -1,6 +1,6 @@
 import React from 'react';
 import { CTAFinalData } from '../types/landing';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { useCheckoutUrl } from '../utils/tracking';
 
 export interface CTAFinalProps {
@@ -11,7 +11,7 @@ const defaultData: CTAFinalData = {
   tag: 'DECISÃO ESTRATÉGICA',
   title: 'Sua empresa pode estar mais perto de conquistar novos clientes do que você imagina.',
   subtitle: 'Descubra primeiro onde estão as oportunidades. Depois decida onde investir.',
-  ctaText: 'Quero receber minha análise estratégica',
+  ctaText: 'EU QUERO A MINHA',
   reassuranceNote: 'Análise Estratégica + Orientação Prática com Especialista • Garantia de 7 dias',
 };
 
@@ -43,7 +43,7 @@ export const CTAFinal: React.FC<CTAFinalProps> = ({ data = {} }) => {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-10 max-w-md mx-auto">
+        <div className="mt-10 flex justify-center">
           <a
             href={checkoutUrl}
             target="_blank"
@@ -53,10 +53,9 @@ export const CTAFinal: React.FC<CTAFinalProps> = ({ data = {} }) => {
                 (window as any).fbq('trackCustom', 'ClickCheckout');
               }
             }}
-            className="w-full py-4 px-8 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-sm sm:text-base font-bold transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2"
+            className="w-full max-w-[280px] sm:w-auto sm:min-w-[235px] min-h-[52px] inline-flex items-center justify-center py-3.5 px-8 sm:px-10 rounded-[14px] bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-nowrap leading-none"
           >
-            <span>{ctaData.ctaText}</span>
-            <ArrowRight className="w-4 h-4" />
+            {ctaData.ctaText}
           </a>
         </div>
 

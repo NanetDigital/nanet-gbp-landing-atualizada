@@ -413,9 +413,9 @@ export const Provas: React.FC = () => {
                   (window as any).fbq('trackCustom', 'ClickCheckout');
                 }
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center h-[58px] px-9 sm:px-12 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white font-mono text-base sm:text-lg font-semibold border border-[#16A34A] transition-all duration-250 ease-out hover:-translate-y-[2px] shadow-sm hover:shadow-md active:translate-y-0 cursor-pointer"
+              className="w-full max-w-[280px] sm:w-auto sm:min-w-[235px] min-h-[52px] inline-flex items-center justify-center py-3.5 px-8 sm:px-10 rounded-[14px] bg-[#16A34A] hover:bg-[#15803D] text-white font-sans text-[15px] sm:text-[16px] font-bold tracking-wide transition-all duration-200 ease-out hover:-translate-y-[1px] shadow-sm hover:shadow active:translate-y-0 cursor-pointer text-center uppercase whitespace-nowrap leading-none"
             >
-              Quero receber minha análise estratégica
+              EU QUERO A MINHA
             </a>
 
             {/* Linhas discretas de redução de fricção */}
