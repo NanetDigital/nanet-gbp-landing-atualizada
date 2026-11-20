@@ -1,6 +1,7 @@
 import React from 'react';
 import { Lock, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { useCheckoutUrl } from '../utils/tracking';
+import { BrandLogo } from './BrandLogo';
 
 export const PreCheckoutCard: React.FC = () => {
   const checkoutUrl = useCheckoutUrl();
@@ -23,19 +24,11 @@ export const PreCheckoutCard: React.FC = () => {
 
         {/* COLUNA DIREITA: Identidade, Divisória, Preço, Divisória, Botão e Confiança */}
         <div className="w-full flex flex-col items-center text-center py-1 md:py-2">
-          {/* Identidade do Produto */}
-          <img
-            src="https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_pretas_crwokx.png"
-            alt="Análise Algoritmo Mais"
-            width={2752}
-            height={1536}
-            loading="lazy"
-            decoding="async"
-            className="w-[155px] sm:w-[170px] h-auto object-contain block -my-5"
+          {/* Identidade do Produto (logo oficial completa, sem texto duplicado) */}
+          <BrandLogo
+            variant="dark-text"
+            className="w-[225px] sm:w-[250px] md:w-[260px] lg:w-[272px]"
           />
-          <h3 className="mt-2 text-[22px] sm:text-[25px] lg:text-[26px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-            Análise Algoritmo Mais
-          </h3>
 
           {/* Primeira Divisória */}
           <div className="w-full max-w-[360px] h-px bg-neutral-200/90 my-4 sm:my-5" />

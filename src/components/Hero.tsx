@@ -1,13 +1,23 @@
 import React from 'react';
+import { BrandLogo } from './BrandLogo';
 
 export const Hero: React.FC = () => {
   return (
     <section
       id="hero"
       aria-label="Análise Estratégica da Empresa - Nanet Digital"
-      className="w-full py-10 sm:py-12 lg:py-10 xl:py-12 bg-[#121318] border-b border-white/10 overflow-hidden"
+      className="w-full pt-7 pb-10 sm:pt-8 sm:pb-12 lg:pt-8 lg:pb-10 xl:pt-9 xl:pb-12 bg-[#121318] border-b border-white/10 overflow-hidden"
     >
       <div className="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* LOGO OFICIAL CENTRALIZADA DENTRO DA SEÇÃO ESCURA */}
+        <div className="flex justify-center mb-6 sm:mb-7 lg:mb-8">
+          <BrandLogo
+            variant="light-text"
+            eager
+            className="w-[195px] sm:w-[225px] lg:w-[252px]"
+          />
+        </div>
 
         {/* ============================================================ */}
         {/* FORMATO DESKTOP: Layout de duas colunas (>= 1024px)          */}

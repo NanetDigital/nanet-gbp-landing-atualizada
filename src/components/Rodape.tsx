@@ -1,5 +1,6 @@
 import React from 'react';
 import { WhatsAppIcon } from './Duvidas';
+import { BrandLogo } from './BrandLogo';
 
 const FOOTER_WHATSAPP_URL =
   'https://wa.me/5527998752912?text=Ol%C3%A1%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20An%C3%A1lise%20Algoritmo%20Mais.';
@@ -13,24 +14,14 @@ export const Rodape: React.FC = () => {
     >
       {/* Área Principal Centralizada em Coluna Única */}
       <div className="max-w-[750px] mx-auto px-5 sm:px-6 py-10 sm:py-12 flex flex-col items-center text-center">
-        {/* 1. Logotipo Oficial Análise Algoritmo Mais (letras brancas) */}
-        <img
-          src="https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_brancas_e3cfov.png"
-          alt="Análise Algoritmo Mais"
-          width={2752}
-          height={1536}
-          loading="lazy"
-          decoding="async"
-          className="w-[165px] sm:w-[180px] h-auto object-contain block -my-5"
+        {/* 1. Logotipo Oficial Análise Algoritmo Mais (letras brancas, sem texto duplicado) */}
+        <BrandLogo
+          variant="light-text"
+          className="w-[175px] sm:w-[205px] lg:w-[218px]"
         />
 
-        {/* 2. Nome do Produto */}
-        <span className="mt-3 text-[15px] sm:text-[16px] font-semibold text-white font-sans">
-          Análise Algoritmo Mais
-        </span>
-
-        {/* 3. Contato pelo WhatsApp */}
-        <p className="mt-4 text-[14px] sm:text-[15px] text-white/90 font-sans">
+        {/* 2. Contato pelo WhatsApp */}
+        <p className="mt-5 sm:mt-6 text-[14px] sm:text-[15px] text-white/90 font-sans">
           Tem alguma dúvida? Envie no WhatsApp.
         </p>
         <a
