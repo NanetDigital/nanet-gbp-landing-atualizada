@@ -1,15 +1,26 @@
 import React from 'react';
 
-export const LOGO_LIGHT_BG_URL =
-  'https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_pretas_crwokx.png';
+const CLOUDINARY_BASE = 'https://res.cloudinary.com/nds7zozp/image/upload';
+const LOGO_LIGHT_BG_ID = 'v1795160964/logo_letras_pretas_crwokx.png';
+const LOGO_DARK_BG_ID = 'v1795160964/logo_letras_brancas_e3cfov.png';
 
-export const LOGO_DARK_BG_URL =
-  'https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_brancas_e3cfov.png';
+export const LOGO_LIGHT_BG_URL = `${CLOUDINARY_BASE}/f_auto,q_auto:good,w_480/${LOGO_LIGHT_BG_ID}`;
+export const LOGO_DARK_BG_URL = `${CLOUDINARY_BASE}/f_auto,q_auto:good,w_480/${LOGO_DARK_BG_ID}`;
+
+function buildLogoSrcSet(assetId: string): string {
+  return [480, 720, 960]
+    .map((w) => `${CLOUDINARY_BASE}/f_auto,q_auto:good,w_${w}/${assetId} ${w}w`)
+    .join(', ');
+}
+
+const LOGO_LIGHT_BG_SRCSET = buildLogoSrcSet(LOGO_LIGHT_BG_ID);
+const LOGO_DARK_BG_SRCSET = buildLogoSrcSet(LOGO_DARK_BG_ID);
 
 interface BrandLogoProps {
   variant: 'dark-text' | 'light-text';
   className?: string;
   eager?: boolean;
+  sizes?: string;
 }
 
 /**
@@ -18,13 +29,16 @@ interface BrandLogoProps {
  * (~12% nas laterais e ~33% acima/abaixo). O container 2202/584 com imagem a 125%
  * compensa esse espaço transparente com ~2% de folga de segurança em todos os lados,
  * garantindo proporção fiel, centralização exata e zero corte no símbolo ou nas letras.
+ * Servida via Cloudinary com f_auto, q_auto:good e srcSet responsivo (~5-8 KiB WebP/AVIF).
  */
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   variant,
   className = 'w-[220px]',
   eager = false,
+  sizes = '(max-width: 640px) 260px, 340px',
 }) => {
   const src = variant === 'dark-text' ? LOGO_LIGHT_BG_URL : LOGO_DARK_BG_URL;
+  const srcSet = variant === 'dark-text' ? LOGO_LIGHT_BG_SRCSET : LOGO_DARK_BG_SRCSET;
 
   return (
     <div
@@ -32,6 +46,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     >
       <img
         src={src}
+        srcSet={srcSet}
+        sizes={sizes}
         alt="Análise Algoritmo Mais"
         width={2752}
         height={1536}

@@ -86,6 +86,8 @@ const SegmentosMarquee: React.FC = () => {
 
   useLayoutEffect(() => {
     const syncDurations = () => {
+      // Leitura em lote para evitar reflows forçados intercalados com escrita
+      const updates: Array<{ el: HTMLDivElement; idx: number; duration: number }> = [];
       SEGMENTOS_FILEIRAS.forEach((_, idx) => {
         const trackEl = trackRefs.current[idx];
         if (!trackEl) return;
@@ -93,9 +95,13 @@ const SegmentosMarquee: React.FC = () => {
         if (halfWidth <= 0) return;
         const nextDuration = Number((halfWidth / MARQUEE_SPEED_PX_PER_SEC).toFixed(2));
         if (Math.abs(nextDuration - lastDurationsRef.current[idx]) >= 0.5) {
-          lastDurationsRef.current[idx] = nextDuration;
-          trackEl.style.setProperty('--nanet-icp-duration', `${nextDuration}s`);
+          updates.push({ el: trackEl, idx, duration: nextDuration });
         }
+      });
+
+      updates.forEach(({ el, idx, duration }) => {
+        lastDurationsRef.current[idx] = duration;
+        el.style.setProperty('--nanet-icp-duration', `${duration}s`);
       });
     };
 

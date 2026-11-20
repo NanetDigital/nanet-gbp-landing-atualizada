@@ -15,7 +15,9 @@ export const Autoridade: React.FC = () => {
             {/* Foto Original de Leandro Pires à Esquerda */}
             <div className="shrink-0 flex items-center justify-center">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1791701835/leandro_alves_evrgch.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_330/v1791701835/leandro_alves_evrgch.png"
+                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_240/v1791701835/leandro_alves_evrgch.png 240w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_330/v1791701835/leandro_alves_evrgch.png 330w"
+                sizes="(max-width: 640px) 120px, (max-width: 1024px) 144px, 165px"
                 alt="Leandro Pires - Fundador da Nanet"
                 width={165}
                 height={165}

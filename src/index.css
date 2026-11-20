@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+/* Exclui componentes legados não utilizados na landing page para reduzir o CSS bloqueante */
+@source not "./components/ComoFunciona.tsx";
+@source not "./components/CTAFinal.tsx";
+@source not "./components/OQueVoceRecebe.tsx";
+@source not "./components/Problema.tsx";
+@source not "./components/Provas.tsx";
+@source not "./components/ResultadosReais.tsx";
+@source not "./components/SectionHeader.tsx";
+@source not "./components/Solucao.tsx";
+@source not "./components/StructureInspector.tsx";
+@source not "./components/Transicao.tsx";
+@source not "./assets/placeholders.tsx";
+
 @layer base {
   html, body {
-    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #171717;
     background-color: #121318;
     -webkit-font-smoothing: antialiased;
@@ -52,7 +65,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 1rem;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);

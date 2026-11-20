@@ -17,7 +17,7 @@
       as="image"
       href="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
       imagesrcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-      imagesizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
+      imagesizes="(max-width: 640px) 358px, 395px"
       fetchpriority="high"
     />
     <style>
@@ -51,24 +51,24 @@
         -webkit-clip-path: inset(0 round 1rem);
       }
     </style>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans with display=swap (asynchronous stylesheet to eliminate ~600ms render block) -->
+    <!-- Google Fonts: Inter (only active weights 400-700) loaded asynchronously -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       />
     </noscript>
     <!-- Meta Pixel Code (Asynchronous, Non-blocking, Immediate attribution capture) -->
@@ -111,7 +111,9 @@
           <div class="flex justify-center mb-6 sm:mb-7 lg:mb-8">
             <div class="relative mx-auto max-w-full aspect-[2202/584] overflow-hidden shrink-0 w-[195px] sm:w-[225px] lg:w-[252px]">
               <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_brancas_e3cfov.png"
+                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto:good,w_480/v1795160964/logo_letras_brancas_e3cfov.png"
+                srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto:good,w_480/v1795160964/logo_letras_brancas_e3cfov.png 480w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto:good,w_720/v1795160964/logo_letras_brancas_e3cfov.png 720w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto:good,w_960/v1795160964/logo_letras_brancas_e3cfov.png 960w"
+                sizes="(max-width: 640px) 244px, 315px"
                 alt="Análise Algoritmo Mais"
                 width="2752"
                 height="1536"
@@ -122,84 +124,45 @@
             </div>
           </div>
 
-          <!-- FORMATO DESKTOP: Layout de duas colunas (>= 1024px) -->
-          <div class="hidden lg:grid lg:grid-cols-[55%_45%] xl:grid-cols-[56%_44%] gap-8 xl:gap-12 items-center">
-            
-            <!-- COLUNA ESQUERDA (DESKTOP) -->
-            <div class="flex flex-col justify-center space-y-4 xl:space-y-5 text-left">
-              
+          <!-- LAYOUT RESPONSIVO ÚNICO: Empilhado centralizado (< 1024px) | Duas colunas (>= 1024px) -->
+          <div class="grid grid-cols-1 gap-6 lg:grid-cols-[55%_45%] xl:grid-cols-[56%_44%] lg:gap-8 xl:gap-12 items-center">
+
+            <!-- COLUNA DE TEXTO (Headline + Subheadline) -->
+            <div class="flex flex-col justify-center space-y-3.5 sm:space-y-4 xl:space-y-5 text-center lg:text-left">
+
               <!-- 1. Headline Principal -->
-              <div>
-                <h1 class="text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-left">
+              <div class="px-1 lg:px-0">
+                <h1 class="text-[25px] sm:text-[28px] lg:text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-center lg:text-left">
                   Sua empresa pode estar perdendo clientes para concorrentes no Google
                 </h1>
               </div>
 
               <!-- 2. Subheadline -->
-              <p class="text-[19px] xl:text-[20px] text-gray-300 font-sans leading-relaxed max-w-xl">
-                Descubra o que melhorar no seu Google Meu Negócio para <strong class="font-bold text-white">aumentar sua visibilidade</strong>, <strong class="font-bold text-white">atrair mais clientes</strong> e <strong class="font-bold text-white">vender mais</strong>, sem depender de anúncios pagos
-              </p>
-            </div>
-
-            <!-- COLUNA DIREITA (DESKTOP) — Imagem Ilustrativa de Pesquisa no Google -->
-            <div class="flex flex-col items-center justify-center">
-              <div class="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex items-center justify-center">
-                <div class="w-full aspect-square drop-shadow-2xl flex items-center justify-center">
-                  <div class="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
-                    <img
-                      src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
-                      srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-                      sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
-                      alt="Pesquisa de empresa no Google Maps no celular"
-                      width="500"
-                      height="500"
-                      loading="eager"
-                      fetchpriority="high"
-                      decoding="sync"
-                      class="hero-image-el w-full h-full object-contain rounded-2xl block"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- FORMATO MOBILE: Apresentação Centralizada (< 1024px) -->
-          <div class="block lg:hidden space-y-6">
-            
-            <div class="space-y-3.5 sm:space-y-4">
-              <!-- 1. HEADLINE PRINCIPAL CENTRALIZADA -->
-              <div class="text-center px-1">
-                <h1 class="text-[25px] sm:text-[28px] font-bold tracking-tight text-white leading-[1.2] font-sans">
-                  Sua empresa pode estar perdendo clientes para concorrentes no Google
-                </h1>
-              </div>
-
-              <!-- 2. Subheadline Centralizada -->
-              <div class="text-center px-2 max-w-[440px] mx-auto">
-                <p class="text-[18px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
+              <div class="px-2 lg:px-0 max-w-[440px] lg:max-w-xl mx-auto lg:mx-0">
+                <p class="text-[18px] lg:text-[19px] xl:text-[20px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
                   Descubra o que melhorar no seu Google Meu Negócio para <strong class="font-bold text-white">aumentar sua visibilidade</strong>, <strong class="font-bold text-white">atrair mais clientes</strong> e <strong class="font-bold text-white">vender mais</strong>, sem depender de anúncios pagos
                 </p>
               </div>
             </div>
 
-            <!-- 3. IMAGEM ILUSTRATIVA DO CELULAR -->
-            <div class="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex justify-center">
-              <div class="w-full aspect-square drop-shadow-xl flex items-center justify-center">
-                <div class="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
-                  <img
-                    src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
-                    srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
-                    alt="Pesquisa de empresa no Google Maps no celular"
-                    width="500"
-                    height="500"
-                    loading="eager"
-                    fetchpriority="high"
-                    decoding="async"
-                    class="hero-image-el w-full h-full object-contain rounded-2xl block"
-                  />
+            <!-- COLUNA DA IMAGEM LCP (Pesquisa no Google no Celular) -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex items-center justify-center">
+                <div class="w-full aspect-square drop-shadow-xl lg:drop-shadow-2xl flex items-center justify-center">
+                  <div class="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
+                    <img
+                      src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
+                      srcset="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
+                      sizes="(max-width: 640px) 358px, 395px"
+                      alt="Pesquisa de empresa no Google Maps no celular"
+                      width="500"
+                      height="500"
+                      loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
+                      class="hero-image-el w-full h-full object-contain rounded-2xl block"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

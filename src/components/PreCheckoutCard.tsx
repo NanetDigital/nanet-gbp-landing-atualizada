@@ -12,7 +12,9 @@ export const PreCheckoutCard: React.FC = () => {
         {/* COLUNA ESQUERDA: Nova composição digital da Nanet */}
         <div className="w-full flex items-center justify-center">
           <img
-            src="https://res.cloudinary.com/nds7zozp/image/upload/v1795149108/Redistribuir_dispositivos_capa_f__a1f2751b_djglkc.jpg"
+            src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1795149108/Redistribuir_dispositivos_capa_f__a1f2751b_djglkc.jpg"
+            srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1795149108/Redistribuir_dispositivos_capa_f__a1f2751b_djglkc.jpg 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_640/v1795149108/Redistribuir_dispositivos_capa_f__a1f2751b_djglkc.jpg 640w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_900/v1795149108/Redistribuir_dispositivos_capa_f__a1f2751b_djglkc.jpg 900w"
+            sizes="(max-width: 767px) calc(100vw - 72px), 520px"
             alt="Análise Algoritmo Mais - Notebook, tablet, monitor do Google Meet e smartphone"
             width={1200}
             height={896}

@@ -15,40 +15,41 @@ export const Hero: React.FC = () => {
           <BrandLogo
             variant="light-text"
             eager
+            sizes="(max-width: 640px) 244px, 315px"
             className="w-[195px] sm:w-[225px] lg:w-[252px]"
           />
         </div>
 
-        {/* ============================================================ */}
-        {/* FORMATO DESKTOP: Layout de duas colunas (>= 1024px)          */}
-        {/* ============================================================ */}
-        <div className="hidden lg:grid lg:grid-cols-[55%_45%] xl:grid-cols-[56%_44%] gap-8 xl:gap-12 items-center">
-          
-          {/* COLUNA ESQUERDA (DESKTOP) */}
-          <div className="flex flex-col justify-center space-y-4 xl:space-y-5 text-left">
-            
+        {/* LAYOUT RESPONSIVO ÚNICO: Empilhado centralizado (< 1024px) | Duas colunas (>= 1024px) */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[55%_45%] xl:grid-cols-[56%_44%] lg:gap-8 xl:gap-12 items-center">
+
+          {/* COLUNA DE TEXTO (Headline + Subheadline) */}
+          <div className="flex flex-col justify-center space-y-3.5 sm:space-y-4 xl:space-y-5 text-center lg:text-left">
+
             {/* 1. Headline Principal */}
-            <div>
-              <h1 className="text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-left">
+            <div className="px-1 lg:px-0">
+              <h1 className="text-[25px] sm:text-[28px] lg:text-[32px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.2] font-sans text-center lg:text-left">
                 Sua empresa pode estar perdendo clientes para concorrentes no Google
               </h1>
             </div>
 
             {/* 2. Subheadline */}
-            <p className="text-[19px] xl:text-[20px] text-gray-300 font-sans leading-relaxed max-w-xl">
-              Descubra o que melhorar no seu Google Meu Negócio para <strong className="font-bold text-white">aumentar sua visibilidade</strong>, <strong className="font-bold text-white">atrair mais clientes</strong> e <strong className="font-bold text-white">vender mais</strong>, sem depender de anúncios pagos
-            </p>
+            <div className="px-2 lg:px-0 max-w-[440px] lg:max-w-xl mx-auto lg:mx-0">
+              <p className="text-[18px] lg:text-[19px] xl:text-[20px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
+                Descubra o que melhorar no seu Google Meu Negócio para <strong className="font-bold text-white">aumentar sua visibilidade</strong>, <strong className="font-bold text-white">atrair mais clientes</strong> e <strong className="font-bold text-white">vender mais</strong>, sem depender de anúncios pagos
+              </p>
+            </div>
           </div>
 
-          {/* COLUNA DIREITA (DESKTOP) — Imagem Ilustrativa de Pesquisa no Google */}
+          {/* COLUNA DA IMAGEM LCP (Pesquisa no Google no Celular) */}
           <div className="flex flex-col items-center justify-center">
             <div className="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex items-center justify-center">
-              <div className="w-full aspect-square drop-shadow-2xl flex items-center justify-center">
+              <div className="w-full aspect-square drop-shadow-xl lg:drop-shadow-2xl flex items-center justify-center">
                 <div className="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
                   <img
                     src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
                     srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
+                    sizes="(max-width: 640px) 358px, 395px"
                     alt="Pesquisa de empresa no Google Maps no celular"
                     width={500}
                     height={500}
@@ -58,49 +59,6 @@ export const Hero: React.FC = () => {
                     className="hero-image-el w-full h-full object-contain rounded-2xl block"
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* ============================================================ */}
-        {/* FORMATO MOBILE: Apresentação Centralizada (< 1024px)         */}
-        {/* ============================================================ */}
-        <div className="block lg:hidden space-y-6">
-          
-          <div className="space-y-3.5 sm:space-y-4">
-            {/* 1. HEADLINE PRINCIPAL CENTRALIZADA */}
-            <div className="text-center px-1">
-              <h1 className="text-[25px] sm:text-[28px] font-bold tracking-tight text-white leading-[1.2] font-sans">
-                Sua empresa pode estar perdendo clientes para concorrentes no Google
-              </h1>
-            </div>
-
-            {/* 2. Subheadline Centralizada */}
-            <div className="text-center px-2 max-w-[440px] mx-auto">
-              <p className="text-[18px] text-gray-300 font-sans leading-[1.45] sm:leading-relaxed">
-                Descubra o que melhorar no seu Google Meu Negócio para <strong className="font-bold text-white">aumentar sua visibilidade</strong>, <strong className="font-bold text-white">atrair mais clientes</strong> e <strong className="font-bold text-white">vender mais</strong>, sem depender de anúncios pagos
-              </p>
-            </div>
-          </div>
-
-          {/* 3. IMAGEM ILUSTRATIVA DO CELULAR */}
-          <div className="w-full max-w-[358px] md:max-w-[392px] lg:max-w-[395px] mx-auto flex justify-center">
-            <div className="w-full aspect-square drop-shadow-xl flex items-center justify-center">
-              <div className="hero-image-wrapper w-full h-full rounded-2xl overflow-hidden">
-                <img
-                  src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png"
-                  srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_400/v1792609276/Design_sem_nome_9_dhkgb6.png 400w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_600/v1792609276/Design_sem_nome_9_dhkgb6.png 600w, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_800/v1792609276/Design_sem_nome_9_dhkgb6.png 800w"
-                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 420px"
-                  alt="Pesquisa de empresa no Google Maps no celular"
-                  width={500}
-                  height={500}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="hero-image-el w-full h-full object-contain rounded-2xl block"
-                />
               </div>
             </div>
           </div>

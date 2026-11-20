@@ -90,9 +90,11 @@ type CarouselPhase =
 export const ClientesConfirmam: React.FC = () => {
   const [isDraggingUI, setIsDraggingUI] = useState(false);
 
+  const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const firstSeqRef = useRef<HTMLDivElement>(null);
+  const isInViewRef = useRef<boolean>(true);
 
   // Offset e dimensões físicas
   const offsetRef = useRef<number>(0);
@@ -292,14 +294,32 @@ export const ClientesConfirmam: React.FC = () => {
     animationFrameIdRef.current = requestAnimationFrame(step);
   }, []);
 
-  // Ciclo de vida: inicialização imediata e listeners de redimensionamento
+  // Ciclo de vida: medição sem reflows desnecessários e rAF ativo apenas quando próximo ou visível na viewport
   useEffect(() => {
     updateDimensions();
 
-    // Inicia imediatamente o loop rAF no mount sem barreiras de bloqueio
-    startLoop();
-
     if (typeof window === 'undefined') return;
+
+    let visibilityObserver: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== 'undefined' && sectionRef.current) {
+      isInViewRef.current = false;
+      visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.some((entry) => entry.isIntersecting);
+          isInViewRef.current = visible;
+          if (visible) {
+            startLoop();
+          } else {
+            stopLoop();
+          }
+        },
+        { rootMargin: '250px 0px' }
+      );
+      visibilityObserver.observe(sectionRef.current);
+    } else {
+      isInViewRef.current = true;
+      startLoop();
+    }
 
     // Observador de redimensionamento dos cards para adaptação fluida
     const resizeObserver = new ResizeObserver(() => {
@@ -316,54 +336,17 @@ export const ClientesConfirmam: React.FC = () => {
     const handleResize = () => {
       updateDimensions();
     };
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-
-    // Instrumentação de diagnóstico em tempo real no console e em window.__CAROUSEL_TEST_RESULTS__
-    const startTime = performance.now();
-    const records: Array<{ time: string; phase: string; offset: number; left: number; transform: string }> = [];
-
-    const captureSnapshot = (label: string) => {
-      const track = trackRef.current;
-      if (!track) return;
-      const left = track.getBoundingClientRect().left;
-      const transform = getComputedStyle(track).transform;
-      const phase = phaseRef.current.type;
-      const offset = offsetRef.current;
-      records.push({ time: label, phase, offset, left, transform });
-      console.log(`[Carrossel V71 - ${label}] Fase: ${phase} | Offset: ${offset.toFixed(1)}px | Left: ${left.toFixed(1)}px | Transform: ${transform}`);
-    };
-
-    captureSnapshot('0s (Inicial)');
-
-    const timer2s = setTimeout(() => captureSnapshot('2s (Transição 1)'), 2000);
-    const timer5s = setTimeout(() => captureSnapshot('5s (Transição 2)'), 5000);
-    const timer10s = setTimeout(() => captureSnapshot('10s (Transição 3)'), 10000);
-    const timer12s = setTimeout(() => {
-      captureSnapshot('12s (Final)');
-      const t0 = records[0];
-      const t12 = records[records.length - 1];
-      const deltaTotal = Math.abs(t12.left - t0.left);
-      const isMoving = deltaTotal > 50;
-      console.log(`[Carrossel V71 - Diagnóstico Final] Deslocamento total comprovado: ${deltaTotal.toFixed(1)}px`);
-      console.log(`[Carrossel V71 - Diagnóstico Final] Status: ${isMoving ? 'MOVIMENTO ATIVO E COMPROVADO' : 'PARADO'}`);
-      console.table(records);
-      (window as any).__CAROUSEL_TEST_RESULTS__ = {
-        records,
-        deltaTotal,
-        isMoving,
-      };
-    }, 12000);
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('orientationchange', handleResize, { passive: true });
 
     return () => {
       stopLoop();
+      if (visibilityObserver) {
+        visibilityObserver.disconnect();
+      }
       resizeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('orientationchange', handleResize);
-      clearTimeout(timer2s);
-      clearTimeout(timer5s);
-      clearTimeout(timer10s);
-      clearTimeout(timer12s);
     };
   }, [updateDimensions, startLoop, stopLoop]);
 
@@ -572,6 +555,7 @@ export const ClientesConfirmam: React.FC = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="clientes-confirmam"
       aria-label="Depoimentos de clientes da Nanet"
       className="w-full pt-10 sm:pt-12 lg:pt-14 pb-10 sm:pb-11 lg:pb-12 bg-white overflow-hidden"

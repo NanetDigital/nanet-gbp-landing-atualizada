@@ -8,6 +8,9 @@ import { Hero } from './components/Hero';
 
 // Code-splitting below-the-fold components to reduce initial JS execution and bundle size
 const Oportunidade = lazy(() => import('./components/Oportunidade').then(m => ({ default: m.Oportunidade })));
+const AntesDepois = lazy(() => import('./components/AntesDepois').then(m => ({ default: m.AntesDepois })));
+const EntregaveisAnalise = lazy(() => import('./components/EntregaveisAnalise').then(m => ({ default: m.EntregaveisAnalise })));
+const BonusChecklist = lazy(() => import('./components/BonusChecklist').then(m => ({ default: m.BonusChecklist })));
 const PublicoAlvo = lazy(() => import('./components/PublicoAlvo').then(m => ({ default: m.PublicoAlvo })));
 const FaixaTransicaoOferta = lazy(() => import('./components/FaixaTransicaoOferta').then(m => ({ default: m.FaixaTransicaoOferta })));
 const Autoridade = lazy(() => import('./components/Autoridade').then(m => ({ default: m.Autoridade })));
@@ -137,6 +140,15 @@ export default function App() {
         {/* 3. Seções mais profundas da página, carregadas progressivamente */}
         {loadRemainingSections && (
           <Suspense fallback={null}>
+            {/* Antes x Depois */}
+            <AntesDepois />
+
+            {/* Apresentação detalhada dos entregáveis */}
+            <EntregaveisAnalise />
+
+            {/* Bônus incluso */}
+            <BonusChecklist />
+
             {/* Qualificação de Público: Para quem é */}
             <PublicoAlvo />
 
