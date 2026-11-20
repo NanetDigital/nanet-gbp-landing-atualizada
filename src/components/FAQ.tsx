@@ -10,77 +10,39 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'Eu já tenho um Perfil da Empresa no Google. Essa análise ainda faz sentido?',
-    answer: (
-      <>
-        Sim. Ter um perfil não garante visibilidade nem bom posicionamento nas buscas da sua região. A análise{' '}
-        <strong className="font-bold text-[#171717]">
-          revela onde sua empresa aparece no Google Maps em relação aos concorrentes e avalia 20 critérios do seu Perfil
-        </strong>
-        , indicando exatamente o que merece atenção.
-      </>
-    ),
+    question: 'Já tenho perfil no Google. Essa análise serve para mim?',
+    answer:
+      'Sim. Você descobre como sua empresa aparece nas buscas da região e o que pode melhorar para ganhar mais visibilidade, clientes e vendas.',
   },
   {
     id: 'faq-2',
-    question: 'Preciso entender de Google ou de marketing?',
-    answer: (
-      <>
-        Não. Os relatórios são{' '}
-        <strong className="font-bold text-[#171717]">
-          interpretados e explicados de forma clara e acessível durante a orientação de 30 minutos com o especialista
-        </strong>
-        , indicando as melhorias prioritárias sem complicação técnica.
-      </>
-    ),
+    question: 'Vou conseguir entender os relatórios?',
+    answer:
+      'Sim. Os relatórios são visuais e fáceis de entender. Um especialista explica os resultados e mostra o que ajustar primeiro.',
   },
   {
     id: 'faq-3',
     question: 'A análise é automática ou feita por um especialista?',
-    answer: (
-      <>
-        Os dados e relatórios são gerados por ferramentas especializadas e{' '}
-        <strong className="font-bold text-[#171717]">
-          interpretados por um especialista da Nanet Digital
-        </strong>
-        , que conduz a orientação e responde às suas dúvidas.
-      </>
-    ),
+    answer:
+      'Usamos ferramentas para gerar os relatórios. Depois, um especialista analisa os resultados e orienta você sobre as melhorias.',
   },
   {
     id: 'faq-4',
-    question: 'Quando vou receber minha análise?',
-    answer: (
-      <>
-        Após a confirmação da compra, você acessa a área de membros na Hotmart, agenda sua orientação e preenche o formulário com os dados da empresa.{' '}
-        <strong className="font-bold text-[#171717]">
-          Os dois relatórios são apresentados e entregues durante a orientação profissional de 30 minutos, em até 7 dias úteis
-        </strong>{' '}
-        após a confirmação do pagamento e o recebimento completo dos dados.
-      </>
-    ),
+    question: 'Quando recebo meus relatórios?',
+    answer:
+      'Em até 48 horas úteis após o envio completo dos dados da empresa. A orientação acontece no horário agendado.',
   },
   {
     id: 'faq-5',
-    question: 'Vocês também fazem os ajustes identificados na análise?',
-    answer: (
-      <>
-        Não. A análise inclui diagnóstico e orientação. A execução das melhorias não está incluída. Você poderá utilizar o Checklist de Implementação, oferecido como bônus, para organizar os ajustes que sua empresa decidir realizar.
-      </>
-    ),
+    question: 'A Nanet faz as melhorias no meu perfil?',
+    answer:
+      'A análise mostra o que melhorar e entrega um checklist de prioridades. A execução das melhorias é um serviço à parte.',
   },
   {
     id: 'faq-6',
-    question: 'E se eu comprar e mudar de ideia?',
-    answer: (
-      <>
-        Você tem{' '}
-        <strong className="font-bold text-[#171717]">
-          7 dias de garantia a partir da compra
-        </strong>
-        . Se dentro desse prazo decidir que a Análise Estratégica não faz sentido para você, poderá solicitar o reembolso.
-      </>
-    ),
+    question: 'E se eu não gostar da análise?',
+    answer:
+      'Você tem 7 dias de garantia para solicitar o reembolso, conforme as condições da compra pela Hotmart.',
   },
 ];
 
@@ -112,27 +74,33 @@ export const FAQ: React.FC = () => {
                 key={item.id}
                 className={`bg-[#F6F3EF] border rounded-2xl transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'border-[#2563EB]/40 shadow-xs'
-                    : 'border-neutral-200/80 hover:border-neutral-300'
+                    ? 'border-[#16A34A]/45 shadow-xs'
+                    : 'border-neutral-200/80 hover:border-[#16A34A]/35'
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}
-                  className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer group"
+                  className="w-full py-4 sm:py-4.5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A]/60 focus-visible:ring-inset cursor-pointer group"
                 >
-                  <span className="font-sans text-[22px] lg:text-[23px] font-semibold text-[#171717] group-hover:text-[#2563EB] transition-colors leading-[1.35]">
+                  <span
+                    className={`font-sans text-[22px] lg:text-[23px] font-semibold transition-colors leading-[1.35] ${
+                      isOpen
+                        ? 'text-[#16A34A]'
+                        : 'text-[#171717] group-hover:text-[#16A34A]'
+                    }`}
+                  >
                     {item.question}
                   </span>
                   <div
                     className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${
                       isOpen
-                        ? 'bg-blue-50 text-[#2563EB] border border-[#2563EB]/40 rotate-180'
-                        : 'bg-white text-[#2563EB] border border-neutral-200/80 shadow-xs group-hover:border-[#2563EB]/40'
+                        ? 'bg-[#16A34A]/10 text-[#16A34A] border border-[#16A34A]/45 rotate-180'
+                        : 'bg-white text-[#16A34A] border border-neutral-200/80 shadow-xs group-hover:border-[#16A34A]/45'
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4 text-[#2563EB] stroke-[2.5]" />
+                    <ChevronDown className="w-4 h-4 text-[#16A34A] stroke-[2.5]" />
                   </div>
                 </button>
 

@@ -1,82 +1,63 @@
 import React from 'react';
-import { Mail, Calendar, FileText } from 'lucide-react';
+import { Mail, FileText, CheckCircle2 } from 'lucide-react';
+
+const STEPS = [
+  {
+    title: 'Confira seu e-mail',
+    description:
+      'Após a aprovação da compra, você recebe seu acesso e as instruções.',
+    Icon: Mail,
+  },
+  {
+    title: 'Receba seus relatórios',
+    description:
+      'Agende sua orientação com o nome da empresa. Receba seus relatórios em até 48 horas úteis.',
+    Icon: FileText,
+  },
+  {
+    title: 'Tudo pronto',
+    description:
+      'Em 30 minutos, saiba onde ajustar primeiro de forma rápida e eficiente.',
+    Icon: CheckCircle2,
+  },
+] as const;
 
 export const DepoisDaCompra: React.FC = () => {
   return (
     <section
       id="depois-da-compra"
       aria-label="Como funciona após a compra da Análise Estratégica"
-      className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-neutral-200/80"
+      className="w-full py-12 sm:py-16 lg:py-[72px] bg-[#F5F5F5] border-b border-neutral-200/80"
     >
       <div className="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Título da Seção Centralizado */}
-        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-            Depois da compra, funciona assim:
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="max-w-[660px] mx-auto text-[26px] sm:text-[32px] lg:text-[38px] font-bold tracking-tight text-[#171717] font-sans leading-[1.2]">
+            Compre agora e receba seu acesso no e-mail imediatamente!
           </h2>
         </div>
 
-        {/* Grade com 3 Cards Lado a Lado (Desktop) e Coluna Única (Mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
-          
-          {/* CARD 01 — PASSO 01 — Confira seu e-mail */}
-          <div className="bg-[#F6F3EF] border border-neutral-200/80 rounded-2xl p-7 sm:p-8 lg:p-9 shadow-none flex flex-col items-center text-center justify-start">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border border-[#16A34A]/25 shadow-xs flex items-center justify-center shrink-0 mb-5 sm:mb-6">
-              <Mail className="w-6 h-6 sm:w-7 sm:h-7 text-[#16A34A]" strokeWidth={2} />
+        {/* Grade com 3 Cards Brancos Compactos */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch max-w-[1025px] mx-auto">
+          {STEPS.map(({ title, description, Icon }) => (
+            <div
+              key={title}
+              className="bg-white border border-neutral-200/90 rounded-2xl p-6 flex flex-col items-center text-center justify-start"
+            >
+              <Icon
+                className="w-9 h-9 text-[#16A34A] shrink-0"
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
+              <h3 className="mt-4 text-[19px] sm:text-[20px] font-bold text-[#171717] font-sans leading-snug tracking-tight">
+                {title}
+              </h3>
+              <p className="mt-2 text-[14.5px] sm:text-[15px] text-[#262626] font-sans leading-[1.5]">
+                {description}
+              </p>
             </div>
-            <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
-              PASSO 01
-            </span>
-            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
-              Confira seu e-mail
-            </h3>
-            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
-              Receba o <strong className="font-bold text-[#171717]">acesso à área de membros na Hotmart</strong> e as instruções para agendar sua orientação e preencher o formulário da empresa.
-            </p>
-          </div>
-
-          {/* CARD 02 — PASSO 02 — Escolha seu horário */}
-          <div className="bg-[#F6F3EF] border border-neutral-200/80 rounded-2xl p-7 sm:p-8 lg:p-9 shadow-none flex flex-col items-center text-center justify-start">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border border-[#16A34A]/25 shadow-xs flex items-center justify-center shrink-0 mb-5 sm:mb-6">
-              <Calendar className="w-6 h-6 sm:w-7 sm:h-7 text-[#16A34A]" strokeWidth={2} />
-            </div>
-            <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
-              PASSO 02
-            </span>
-            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
-              Escolha seu horário
-            </h3>
-            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
-              Escolha um horário disponível e preencha o formulário com os dados da sua empresa. <strong className="font-bold text-[#171717]">Nossa equipe prepara seus dois relatórios personalizados.</strong>
-            </p>
-          </div>
-
-          {/* CARD 03 — PASSO 03 — Descubra por onde começar */}
-          <div className="bg-[#F6F3EF] border border-neutral-200/80 rounded-2xl p-7 sm:p-8 lg:p-9 shadow-none flex flex-col items-center text-center justify-start">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border border-[#16A34A]/25 shadow-xs flex items-center justify-center shrink-0 mb-5 sm:mb-6">
-              <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-[#16A34A]" strokeWidth={2} />
-            </div>
-            <span className="text-xs font-mono font-bold tracking-wider text-[#16A34A] uppercase mb-1">
-              PASSO 03
-            </span>
-            <h3 className="text-[20px] sm:text-[20px] lg:text-[22px] font-bold text-[#171717] font-sans mb-2 tracking-tight">
-              Receba sua análise
-            </h3>
-            <p className="text-[18px] text-[#6B7280] font-sans leading-[1.5] max-w-[340px]">
-              Durante a orientação agendada de 30 minutos, <strong className="font-bold text-[#171717]">o especialista apresenta e entrega os relatórios</strong> e explica as prioridades identificadas.
-            </p>
-          </div>
-
+          ))}
         </div>
-
-        {/* Informação sutil sobre prazo de entrega */}
-        <div className="text-center mt-8 sm:mt-10">
-          <p className="text-xs sm:text-sm text-[#6B7280] font-sans">
-            A apresentação dos relatórios e a orientação acontecem em até <strong className="font-semibold text-[#171717]">7 dias úteis</strong> após a confirmação do pagamento e o recebimento completo dos dados da empresa.
-          </p>
-        </div>
-
       </div>
     </section>
   );

@@ -574,14 +574,14 @@ export const ClientesConfirmam: React.FC = () => {
     <section
       id="clientes-confirmam"
       aria-label="Depoimentos de clientes da Nanet"
-      className="w-full pt-16 sm:pt-20 lg:pt-24 pb-0 bg-[#F6F3EF] overflow-hidden"
+      className="w-full pt-16 sm:pt-20 lg:pt-24 pb-0 bg-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8">
         <div className="space-y-8 sm:space-y-10">
           {/* Header da Seção */}
           <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#171717] font-sans leading-tight">
-              Resultados de empresas que fizeram a Análise Estratégica
+            <h2 className="text-[24px] lg:text-[32px] font-bold tracking-tight text-[#171717] font-sans leading-[1.25]">
+              Veja empresas locais que já estão recebendo mais clientes pelo Google
             </h2>
           </div>
 

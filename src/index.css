@@ -64,3 +64,49 @@
   -webkit-clip-path: inset(0 round 1rem);
 }
 
+@keyframes nanetGentleFloat {
+  0%, 100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.transition-arrow-float {
+  animation: nanetGentleFloat 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-arrow-float {
+    animation: none;
+  }
+}
+
+@keyframes nanetIcpMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.nanet-icp-row-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nanet-icp-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+  animation-name: nanetIcpMarquee;
+  animation-duration: var(--nanet-icp-duration, 65s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}

@@ -20,11 +20,11 @@ const defaultData: OportunidadeData = {
 export const Oportunidade: React.FC<OportunidadeProps> = () => {
   return (
     <>
-      {/* SEÇÃO DE DEMONSTRAÇÃO VISUAL DA ANÁLISE ESTRATÉGICA */}
-      <DemonstracaoAnalise />
-
       {/* SEÇÃO COMPLETA: Clientes confirmam a experiência */}
       <ClientesConfirmam />
+
+      {/* SEÇÃO DE DEMONSTRAÇÃO VISUAL DA ANÁLISE ESTRATÉGICA */}
+      <DemonstracaoAnalise />
 
       {/* SEÇÃO COMPLETA: ANTES × DEPOIS */}
       <AntesDepois />

@@ -9,18 +9,16 @@ import { Hero } from './components/Hero';
 // Code-splitting below-the-fold components to reduce initial JS execution and bundle size
 const Oportunidade = lazy(() => import('./components/Oportunidade').then(m => ({ default: m.Oportunidade })));
 const PublicoAlvo = lazy(() => import('./components/PublicoAlvo').then(m => ({ default: m.PublicoAlvo })));
+const FaixaTransicaoOferta = lazy(() => import('./components/FaixaTransicaoOferta').then(m => ({ default: m.FaixaTransicaoOferta })));
 const Autoridade = lazy(() => import('./components/Autoridade').then(m => ({ default: m.Autoridade })));
+const SegundoPreCheckout = lazy(() => import('./components/SegundoPreCheckout').then(m => ({ default: m.SegundoPreCheckout })));
 const Oferta = lazy(() => import('./components/Oferta').then(m => ({ default: m.Oferta })));
 const DepoisDaCompra = lazy(() => import('./components/DepoisDaCompra').then(m => ({ default: m.DepoisDaCompra })));
 const Garantia = lazy(() => import('./components/Garantia').then(m => ({ default: m.Garantia })));
 const FAQ = lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })));
-const CTAPosFAQ = lazy(() => import('./components/CTAPosFAQ').then(m => ({ default: m.CTAPosFAQ })));
 const Rodape = lazy(() => import('./components/Rodape').then(m => ({ default: m.Rodape })));
-const PoliticaPrivacidade = lazy(() => import('./components/PoliticaPrivacidade').then(m => ({ default: m.PoliticaPrivacidade })));
-const TermosDeUso = lazy(() => import('./components/TermosDeUso').then(m => ({ default: m.TermosDeUso })));
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'landing' | 'privacidade' | 'termos'>('landing');
   
   // Estado para carregamento progressivo das seções mais profundas da página
   const [loadRemainingSections, setLoadRemainingSections] = useState<boolean>(() => {
@@ -33,12 +31,7 @@ export default function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === '#privacidade') {
-        setCurrentPage('privacidade');
-      } else if (hash === '#termos') {
-        setCurrentPage('termos');
-      } else if (hash) {
+      if (window.location.hash) {
         setLoadRemainingSections(true);
       }
     };
@@ -126,39 +119,6 @@ export default function App() {
     return cleanup;
   }, [loadRemainingSections]);
 
-  const navigateTo = (page: 'landing' | 'privacidade' | 'termos') => {
-    setCurrentPage(page);
-    if (page === 'landing') {
-      if (window.location.hash) {
-        history.pushState('', document.title, window.location.pathname + window.location.search);
-      }
-      window.scrollTo(0, 0);
-    } else {
-      window.location.hash = `#${page}`;
-      window.scrollTo(0, 0);
-    }
-  };
-
-  if (currentPage === 'privacidade') {
-    return (
-      <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
-        <Suspense fallback={null}>
-          <PoliticaPrivacidade onBack={() => navigateTo('landing')} />
-        </Suspense>
-      </div>
-    );
-  }
-
-  if (currentPage === 'termos') {
-    return (
-      <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
-        <Suspense fallback={null}>
-          <TermosDeUso onBack={() => navigateTo('landing')} />
-        </Suspense>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white text-[#171717] selection:bg-neutral-200 font-sans antialiased">
       {/* Main Container rendering all production components */}
@@ -180,6 +140,9 @@ export default function App() {
             {/* Qualificação de Público: Para quem é */}
             <PublicoAlvo />
 
+            {/* Faixa de transição entre Público-Alvo e Oferta */}
+            <FaixaTransicaoOferta />
+
             {/* 4. Oferta: SUA ANÁLISE ESTRATÉGICA COMPLETA */}
             <Oferta />
 
@@ -192,14 +155,14 @@ export default function App() {
             {/* Autoridade: Quem está por trás da sua análise */}
             <Autoridade />
 
+            {/* Segundo Pré-checkout idêntico ao original */}
+            <SegundoPreCheckout />
+
             {/* Perguntas Frequentes */}
             <FAQ />
 
-            {/* Nova Seção: CTA Final de Fechamento */}
-            <CTAPosFAQ />
-
             {/* Rodapé */}
-            <Rodape onNavigate={navigateTo} />
+            <Rodape />
           </Suspense>
         )}
       </main>

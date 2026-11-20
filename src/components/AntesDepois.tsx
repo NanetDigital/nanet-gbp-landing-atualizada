@@ -2,28 +2,28 @@ import React from 'react';
 import { X, Check } from 'lucide-react';
 
 const ANTES_ITEMS = [
-  'Não sabe onde sua empresa aparece nas buscas locais.',
-  'Não sabe como se compara aos concorrentes.',
-  'Não sabe quais pontos do perfil precisam de atenção.',
-  'Perde tempo fazendo ajustes sem saber o que priorizar.',
+  'Clientes da região podem não encontrar sua empresa.',
+  'Poucos clientes chegam pelo Google.',
+  'Perde oportunidades de vendas para concorrentes.',
+  'Não sabe o que melhorar para atrair clientes.',
 ];
 
 const DEPOIS_ITEMS = [
   {
-    bold: 'Veja onde sua empresa aparece',
-    rest: ' para uma busca local analisada.',
+    bold: 'Mais visibilidade para sua empresa na região.',
+    rest: '',
   },
   {
-    bold: 'Compare sua posição',
-    rest: ' com a dos concorrentes da região.',
+    bold: 'Atrai clientes que buscam o que você vende.',
+    rest: '',
   },
   {
-    bold: 'Descubra o que precisa melhorar',
-    rest: ' com uma avaliação de 20 critérios.',
+    bold: 'Melhora seu Perfil no Google com menos tentativa e erro.',
+    rest: '',
   },
   {
-    bold: 'Saiba o que priorizar primeiro',
-    rest: ' com checklist e orientação de um especialista.',
+    bold: 'Mais oportunidades de vendas sem anúncios pagos.',
+    rest: '',
   },
 ];
 
@@ -38,8 +38,8 @@ export const AntesDepois: React.FC = () => {
         {/* Headline definitiva sem subtítulo */}
         <div className="text-center max-w-[880px] mx-auto mb-10 sm:mb-12 lg:mb-14">
           <h2 className="text-[24px] lg:text-[32px] font-bold tracking-tight font-sans leading-[1.25]">
-            <span className="text-[#171717]">Pare de perder tempo no escuro. </span>
-            <span className="text-[#16A34A]">Saiba o que melhorar no seu Perfil da Empresa no Google.</span>
+            <span className="text-[#171717]">Pare de perder clientes e dinheiro </span>
+            <span className="text-[#16A34A]">tentando melhorar seu Google no escuro.</span>
           </h2>
         </div>
 

@@ -1,200 +1,64 @@
 import React from 'react';
-import { RodapeData } from '../types/landing';
-import { WHATSAPP_URL, WhatsAppIcon } from './Duvidas';
+import { WhatsAppIcon } from './Duvidas';
 
-export interface RodapeProps {
-  data?: Partial<RodapeData>;
-  onNavigate?: (page: 'landing' | 'privacidade' | 'termos') => void;
-}
+const FOOTER_WHATSAPP_URL =
+  'https://wa.me/5527998752912?text=Ol%C3%A1%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20An%C3%A1lise%20Algoritmo%20Mais.';
 
-const defaultData: RodapeData = {
-  brandName: 'Nanet Digital',
-  copyright: '© 2026 Nanet Digital. Todos os direitos reservados.',
-  links: [
-    'Política de Privacidade',
-    'Termos de Uso',
-    'WhatsApp Suporte',
-  ],
-  disclaimer:
-    'Este site não é afiliado ao Google. Os resultados dependem das condições de cada empresa e da aplicação das recomendações.',
-};
-
-export const Rodape: React.FC<RodapeProps> = ({ data = {}, onNavigate }) => {
-  const footerData = { ...defaultData, ...data };
-
-  const handleLinkClick = (link: string) => {
-    if (link === 'Política de Privacidade') {
-      if (onNavigate) {
-        onNavigate('privacidade');
-      } else {
-        window.location.hash = '#privacidade';
-      }
-    } else if (link === 'Termos de Uso') {
-      if (onNavigate) {
-        onNavigate('termos');
-      } else {
-        window.location.hash = '#termos';
-      }
-    }
-  };
-
+export const Rodape: React.FC = () => {
   return (
     <footer
       id="rodape"
-      aria-label="Rodapé institucional Nanet Digital"
-      className="w-full py-8 sm:py-10 bg-[#171C24] text-[#B8C0CC] border-t border-[#39414C]"
+      aria-label="Rodapé institucional Nanet"
+      className="w-full bg-[#000000] text-white"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-        
-        {/* ========================================================== */}
-        {/* 1. LAYOUT DESKTOP (3 Colunas Horizontais)                  */}
-        {/* ========================================================== */}
-        <div className="hidden md:grid md:grid-cols-3 items-start gap-8 pb-6 border-b border-[#39414C]">
-          
-          {/* COLUNA 1: IDENTIFICAÇÃO (Alinhada à esquerda) */}
-          <div className="flex flex-col items-start space-y-1.5 text-left">
-            <div className="flex items-center pb-0.5">
-              <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_130/v1785814782/Design_sem_nome_3_esxy36.png 1x, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png 2x"
-                alt="Nanet Digital"
-                width={120}
-                height={32}
-                loading="lazy"
-                decoding="async"
-                className="w-[110px] sm:w-[120px] h-auto object-contain block brightness-0 invert opacity-95"
-              />
-            </div>
-            <span className="text-[14px] font-semibold text-[#F3F4F6] font-sans">
-              Análise Estratégica da Empresa
-            </span>
-            <span className="text-[12px] text-[#B8C0CC] font-mono">
-              CNPJ: 65.262.598/0001-32
-            </span>
-          </div>
+      {/* Área Principal Centralizada em Coluna Única */}
+      <div className="max-w-[750px] mx-auto px-5 sm:px-6 py-10 sm:py-12 flex flex-col items-center text-center">
+        {/* 1. Logotipo Oficial Análise Algoritmo Mais (letras brancas) */}
+        <img
+          src="https://res.cloudinary.com/nds7zozp/image/upload/v1795160964/logo_letras_brancas_e3cfov.png"
+          alt="Análise Algoritmo Mais"
+          width={2752}
+          height={1536}
+          loading="lazy"
+          decoding="async"
+          className="w-[165px] sm:w-[180px] h-auto object-contain block -my-5"
+        />
 
-          {/* COLUNA 2: RECURSOS (Centralizada) */}
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <span className="text-[15px] font-semibold text-[#F3F4F6] font-sans tracking-tight">
-              Recursos
-            </span>
-            <div className="flex flex-col space-y-1.5 text-[13px] font-sans">
-              <button
-                type="button"
-                onClick={() => handleLinkClick('Política de Privacidade')}
-                className="text-[#D1D5DB] hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 text-center"
-              >
-                Política de Privacidade
-              </button>
-              <button
-                type="button"
-                onClick={() => handleLinkClick('Termos de Uso')}
-                className="text-[#D1D5DB] hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 text-center"
-              >
-                Termos de Uso
-              </button>
-            </div>
-          </div>
+        {/* 2. Nome do Produto */}
+        <span className="mt-3 text-[15px] sm:text-[16px] font-semibold text-white font-sans">
+          Análise Algoritmo Mais
+        </span>
 
-          {/* COLUNA 3: SUPORTE (Alinhada à direita) */}
-          <div className="flex flex-col items-end justify-start text-right pt-0.5">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
-            >
-              <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-              <span>WhatsApp Suporte</span>
-            </a>
-          </div>
+        {/* 3. Contato pelo WhatsApp */}
+        <p className="mt-4 text-[14px] sm:text-[15px] text-white/90 font-sans">
+          Tem alguma dúvida? Envie no WhatsApp.
+        </p>
+        <a
+          href={FOOTER_WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1.5 inline-flex items-center justify-center gap-1.5 text-[14px] sm:text-[15px] font-semibold text-[#4ADE80] hover:text-[#22c55e] transition-colors font-sans"
+        >
+          <WhatsAppIcon className="w-4 h-4 shrink-0" />
+          <span>Falar com o suporte</span>
+        </a>
 
-        </div>
+        {/* 4. CNPJ */}
+        <span className="mt-4 text-[12.5px] sm:text-[13px] text-white/85 font-mono">
+          CNPJ: 65.262.598/0001-32
+        </span>
 
-        {/* ========================================================== */}
-        {/* 2. LAYOUT MOBILE (Coluna Única Centralizada)               */}
-        {/* ========================================================== */}
-        <div className="md:hidden flex flex-col space-y-5">
-          
-          {/* BLOCO 1: IDENTIFICAÇÃO E CONTATO (Centralizado) */}
-          <div className="flex flex-col items-center text-center space-y-2">
-            <div className="flex items-center pb-0.5">
-              <img
-                src="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png"
-                srcSet="https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_130/v1785814782/Design_sem_nome_3_esxy36.png 1x, https://res.cloudinary.com/nds7zozp/image/upload/f_auto,q_auto,w_260/v1785814782/Design_sem_nome_3_esxy36.png 2x"
-                alt="Nanet Digital"
-                width={120}
-                height={32}
-                loading="lazy"
-                decoding="async"
-                className="w-[110px] h-auto object-contain block brightness-0 invert opacity-95"
-              />
-            </div>
-            <span className="text-[14px] font-semibold text-[#F3F4F6] font-sans">
-              Análise Estratégica da Empresa
-            </span>
-            <span className="text-[12px] text-[#B8C0CC] font-mono">
-              CNPJ: 65.262.598/0001-32
-            </span>
-            <div className="pt-0.5">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#4ADE80] hover:text-[#22c55e] transition-colors"
-              >
-                <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-                <span>WhatsApp Suporte</span>
-              </a>
-            </div>
-          </div>
+        {/* 5. Aviso Legal Centralizado */}
+        <p className="mt-5 max-w-[750px] mx-auto text-[12px] sm:text-[12.5px] text-white/85 font-sans leading-relaxed text-center">
+          Este site não é afiliado ao Google. A Análise Algoritmo Mais oferece relatórios e orientação sobre melhorias no Perfil da Empresa no Google. A compra desse material não garante nenhum tipo de resultado. Os resultados dependem das condições de cada negócio e da aplicação das recomendações.
+        </p>
+      </div>
 
-          {/* DIVISÓRIA MOBILE 1 */}
-          <div className="w-full h-px bg-[#39414C]" />
-
-          {/* BLOCO 2: RECURSOS (Centralizado) */}
-          <div className="flex flex-col items-center text-center space-y-2">
-            <span className="text-[15px] font-semibold text-[#F3F4F6] font-sans tracking-tight">
-              Recursos
-            </span>
-            
-            {/* Links lado a lado na mesma linha com quebra natural */}
-            <div className="flex flex-wrap items-center justify-center gap-x-2 text-[14px] font-sans text-[#D1D5DB] leading-relaxed">
-              <button
-                type="button"
-                onClick={() => handleLinkClick('Política de Privacidade')}
-                className="text-[#D1D5DB] hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 whitespace-nowrap"
-              >
-                Política de Privacidade
-              </button>
-              <span className="text-[#39414C] select-none">·</span>
-              <button
-                type="button"
-                onClick={() => handleLinkClick('Termos de Uso')}
-                className="text-[#D1D5DB] hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 whitespace-nowrap"
-              >
-                Termos de Uso
-              </button>
-            </div>
-          </div>
-
-          {/* DIVISÓRIA MOBILE 2 */}
-          <div className="w-full h-px bg-[#39414C]" />
-
-        </div>
-
-        {/* ========================================================== */}
-        {/* 3. AVISO LEGAL E COPYRIGHT (Desktop e Mobile)              */}
-        {/* ========================================================== */}
-        <div className="space-y-2 text-center text-[12px] font-sans text-[#B8C0CC]">
-          <p className="leading-relaxed max-w-2xl md:max-w-4xl mx-auto">
-            {footerData.disclaimer}
-          </p>
-          <p className="text-[#B8C0CC]">
-            {footerData.copyright}
-          </p>
-        </div>
-
+      {/* Faixa Inferior Cinza-Escura (#242424) */}
+      <div className="w-full bg-[#242424] min-h-[58px] py-4 px-4 flex items-center justify-center text-center">
+        <p className="text-[13px] sm:text-[13.5px] text-white font-sans font-normal">
+          Todos os direitos reservados © 2026
+        </p>
       </div>
     </footer>
   );
